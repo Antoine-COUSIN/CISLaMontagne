@@ -5,6 +5,7 @@
 -création des wireframe public
 -Mise en place des home controller public/extranet/Back-Office | OK
 -Mise en place des nav/header/footer
+-Mise en place du système d'authentification
 
 ========== 28/09/2021 ==========
 -V0.2.0 MCD/MLD => ajout du back-Office
