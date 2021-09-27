@@ -20,21 +20,26 @@
     </head>
     <body>
         <header>
-            <div class="container">
-                <div class="row">
-                    <Div class="col-md-12">
-                        <div>
-                            <a href=""></a>
-                            <a href=""></a>
-                        </div>
-
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </Div>
+            <div class="bg-light topBarreContainer">
+                <div class="container">
+                    <div class="row">
+                        <Div class="col-md-12">
+                            <div class="topBarre">
+                                <div>
+                                    <a href=""><i class="fas fa-phone-alt"></i>18/112</a>
+                                    <a href=""><i class="far fa-envelope"></i>Contactez-nous</a>
+                                </div>
+        
+                                <div class="socialNetwork">
+                                    <p class="socialNetwork-P">Restons connectés</p>
+                                    <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i><i class="fab fa-linkedin-in"></i></p>
+                                </div>
+                            </div>
+                        </Div>
+                    </div>
                 </div>
             </div>
+
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
                     <a class="navbar-brand" href="/">C.I.S LA MONTAGNE</a>
@@ -50,6 +55,23 @@
                             <a class="nav-link" href="#">L'amicale des sapeurs-pompiers</a>
                             <a class="nav-link" href="#">Livre d'or</a>
                         </div>
+
+                        
+                        {% if app.user %}
+                            <div class="navbar-nav user-dropdown ms-auto">
+                                    <div class="dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="far fa-user"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a href="{{ path('home_back_office') }}">Extranet</a></li>
+                                            <li><a href="{{ path('home_back_office') }}">Back-office</a></li>
+                                            <li><a href="{{ path('app_logout') }}" style="color: red !important;"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        {% endif %}
                     </div>
 
                 </div>
