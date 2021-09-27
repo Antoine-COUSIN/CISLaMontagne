@@ -2,7 +2,7 @@
 
 ========== 27/09/2021 ==========
 -V0.1.0 MCD/MLD créée | OK
--création des wireframe public
+-création des wireframe public | OK
 -Mise en place des home controller public/extranet/Back-Office | OK
 -Mise en place des nav/header/footer | OK
 -Mise en place du système d'authentification | OK
