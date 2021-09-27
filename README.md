@@ -24,3 +24,4 @@
 -Responsive des élément ci dessus
 
 ========== 30/09/2021 ==========
+-Mise en place du formulaire de contact
