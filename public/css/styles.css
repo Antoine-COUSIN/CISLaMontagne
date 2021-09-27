@@ -60,6 +60,12 @@ header .topBarreContainer {
   border-bottom: 1px solid #e1e1e1;
 }
 
+nav {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: rgba(230, 230, 230, 0.3);
+}
+
 nav .user-dropdown {
   height: 41px;
 }

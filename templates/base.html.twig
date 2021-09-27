@@ -15,7 +15,7 @@
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            
         {% endblock %}
     </head>
     <body>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav id="principalNav" class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <a class="navbar-brand" href="/">C.I.S LA MONTAGNE</a>
 
@@ -115,6 +115,10 @@
                 </div>
             </div>
         </footer>
+
+        <script type="text/javascript" src="{{ asset('js/navbarscroll.js') }}"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     </body>
