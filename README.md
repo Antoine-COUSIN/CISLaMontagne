@@ -4,8 +4,8 @@
 -V0.1.0 MCD/MLD créée | OK
 -création des wireframe public
 -Mise en place des home controller public/extranet/Back-Office | OK
--Mise en place des nav/header/footer
--Mise en place du système d'authentification
+-Mise en place des nav/header/footer | OK
+-Mise en place du système d'authentification | OK
 
 ========== 28/09/2021 ==========
 -V0.2.0 MCD/MLD => ajout du back-Office
