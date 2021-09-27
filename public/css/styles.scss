@@ -1,0 +1,73 @@
+/*
+
+
+
+
+
+
+
+
+*/
+
+//GLOBAL=========================================================================================================
+//HEADER=========================================================================================================
+header
+{
+    background-image: url(../img/background/bg-header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+}
+//NAV============================================================================================================
+
+//FOOTER=========================================================================================================
+footer
+{
+    color: white;
+    background-color: rgb(150, 150, 150);
+    height: 218px;
+    padding: 15px 0px;
+
+    .central-footer
+    {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .bloc-mentions-legales
+        {
+            a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0px 20px;
+                margin-right: -5px;
+            }
+
+            .border-right
+            {
+                border-right: 1px solid white;
+            }
+        }
+    }
+
+    .right-footer
+    {
+        li
+        {
+            list-style: none;
+
+            a
+            {
+                color: white;
+                text-decoration: none;
+            }
+
+            i
+            {
+                margin-right: 8px;
+            }
+        }
+    }
+}

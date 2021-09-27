@@ -2,11 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}C.I.S La MONTAGNE{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+
+        <!-- ICONS -->
+        <script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
+
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +19,81 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <Div class="col-md-12">
+                        <div>
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+
+                        <div>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </Div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/">C.I.S LA MONTAGNE</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                            <a class="nav-link" href="#">Nos missions</a>
+                            <a class="nav-link" href="#">L'amicale des sapeurs-pompiers</a>
+                            <a class="nav-link" href="#">Livre d'or</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
         {% block body %}{% endblock %}
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="{{ asset('img/logo/macaron-sp.png') }}" alt="CIS la Montagne">
+                    </div>
+        
+                    <div class="col-md-8">
+                        <div class="central-footer">
+                            <div class="bloc-adress">
+                                <h5>Centre d'incendie et de secours de La Montagne</h5>
+                                <p>6 Rue de la Briandière,<br>
+                                44620 LA MONTAGNE<br>
+                                <i class="fab fa-facebook"></i></p>
+                            </div>
+                            
+                            <div class="bloc-mentions-legales">
+                                <a class="border-right" href="">Plan du site</a>
+                                <a class="border-right" href="">Mentions légales et confidentialité</a>
+                                <a href="">Réalisation : COSINUS-SA webcreation</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-2">
+                        <div class="right-footer">
+                            <ul>
+                                <li><a href=""><i class="fas fa-lock"></i>Extranet</a></li>
+                                <li><a class="border-right" href=""><i class="fas fa-envelope-open-text"></i>Nous contacter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     </body>
 </html>
