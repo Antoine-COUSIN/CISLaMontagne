@@ -1,0 +1,5 @@
+//Affichage photo groupe centre
+<td><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="100" alt=""></td>
+
+//Affichage photo chef centre
+<td><img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" width="100" alt=""></td>

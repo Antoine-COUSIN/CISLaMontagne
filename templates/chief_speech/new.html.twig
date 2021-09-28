@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ChiefSpeech{% endblock %}
+
+{% block body %}
+    <h1>Create new ChiefSpeech</h1>
+
+    {{ include('chief_speech/_form.html.twig') }}
+
+    <a href="{{ path('chief_speech_index') }}">back to list</a>
+{% endblock %}

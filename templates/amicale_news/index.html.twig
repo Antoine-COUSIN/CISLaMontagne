@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AmicaleNews index{% endblock %}
+
+{% block body %}
+    <h1>AmicaleNews index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Img</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for amicale_news in amicale_news %}
+            <tr>
+                <td>{{ amicale_news.id }}</td>
+                <td>{{ amicale_news.title }}</td>
+                <td>{{ amicale_news.text }}</td>
+                <td><img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" width="100" alt=""></td>
+                <td>
+                    <a href="{{ path('amicale_news_show', {'id': amicale_news.id}) }}">show</a>
+                    <a href="{{ path('amicale_news_edit', {'id': amicale_news.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('amicale_news_new') }}">Create new</a>
+{% endblock %}

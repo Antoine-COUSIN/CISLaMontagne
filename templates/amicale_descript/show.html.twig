@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AmicaleDescript{% endblock %}
+
+{% block body %}
+    <h1>AmicaleDescript</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ amicale_descript.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ amicale_descript.text }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('amicale_descript_index') }}">back to list</a>
+
+    <a href="{{ path('amicale_descript_edit', {'id': amicale_descript.id}) }}">edit</a>
+
+    {{ include('amicale_descript/_delete_form.html.twig') }}
+{% endblock %}

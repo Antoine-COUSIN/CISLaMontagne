@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GoldenBook{% endblock %}
+
+{% block body %}
+    <h1>Create new GoldenBook</h1>
+
+    {{ include('golden_book/_form.html.twig') }}
+
+    <a href="{{ path('golden_book_index') }}">back to list</a>
+{% endblock %}

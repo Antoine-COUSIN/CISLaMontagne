@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AmicaleDescript{% endblock %}
+
+{% block body %}
+    <h1>Create new AmicaleDescript</h1>
+
+    {{ include('amicale_descript/_form.html.twig') }}
+
+    <a href="{{ path('amicale_descript_index') }}">back to list</a>
+{% endblock %}

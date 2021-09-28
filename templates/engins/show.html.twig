@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Engins{% endblock %}
+
+{% block body %}
+    <h1>Engins</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ engin.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ engin.title }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ engin.text }}</td>
+            </tr>
+            <tr>
+                <th>EnginPicture</th>
+                <td>{{ engin.enginPicture }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('engins_index') }}">back to list</a>
+
+    <a href="{{ path('engins_edit', {'id': engin.id}) }}">edit</a>
+
+    {{ include('engins/_delete_form.html.twig') }}
+{% endblock %}

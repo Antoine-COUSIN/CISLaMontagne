@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AmicaleDescript index{% endblock %}
+
+{% block body %}
+    <h1>AmicaleDescript index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for amicale_descript in amicale_descripts %}
+            <tr>
+                <td>{{ amicale_descript.id }}</td>
+                <td>{{ amicale_descript.text }}</td>
+                <td>
+                    <a href="{{ path('amicale_descript_show', {'id': amicale_descript.id}) }}">show</a>
+                    <a href="{{ path('amicale_descript_edit', {'id': amicale_descript.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('amicale_descript_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StationCorePicture index{% endblock %}
+
+{% block body %}
+    <h1>StationCorePicture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Picture</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for station_core_picture in station_core_pictures %}
+            <tr>
+                <td>{{ station_core_picture.id }}</td>
+                <td><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="100" alt=""></td>
+                <td>
+                    <a href="{{ path('station_core_picture_show', {'id': station_core_picture.id}) }}">show</a>
+                    <a href="{{ path('station_core_picture_edit', {'id': station_core_picture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('station_core_picture_new') }}">Create new</a>
+{% endblock %}
