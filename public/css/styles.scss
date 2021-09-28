@@ -25,12 +25,13 @@ header
         justify-content: space-between;
         padding-top: 5px;
         margin-bottom: 5px;
-        color: cornflowerblue;
+        color: rgb(237, 116, 100);
 
         a
         {
             margin-right: 25px;
             text-decoration: none;
+            color: rgb(237, 116, 100);
 
             i
             {
@@ -67,10 +68,18 @@ header
     }
 }
 //NAV============================================================================================================
-nav
+#principalNav
 {
+    
+    background-color: rgba(230, 230, 230, 0.5);
     transition: all 0.5s;
-    background-color: rgba(230, 230, 230, 0.3);
+
+    a
+    {
+        color: rgb(241, 78, 56);
+        text-transform: uppercase;
+    }
+
     .user-dropdown
     {
         height: 41px;
@@ -80,6 +89,7 @@ nav
             a
             {
                 padding: 0px;
+
                 i
                 {
                     font-size: 40px;
@@ -87,11 +97,6 @@ nav
                 }
             }
         }
-
-        // .dropdown-menu
-        // {
-        //     position: static !important;
-        // }
     }
 }
 
@@ -175,5 +180,43 @@ footer
         top: 100%;
         left: -85px;
         margin-top: .125rem;
+    }
+}
+
+
+//=================================================================================================================
+//BACK-OFFICE======================================================================================================
+//=================================================================================================================
+#back-office-container-laptop
+{
+    #navBackOffice
+    {
+        border: 1px solid black;
+    }
+    .container-fluid
+    {
+        display: flex !important;
+        flex-direction: column !important;
+
+        h3
+        {
+            text-align: center;
+        }
+    }
+    .navbar-nav
+    {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .pif
+    {
+        border: 1px solid red;
+        height: 500px;
+    }
+
+    .paf
+    {
+        border: 1px solid blueviolet;
+        height: 500px;
     }
 }

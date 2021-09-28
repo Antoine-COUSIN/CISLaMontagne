@@ -1,20 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeBackOfficeController!{% endblock %}
+{% block title %}Back-Office{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section id="back-office-container-laptop">
+    <div class="container">
+        <div class="row">
+            <div class="pif col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav id="navBackOffice" class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                                <h3>Menu<br>Back-Office</h3>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Acceuil
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">Photo groupe</a></li>
+                                                <li><a class="dropdown-item" href="#">Encart chef de centre</a></li>
+                                                <li><a class="dropdown-item" href="#">Histoire de la caserne</a></li>
+                                            </ul>
+                                        </li>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Nos Missions
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">Missions</a></li>
+                                                <li><a class="dropdown-item" href="#">Engin</a></li>
+                                            </ul>
+                                        </li>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/CISLaMontagne/src/Controller/HomeBackOfficeController.php'|file_link(0) }}">src/Controller/HomeBackOfficeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/CISLaMontagne/templates/home_back_office/index.html.twig'|file_link(0) }}">templates/home_back_office/index.html.twig</a></code></li>
-    </ul>
-</div>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                L'amicale
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">Présentation</a></li>
+                                                <li><a class="dropdown-item" href="#">Actualitées</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Livre d'or</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Gestion utilisateurs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="paf col-md-9">
+    
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
+
+
