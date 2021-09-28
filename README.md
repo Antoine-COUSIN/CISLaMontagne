@@ -10,8 +10,8 @@
 ========== 28/09/2021 ==========
 -V0.2.0 MCD/MLD => ajout du back-Office | OK
 -Mise en place de la navigation back-Offcie | OK
--Mise en place des tables back-office avec remplissage
--Début mise en place des éléments publics
+-Mise en place des tables back-office | OK | Manque gestion des compte user
+-Début mise en place des éléments publics | OK
 
 ========== 28/09/2021 ==========
 -Suite des mise en place des élément public
