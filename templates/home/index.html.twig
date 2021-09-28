@@ -7,19 +7,57 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-
+                <div class="stationPicture">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Effectif du C.I.S La MONTAGNE</h2>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% for station_core_picture in station_core_pictures %}
+                                <img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}"  alt="">    
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-3">
-                
+                <div class="containerChiefSpeech">
+                    {% for chief_speech in chief_speeches %}
+                        <img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" width="100" alt="">
+                        <figcaption>{{ chief_speech.underTitle }}</figcaption>
+                    {% endfor %}
+                        <h3>Le mot du<br>chef de centre</h3>
+                    {% for chief_speech in chief_speeches %}
+                        <p>{{ chief_speech.text|raw }}</p>
+                    {% endfor %}
+                </div>                
             </div>
         </div>
     </div>
-
 </section>
 
 <section id="stationStory">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for station_story in station_stories %}
+                    <h2>{{ station_story.title }}</h2>
+                {% endfor %}
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                {% for station_story in station_stories %}
+                    <p>{{ station_story.text|raw }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
