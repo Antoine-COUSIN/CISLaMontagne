@@ -13,16 +13,16 @@
 -Mise en place des tables back-office | OK | Manque gestion des compte user
 -Début mise en place des éléments publics | OK
 
-========== 28/09/2021 ==========
+========== 29/09/2021 ==========
 -Suite des mise en place des élément public
 -Responsive front-office
 -Finalisation du front-office
 
-========== 29/09/2021 ==========
+========== 30/09/2021 ==========
 -Mise en place de l'accueil extranet
 -Mise en place de l'acceuil Back-office
 -Mise en place des élément back office
 -Responsive des élément ci dessus
 
-========== 30/09/2021 ==========
+========== 01/10/2021 ==========
 -Mise en place du formulaire de contact
