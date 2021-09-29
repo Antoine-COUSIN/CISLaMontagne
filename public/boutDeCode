@@ -1,5 +1,84 @@
-//Affichage photo groupe centre
-<td><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="100" alt=""></td>
+<section id="goldenBook">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Livre d'or</h2>
+            </div>
+        </div>
 
-//Affichage photo chef centre
-<td><img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" width="100" alt=""></td>
+        <div class="row">
+            <div class="col-md-12">
+                {% for golden_book in golden_books %}
+                    <arcticle class="goldenBookArticle">
+                        <h4>{{ golden_book.title }}</h4>
+                        <p>{{ golden_book.text|raw }}</p>
+                    </arcticle>
+                {% else %}
+                    <p>Il n'y à pas encore de commentaire dans le livre d'or.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="addGoldenBookArticle">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Ajouter un commentaire</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>Les Sapeurs-Pompiers de la montagne sont intervenus pour vous et vous souhaitez les remercier?<br>
+                    Profitez de cet espace dédié!</p>
+                    {{ include('golden_book/_form.html.twig') }}
+                <p>*Les remerciements doivent être anonyme et sans indication de lieux.</p>
+                <p>**Les commentaires sont soumis à la modération avant d'être publiés.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+/**
+     * @Route("/", name="golden_book", methods={"GET","POST"})
+     */
+    public function new(Request $request): Response
+    {
+        $goldenBook = new GoldenBook();
+        $form = $this->createForm(GoldenBookType::class, $goldenBook);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($goldenBook);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('golden_book_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('golden_book/new.html.twig', [
+            'golden_book' => $goldenBook,
+            'form' => $form,
+        ]);
+    }
+
+    <a href="{{ path('golden_book_new') }}">Create new</a> // admin.html.twig
+
+    <a href="{{ path('golden_book_new') }}">Create new</a> // index.html.twig
+
+
+
+    {{ form_row(goldenBook.title) }}
+    {{ form_row(goldenBook.text) }}
+    {{ form_row(goldenBook.validationStatus) }}

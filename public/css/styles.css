@@ -12,6 +12,10 @@ h2 {
   text-align: center;
 }
 
+.inputDisappearance {
+  display: none;
+}
+
 header {
   background-image: url(../img/background/bg-header.jpg);
   background-position: center;
