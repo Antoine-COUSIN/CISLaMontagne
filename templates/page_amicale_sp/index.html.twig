@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'amicale des sapeurs-pompiers{% endblock %}
+
+{% block body %}
+<section id="AmicaleDescript">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>L'amicale des Sapeurs-Pompiers de la Montagne</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                {% for amicale_descript in amicale_descripts %}
+                    <p>{{ amicale_descript.text|raw }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="amicaleNews">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Les news</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <artcile class="news">
+                    {% for amicale_news in amicale_news %}
+                        <td>{{ amicale_news.title }}</td>
+                        <td>{{ amicale_news.text|raw }}</td>
+                        <td><img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" alt=""></td>
+                    {% endfor %}
+                </artcile>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GoldenBook index{% endblock %}
+
+{% block body %}
+    <h1>GoldenBook index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>ValidationStatus</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for golden_book in golden_books %}
+            <tr>
+                <td>{{ golden_book.id }}</td>
+                <td>{{ golden_book.title }}</td>
+                <td>{{ golden_book.text|raw }}</td>
+                <td>{{ golden_book.validationStatus ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('golden_book_show', {'id': golden_book.id}) }}">show</a>
+                    <a href="{{ path('golden_book_edit', {'id': golden_book.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('golden_book_new') }}">Create new</a>
+{% endblock %}

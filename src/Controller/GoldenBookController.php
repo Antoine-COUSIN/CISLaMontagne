@@ -26,6 +26,16 @@ class GoldenBookController extends AbstractController
     }
 
     /**
+     * @Route("/admin", name="golden_book_admin", methods={"GET"})
+     */
+    public function indexBackOffice(GoldenBookRepository $goldenBookRepository): Response
+    {
+        return $this->render('golden_book/admin.html.twig', [
+            'golden_books' => $goldenBookRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="golden_book_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -42,7 +52,7 @@ class GoldenBookController extends AbstractController
             return $this->redirectToRoute('golden_book_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('golden_book/new.html.twig', [
+        return $this->renderForm('golden_book/index.html.twig', [
             'golden_book' => $goldenBook,
             'form' => $form,
         ]);

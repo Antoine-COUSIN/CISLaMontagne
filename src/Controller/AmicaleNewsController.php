@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
- * @Route("/amicale/news")
+ * @Route("/amicale_news")
  */
 class AmicaleNewsController extends AbstractController
 {

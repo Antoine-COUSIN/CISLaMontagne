@@ -3,37 +3,48 @@
 {% block title %}GoldenBook index{% endblock %}
 
 {% block body %}
-    <h1>GoldenBook index</h1>
+    <section id="goldenBook">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Livre d'or</h2>
+            </div>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>ValidationStatus</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for golden_book in golden_books %}
-            <tr>
-                <td>{{ golden_book.id }}</td>
-                <td>{{ golden_book.title }}</td>
-                <td>{{ golden_book.text|raw }}</td>
-                <td>{{ golden_book.validationStatus ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('golden_book_show', {'id': golden_book.id}) }}">show</a>
-                    <a href="{{ path('golden_book_edit', {'id': golden_book.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="row">
+            <div class="col-md-12">
+                {% for golden_book in golden_books %}
+                    <arcticle class="goldenBookArticle">
+                        <h4>{{ golden_book.title }}</h4>
+                        <p>{{ golden_book.text|raw }}</p>
+                    </arcticle>
+                {% else %}
+                    <p>Il n'y à pas encore de commentaire dans le livre d'or.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
 
-    <a href="{{ path('golden_book_new') }}">Create new</a>
+<section id="addGoldenBookArticle">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Ajouter un commentaire</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>Les Sapeurs-Pompiers de la montagne sont intervenus pour vous et vous souhaitez les remercier?<br>
+                    Profitez de cet espace dédié!</p>
+                    {{ include('golden_book/_form.html.twig') }}
+                <p>*Les remerciements doivent être anonyme et sans indication de lieux.</p>
+                <p>**Les commentaires sont soumis à la modération avant d'être publiés.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {# <a href="{{ path('golden_book_new') }}">Create new</a> #}
 {% endblock %}

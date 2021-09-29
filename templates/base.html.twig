@@ -50,10 +50,10 @@
 
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
-                            <a class="nav-link" aria-current="page" href="#">Accueil</a>
-                            <a class="nav-link" href="#">Nos missions</a>
-                            <a class="nav-link" href="#">L'amicale des sapeurs-pompiers</a>
-                            <a class="nav-link" href="#">Livre d'or</a>
+                            <a class="nav-link" aria-current="page" href="{{ path('home') }}">Accueil</a>
+                            <a class="nav-link" href="{{ path('page_missions') }}">Nos missions</a>
+                            <a class="nav-link" href="{{ path('page_amicale_sp') }}">L'amicale des sapeurs-pompiers</a>
+                            <a class="nav-link" href="/">Livre d'or</a>
                         </div>
 
                         
@@ -65,7 +65,7 @@
                                         </a>
 
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a href="{{ path('home_back_office') }}">Extranet</a></li>
+                                            <li><a href="{{ path('home_extranet') }}">Extranet</a></li>
                                             <li><a href="{{ path('home_back_office') }}">Back-office</a></li>
                                             <li><a href="{{ path('app_logout') }}" style="color: red !important;"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
                                         </ul>
@@ -99,7 +99,7 @@
                             <div class="bloc-mentions-legales">
                                 <a class="border-right" href="">Plan du site</a>
                                 <a class="border-right" href="">Mentions légales et confidentialité</a>
-                                <a href="">Réalisation : COSINUS-SA webcreation</a>
+                                <a href="http://www.cosinus-sa.fr">Réalisation : COSINUS-SA webcreation</a>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     <div class="col-md-2">
                         <div class="right-footer">
                             <ul>
-                                <li><a href=""><i class="fas fa-lock"></i>Extranet</a></li>
+                                <li><a href="{{ path('app_login') }}"><i class="fas fa-lock"></i>Extranet</a></li>
                                 <li><a class="border-right" href=""><i class="fas fa-envelope-open-text"></i>Nous contacter</a></li>
                             </ul>
                         </div>
