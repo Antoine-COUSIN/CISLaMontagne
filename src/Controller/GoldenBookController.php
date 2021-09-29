@@ -18,28 +18,9 @@ class GoldenBookController extends AbstractController
     /**
      * @Route("/", name="golden_book_index", methods={"GET"})
      */
-    public function index(GoldenBookRepository $goldenBookRepository): Response
+    public function index(Request $request, GoldenBookRepository $goldenBookRepository): Response
     {
-        return $this->render('golden_book/index.html.twig', [
-            'golden_books' => $goldenBookRepository->findAll(),
-        ]);
-    }
 
-    /**
-     * @Route("/admin", name="golden_book_admin", methods={"GET"})
-     */
-    public function indexBackOffice(GoldenBookRepository $goldenBookRepository): Response
-    {
-        return $this->render('golden_book/admin.html.twig', [
-            'golden_books' => $goldenBookRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="golden_book_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
         $goldenBook = new GoldenBook();
         $form = $this->createForm(GoldenBookType::class, $goldenBook);
         $form->handleRequest($request);
@@ -55,8 +36,22 @@ class GoldenBookController extends AbstractController
         return $this->renderForm('golden_book/index.html.twig', [
             'golden_book' => $goldenBook,
             'form' => $form,
+            'golden_books' => $goldenBookRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/admin", name="golden_book_admin", methods={"GET"})
+     */
+    public function admin(GoldenBookRepository $goldenBookRepository): Response
+    {
+        
+        return $this->render('golden_book/admin.html.twig', [
+            'golden_books' => $goldenBookRepository->findAll(),
+        ]);
+    }
+
+    // ICI se trouve la fonction NEW
 
     /**
      * @Route("/{id}", name="golden_book_show", methods={"GET"})
