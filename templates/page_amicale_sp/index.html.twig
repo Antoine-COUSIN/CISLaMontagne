@@ -33,9 +33,9 @@
             <div class="col-md-12">
                 <artcile class="news">
                     {% for amicale_news in amicale_news %}
-                        <td>{{ amicale_news.title }}</td>
-                        <td>{{ amicale_news.text|raw }}</td>
-                        <td><img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" alt=""></td>
+                        <h3>{{ amicale_news.title }}</h3>
+                        <p>{{ amicale_news.text|raw }}</p>
+                        <img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" alt="">
                     {% endfor %}
                 </artcile>
             </div>

@@ -113,6 +113,11 @@ header
 //SECTION STATIONPRESENTATION====================================================================================
 #stationPresentation
 {
+    .col-md-3
+    {
+        padding: 0px !important;
+    }
+
     h2::after
     {
         display: block;
@@ -127,6 +132,16 @@ header
     .stationPicture
     {
         padding-top: 50px;
+
+        .col-md-12
+        {
+            padding: 0px !important;
+        }
+
+        // img
+        // {
+        //     width: auto;
+        // }
     }    
 
     .containerChiefSpeech
@@ -180,6 +195,178 @@ header
     p
     {
         text-align: justify;
+    }
+}
+
+//SECTION MISSIONS===============================================================================================
+#missions
+{
+    padding-top: 50px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 140px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+}
+
+//SECTION ENGINS=================================================================================================
+#engins
+{
+    padding: 50px 0px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 115px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    .enginGlobalContainer
+    {
+        .enginArticle:nth-child(n+2)
+        {
+            margin-top: 25px;
+        }
+
+        .enginArticle:nth-child(odd)
+        {
+            display: flex;
+        }
+
+        .enginArticle:nth-child(even)
+        {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        img
+        {
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px #646464;
+        }
+
+        .descriptContainer
+        {
+            padding: 0px 15px;
+            
+            p
+            {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+//SECTION AMICALE DESCRIPT=======================================================================================
+#AmicaleDescript
+{
+    padding-top: 50px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 250px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    p
+    {
+        text-align: justify;
+    }
+}
+//SECTION AMICALE NEWS===========================================================================================
+#amicaleNews
+{
+    padding: 50px 0px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 90px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    p
+    {
+        text-align: justify;
+    }
+}
+
+//SECTION GOLDEN BOOK============================================================================================
+#goldenBook
+{
+    padding-top: 50px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 100px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+}
+//SECTION ADD GOLDEN BOOK========================================================================================
+#addGoldenBookArticle
+{
+    padding: 50px 0px;
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    #golden_book_title
+    {
+        width: 250px;
+        margin-bottom: 25px;
+    }
+
+    .goldenBookFormPublic
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnPosteGoldenBook
+    {
+        background-color: #0d6efd;
+        border: 1px solid #0d6efd;
+        color: white;
+        margin-top: 12px;
+        width: 125px;
+        
+    }
+
+    .btnValidateGoldenBook
+    {
+        display: none;
     }
 }
 
@@ -272,10 +459,10 @@ footer
 //=================================================================================================================
 #back-office-container-laptop
 {
-    #navBackOffice
-    {
-        border: 1px solid black;
-    }
+    // #navBackOffice
+    // {
+    //     border: 1px solid black;
+    // }
     .container-fluid
     {
         display: flex !important;
@@ -293,13 +480,14 @@ footer
     }
     .pif
     {
-        border: 1px solid red;
-        height: 500px;
+        background-color: rgb(225, 225, 225);
+        border: 1px solid rgb(225, 225, 225);
+        height: 600px;
     }
 
-    .paf
-    {
-        border: 1px solid blueviolet;
-        height: 500px;
-    }
+    // .paf
+    // {
+    //     border: 1px solid blueviolet;
+    //     height: 800px;
+    // }
 }

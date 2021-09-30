@@ -93,6 +93,10 @@ header .topBarreContainer {
   margin: 0px;
 }
 
+#stationPresentation .col-md-3 {
+  padding: 0px !important;
+}
+
 #stationPresentation h2::after {
   display: block;
   height: 2px;
@@ -105,6 +109,10 @@ header .topBarreContainer {
 
 #stationPresentation .stationPicture {
   padding-top: 50px;
+}
+
+#stationPresentation .stationPicture .col-md-12 {
+  padding: 0px !important;
 }
 
 #stationPresentation .containerChiefSpeech {
@@ -154,6 +162,159 @@ header .topBarreContainer {
 
 #stationStory p {
   text-align: justify;
+}
+
+#missions {
+  padding-top: 50px;
+}
+
+#missions h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 140px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#engins {
+  padding: 50px 0px;
+}
+
+#engins h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 115px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#engins .enginGlobalContainer .enginArticle:nth-child(n+2) {
+  margin-top: 25px;
+}
+
+#engins .enginGlobalContainer .enginArticle:nth-child(odd) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#engins .enginGlobalContainer .enginArticle:nth-child(even) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#engins .enginGlobalContainer img {
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 5px #646464;
+          box-shadow: 0px 0px 5px #646464;
+}
+
+#engins .enginGlobalContainer .descriptContainer {
+  padding: 0px 15px;
+}
+
+#engins .enginGlobalContainer .descriptContainer p {
+  text-align: justify;
+}
+
+#AmicaleDescript {
+  padding-top: 50px;
+}
+
+#AmicaleDescript h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 250px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#AmicaleDescript p {
+  text-align: justify;
+}
+
+#amicaleNews {
+  padding: 50px 0px;
+}
+
+#amicaleNews h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 90px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#amicaleNews p {
+  text-align: justify;
+}
+
+#goldenBook {
+  padding-top: 50px;
+}
+
+#goldenBook h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 100px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#addGoldenBookArticle {
+  padding: 50px 0px;
+}
+
+#addGoldenBookArticle h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 200px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#addGoldenBookArticle #golden_book_title {
+  width: 250px;
+  margin-bottom: 25px;
+}
+
+#addGoldenBookArticle .goldenBookFormPublic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#addGoldenBookArticle .btnPosteGoldenBook {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+  color: white;
+  margin-top: 12px;
+  width: 125px;
+}
+
+#addGoldenBookArticle .btnValidateGoldenBook {
+  display: none;
 }
 
 footer {
@@ -225,10 +386,6 @@ footer .right-footer li i {
   }
 }
 
-#back-office-container-laptop #navBackOffice {
-  border: 1px solid black;
-}
-
 #back-office-container-laptop .container-fluid {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -254,12 +411,8 @@ footer .right-footer li i {
 }
 
 #back-office-container-laptop .pif {
-  border: 1px solid red;
-  height: 500px;
-}
-
-#back-office-container-laptop .paf {
-  border: 1px solid blueviolet;
-  height: 500px;
+  background-color: #e1e1e1;
+  border: 1px solid #e1e1e1;
+  height: 600px;
 }
 /*# sourceMappingURL=styles.css.map */
