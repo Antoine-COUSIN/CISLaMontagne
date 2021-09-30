@@ -3,33 +3,101 @@
 {% block title %}StationCorePicture index{% endblock %}
 
 {% block body %}
-    <h1>StationCorePicture index</h1>
+<section id="back-office-container-laptop">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navcontainer col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav id="navBackOffice" class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid">
+                                <a href="{{ path('home_back_office') }}"><h3>Menu<br>Back-Office</h3></a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle pageEnCours" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Acceuil
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item pageEnCours" href="{{ path('station_core_picture_index') }}">Photo groupe</a></li>
+                                                <li><a class="dropdown-item" href="{{ path('chief_speech_index') }}">Encart chef de centre</a></li>
+                                                <li><a class="dropdown-item" href="{{ path('station_story_index') }}">Histoire de la caserne</a></li>
+                                            </ul>
+                                        </li>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Picture</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for station_core_picture in station_core_pictures %}
-            <tr>
-                <td>{{ station_core_picture.id }}</td>
-                <td><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="100" alt=""></td>
-                <td>
-                    <a href="{{ path('station_core_picture_show', {'id': station_core_picture.id}) }}">show</a>
-                    <a href="{{ path('station_core_picture_edit', {'id': station_core_picture.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Nos Missions
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="{{ path('missions_index') }}">Missions</a></li>
+                                                <li><a class="dropdown-item" href="{{ path('engins_index') }}">Engin</a></li>
+                                            </ul>
+                                        </li>
 
-    <a href="{{ path('station_core_picture_new') }}">Create new</a>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                L'amicale
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item " href="{{ path('amicale_descript_index') }}">Présentation</a></li>
+                                                <li><a class="dropdown-item" href="{{ path('amicale_news_index') }}">Actualitées</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('golden_book_admin') }}">Livre d'or</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Gestion utilisateurs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="backOfficeContainer col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Gestion de la photo de groupe</h2>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Photo</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for station_core_picture in station_core_pictures %}
+                                    <tr>
+                                        <td class="tBodyImg"><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="250" alt=""></td>
+                                        <td><a class="aEdit" href="{{ path('station_core_picture_edit', {'id': station_core_picture.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="3">Il n'y à pas encore de photo</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <a href="{{ path('station_core_picture_new') }}">Ajouter une photo</a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

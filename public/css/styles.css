@@ -16,6 +16,14 @@ h2 {
   display: none;
 }
 
+.tBodyImg {
+  text-align: center;
+}
+
+.pageEnCours {
+  font-weight: bold;
+}
+
 header {
   background-image: url(../img/background/bg-header.jpg);
   background-position: center;
@@ -319,7 +327,7 @@ header .topBarreContainer {
 
 footer {
   color: white;
-  background-color: #969696;
+  background-color: #afafaf;
   height: 218px;
   padding: 15px 0px;
 }
@@ -386,6 +394,38 @@ footer .right-footer li i {
   }
 }
 
+#back-office-container-laptop h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 200px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
+#back-office-container-laptop tbody .aEdit {
+  border: transparent;
+  border-radius: 25px;
+  padding: 5px;
+  color: green;
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#back-office-container-laptop tbody .aEdit .fa-edit {
+  margin-right: 5px;
+}
+
+#back-office-container-laptop tbody .aEdit:hover {
+  color: green;
+  text-decoration: underline;
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: white;
+}
+
 #back-office-container-laptop .container-fluid {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -396,8 +436,13 @@ footer .right-footer li i {
           flex-direction: column !important;
 }
 
-#back-office-container-laptop .container-fluid h3 {
+#back-office-container-laptop .container-fluid a {
+  text-decoration: none;
+}
+
+#back-office-container-laptop .container-fluid a h3 {
   text-align: center;
+  color: #f14e38;
 }
 
 #back-office-container-laptop .navbar-nav {
@@ -410,9 +455,15 @@ footer .right-footer li i {
           flex-direction: column !important;
 }
 
-#back-office-container-laptop .pif {
+#back-office-container-laptop .navcontainer {
+  padding: 50px 0px;
   background-color: #e1e1e1;
   border: 1px solid #e1e1e1;
-  height: 600px;
+  -webkit-box-shadow: 2px 0px 5px -2px rgba(0, 0, 0, 0.78);
+          box-shadow: 2px 0px 5px -2px rgba(0, 0, 0, 0.78);
+}
+
+#back-office-container-laptop .backOfficeContainer {
+  padding: 50px 25px;
 }
 /*# sourceMappingURL=styles.css.map */

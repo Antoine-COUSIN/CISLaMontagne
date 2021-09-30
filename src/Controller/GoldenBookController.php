@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GoldenBookController extends AbstractController
 {
     /**
-     * @Route("/", name="golden_book_index", methods={"GET"})
+     * @Route("/", name="golden_book_index", methods={"GET", "POST"})
      */
     public function index(Request $request, GoldenBookRepository $goldenBookRepository): Response
     {

@@ -21,6 +21,16 @@ h2
     display: none;
 }
 
+.tBodyImg
+{
+    text-align: center;
+}
+
+.pageEnCours
+{
+    font-weight: bold;
+}
+
 //HEADER=========================================================================================================
 header
 {
@@ -374,7 +384,7 @@ header
 footer
 {
     color: white;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(175, 175, 175);
     height: 218px;
     padding: 15px 0px;
 
@@ -459,35 +469,73 @@ footer
 //=================================================================================================================
 #back-office-container-laptop
 {
-    // #navBackOffice
-    // {
-    //     border: 1px solid black;
-    // }
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    tbody .aEdit
+    {
+        border: transparent;
+        border-radius: 25px;
+        padding: 5px;
+        color: green;
+        text-decoration: none;
+        transition: all 1s;
+
+        .fa-edit
+        {
+            margin-right: 5px;
+        }
+    }
+
+    tbody .aEdit:hover
+    {
+        color: green;
+        text-decoration: underline;
+        border: 1px solid white;
+        border-radius: 25px;
+        background-color: white;
+    }
+
     .container-fluid
     {
         display: flex !important;
         flex-direction: column !important;
 
-        h3
+        a
         {
-            text-align: center;
+            text-decoration: none;
+
+            h3
+            {
+                text-align: center;
+                color: rgb(241, 78, 56);
+            }
         }
     }
     .navbar-nav
     {
         display: flex !important;
         flex-direction: column !important;
+        
     }
-    .pif
+    .navcontainer
     {
+        padding: 50px 0px;
         background-color: rgb(225, 225, 225);
         border: 1px solid rgb(225, 225, 225);
-        height: 600px;
+        box-shadow: 2px 0px 5px -2px rgba(0, 0, 0, 0.78);
     }
 
-    // .paf
-    // {
-    //     border: 1px solid blueviolet;
-    //     height: 800px;
-    // }
+    .backOfficeContainer
+    {
+        padding: 50px 25px;
+    }
 }

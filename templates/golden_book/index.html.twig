@@ -14,10 +14,12 @@
         <div class="row">
             <div class="col-md-12">
                 {% for golden_book in golden_books %}
-                    <arcticle class="goldenBookArticle">
-                        <h4>{{ golden_book.title }}</h4>
-                        <p>{{ golden_book.text|raw }}</p>
-                    </arcticle>
+                    {% if golden_book.validationStatus == 'Yes' %}
+                        <arcticle class="goldenBookArticle">
+                            <h4>{{ golden_book.title }}</h4>
+                            <p>{{ golden_book.text|raw }}</p>
+                        </arcticle>
+                    {% endif %}
                 {% else %}
                     <p>Il n'y à pas encore de commentaire dans le livre d'or.</p>
                 {% endfor %}
