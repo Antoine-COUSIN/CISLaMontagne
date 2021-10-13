@@ -78,6 +78,47 @@
             </nav>
         </header>
 
+        <div id="menu_turn_style" class="container-fluid">
+            <div class="menu_turn_style">
+                <input type="checkbox">
+                <a href="#">
+                    <img src="{{ asset('img/acces-rapide.png') }}">
+                </a>
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">
+                            <img src="{{ asset('img/acces-reserve-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_1">Accès réservé</em>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+                            <img src="{{ asset('img/numero-durgence-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_2">18/112</em>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+                            <img src="{{ asset('img/attestation-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_3">Attestation d’intervention</em>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+                            <img src="{{ asset('img/contacter-nous-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_4">Contactez-nous</em>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <img src="{{ asset('img/attestation-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_5">Demande de saisine</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         {% block body %}{% endblock %}
 
         <footer>
