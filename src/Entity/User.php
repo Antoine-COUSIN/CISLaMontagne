@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -56,9 +58,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $phoneNumber;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=RoleCenter::class, inversedBy="users")
+     */
+    private $roleCenter;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Grade::class, inversedBy="users")
+     */
+    private $grade;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Ranks::class, inversedBy="users")
+     */
+    private $rank;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Fonction::class, inversedBy="users")
+     */
+    private $fonction;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Speciality::class, inversedBy="users")
+     */
+    private $speciality;
+
     public function __construct()
     {               
-        $this->roles = [self::ROLE_USER];     
+        $this->roles = [self::ROLE_USER];
+        $this->roleCenter = new ArrayCollection();
+        $this->speciality = new ArrayCollection();     
     }
 
     public function getId(): ?int
@@ -182,6 +211,90 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPhoneNumber(string $phoneNumber): self
     {
         $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RoleCenter[]
+     */
+    public function getRoleCenter(): Collection
+    {
+        return $this->roleCenter;
+    }
+
+    public function addRoleCenter(RoleCenter $roleCenter): self
+    {
+        if (!$this->roleCenter->contains($roleCenter)) {
+            $this->roleCenter[] = $roleCenter;
+        }
+
+        return $this;
+    }
+
+    public function removeRoleCenter(RoleCenter $roleCenter): self
+    {
+        $this->roleCenter->removeElement($roleCenter);
+
+        return $this;
+    }
+
+    public function getGrade(): ?Grade
+    {
+        return $this->grade;
+    }
+
+    public function setGrade(?Grade $grade): self
+    {
+        $this->grade = $grade;
+
+        return $this;
+    }
+
+    public function getRank(): ?Ranks
+    {
+        return $this->rank;
+    }
+
+    public function setRank(?Ranks $rank): self
+    {
+        $this->rank = $rank;
+
+        return $this;
+    }
+
+    public function getFonction(): ?Fonction
+    {
+        return $this->fonction;
+    }
+
+    public function setFonction(?Fonction $fonction): self
+    {
+        $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Speciality[]
+     */
+    public function getSpeciality(): Collection
+    {
+        return $this->speciality;
+    }
+
+    public function addSpeciality(Speciality $speciality): self
+    {
+        if (!$this->speciality->contains($speciality)) {
+            $this->speciality[] = $speciality;
+        }
+
+        return $this;
+    }
+
+    public function removeSpeciality(Speciality $speciality): self
+    {
+        $this->speciality->removeElement($speciality);
 
         return $this;
     }
