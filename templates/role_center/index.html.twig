@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RoleCenter index{% endblock %}
+
+{% block body %}
+    <h1>RoleCenter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameRoleCenter</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for role_center in role_centers %}
+            <tr>
+                <td>{{ role_center.id }}</td>
+                <td>{{ role_center.nameRoleCenter }}</td>
+                <td>
+                    <a href="{{ path('role_center_show', {'id': role_center.id}) }}">show</a>
+                    <a href="{{ path('role_center_edit', {'id': role_center.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('role_center_new') }}">Create new</a>
+{% endblock %}

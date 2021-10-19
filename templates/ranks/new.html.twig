@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ranks{% endblock %}
+
+{% block body %}
+    <h1>Create new Ranks</h1>
+
+    {{ include('ranks/_form.html.twig') }}
+
+    <a href="{{ path('ranks_index') }}">back to list</a>
+{% endblock %}

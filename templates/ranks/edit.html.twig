@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Ranks{% endblock %}
+
+{% block body %}
+    <h1>Edit Ranks</h1>
+
+    {{ include('ranks/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('ranks_index') }}">back to list</a>
+
+    {{ include('ranks/_delete_form.html.twig') }}
+{% endblock %}

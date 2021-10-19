@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RoleCenter{% endblock %}
+
+{% block body %}
+    <h1>RoleCenter</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ role_center.id }}</td>
+            </tr>
+            <tr>
+                <th>NameRoleCenter</th>
+                <td>{{ role_center.nameRoleCenter }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('role_center_index') }}">back to list</a>
+
+    <a href="{{ path('role_center_edit', {'id': role_center.id}) }}">edit</a>
+
+    {{ include('role_center/_delete_form.html.twig') }}
+{% endblock %}

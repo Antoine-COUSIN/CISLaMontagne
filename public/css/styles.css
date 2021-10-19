@@ -382,6 +382,31 @@ header .topBarreContainer {
   background-color: #e2e2e2;
 }
 
+#create-account .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#create-account .active, #create-account .accordion:hover {
+  background-color: #ccc;
+}
+
+#create-account .panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
 #create-account form {
   background-color: white;
   border-radius: 5px;

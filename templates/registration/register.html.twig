@@ -14,6 +14,10 @@
             {{ form_row(registrationForm.email, { label: 'Email' }) }}
             {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
             {{ form_row(registrationForm.agreeTerms, { label: 'Accepter les conditions d\'utilisation' }) }}
+            {{ form_row(registrationForm.speciality, { label: 'Spécialitées' }) }}
+            {{ form_row(registrationForm.roleCenter, { label: 'Rôles au seins du centre' }) }}
+
+            
 
             <button type="submit" class="btn-create-account">Créer le compte</button>
         {{ form_end(registrationForm) }}

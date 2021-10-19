@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit RoleCenter{% endblock %}
+
+{% block body %}
+    <h1>Edit RoleCenter</h1>
+
+    {{ include('role_center/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('role_center_index') }}">back to list</a>
+
+    {{ include('role_center/_delete_form.html.twig') }}
+{% endblock %}
