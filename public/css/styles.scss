@@ -103,17 +103,23 @@ header
     .user-dropdown
     {
         height: 41px;
+        margin-bottom: 8px !important;
 
         .dropdown
         {
+            
             a
             {
                 padding: 0px;
+                
 
-                i
+                .profile-img
                 {
-                    font-size: 40px;
+                    width: 50px;
+                    border-radius: 50%;
+                    // font-size: 40px;
                     margin: 0px;
+                    padding: 0px;
                 }
             }
         }
@@ -301,6 +307,174 @@ header
     }
 }
 
+//LOGIN==========================================================================================================
+#login_section
+{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(226, 226, 226);
+    // background-color: white;
+    // background-image: linear-gradient(rgb(3, 34, 76), rgb(241, 78, 56));
+    // background-image: linear-gradient(rgb(241, 78, 56), rgb(3, 34, 76));
+    // background-image: linear-gradient(rgb(241, 78, 56), rgb(255, 255, 255));
+    
+
+    #log_form
+    {
+        background-color: white;
+        border-radius: 5px;
+        width: 400px;
+        margin: 75px 0px;
+        padding-top: 35px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 15px rgb(99, 99, 99);
+
+        .foreget_password
+        {
+            width: 100%;
+            border-top: 1px solid rgb(175, 175, 175);
+            padding: 0px;
+            padding-top: 5px;
+            padding-left: 8px;
+            
+
+            a
+            {
+                text-decoration: none;
+                color: #4d90fe;
+            }
+        }
+
+        .login-submit
+        {
+            width: 250px;
+            margin-bottom: 20px;
+            border: 0px;
+            border-radius: 3px;
+            color: #fff;
+            text-shadow: 0 1px rgba(0,0,0,0.1); 
+            background-color: #4d90fe;
+            padding: 15px 0px;
+            transition: all 0.7s;
+          }
+          
+          .login-submit:hover
+          {
+            border: 0px;
+            text-shadow: 0 1px rgba(0,0,0,0.3);
+            background-color: #357ae8;
+          }
+
+        .login-profile-img
+        {
+            border-radius: 50%;
+            width: 125px;
+            margin-bottom: 25px;
+        }
+
+        input
+        {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        label
+        {
+            width: 300px;
+            margin-bottom: 8px;
+            color: black !important;
+        }
+
+        .rememberAccount
+        {
+            // border: 1px solid red;
+            width: 300px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-top: -15px;
+            margin-bottom: 15px;
+
+            input{
+                // border: 1px solid green;
+                padding: 0px;
+                margin: 0px;
+                width: 30px;
+            }
+
+            label{
+                // border: 1px solid blueviolet;
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+//REGISTRATION FORM==============================================================================================
+#create-account
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(226, 226, 226);
+
+    form
+    {
+        background-color: white;
+        border-radius: 5px;
+        width: 400px;
+        margin: 75px 0px;
+        padding-top: 35px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 15px rgb(99, 99, 99);
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .btn-create-account
+        {
+            width: 250px;
+            margin-bottom: 20px;
+            border: 0px;
+            border-radius: 3px;
+            color: #fff;
+            text-shadow: 0 1px rgba(0,0,0,0.1); 
+            background-color: #4d90fe;
+            padding: 15px 0px;
+            transition: all 0.7s;
+        }
+
+        .btn-create-account:hover
+        {
+            border: 0px;
+            text-shadow: 0 1px rgba(0,0,0,0.3);
+            background-color: #357ae8;
+        }
+
+        input
+        {
+            width: 300px;
+            margin-bottom: 15px;
+        }
+
+        label
+        {
+            width: 300px;
+            margin-bottom: 8px;
+            color: black !important;
+        }
+    }
+}
 //SECTION STATIONPRESENTATION====================================================================================
 #stationPresentation
 {
@@ -565,7 +739,7 @@ header
 footer
 {
     color: white;
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(99, 99, 99);
     height: 218px;
     padding: 15px 0px;
 

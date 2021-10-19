@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Le site web des Sapeurs-Pompiers de La Montagne vous permettra de mieux les connaîtres, de postuler mais également de les remercier">
         <title>{% block title %}C.I.S La MONTAGNE{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
@@ -61,7 +62,8 @@
                             <div class="navbar-nav user-dropdown ms-auto">
                                     <div class="dropdown">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="far fa-user"></i>
+                                            <img class="profile-img" src="{{ asset('img/user.png') }}" />
+                                            
                                         </a>
 
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -81,12 +83,12 @@
         <div id="menu_turn_style" class="container-fluid">
             <div class="menu_turn_style">
                 <input type="checkbox">
-                <a href="#">
+                <a href="/">
                     <img src="{{ asset('img/acces-rapide.png') }}">
                 </a>
                 <ul>
                     <li>
-                        <a href="#" target="_blank">
+                        <a href="{{ path('app_login') }}" target="_blank">
                             <img src="{{ asset('img/acces-reserve-1.png') }}">
                         </a>
                         <em class="flying_bubble_info_1">Accès réservé</em>

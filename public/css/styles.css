@@ -90,15 +90,18 @@ header .topBarreContainer {
 
 #principalNav .user-dropdown {
   height: 41px;
+  margin-bottom: 8px !important;
 }
 
 #principalNav .user-dropdown .dropdown a {
   padding: 0px;
 }
 
-#principalNav .user-dropdown .dropdown a i {
-  font-size: 40px;
+#principalNav .user-dropdown .dropdown a .profile-img {
+  width: 50px;
+  border-radius: 50%;
   margin: 0px;
+  padding: 0px;
 }
 
 #menu_turn_style {
@@ -257,6 +260,187 @@ header .topBarreContainer {
 #menu_turn_style .menu_turn_style li:nth-child(5) {
   -webkit-transition: 1.1s;
   transition: 1.1s;
+}
+
+#login_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #e2e2e2;
+}
+
+#login_section #log_form {
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  margin: 75px 0px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 15px #636363;
+          box-shadow: 0px 0px 15px #636363;
+}
+
+#login_section #log_form .foreget_password {
+  width: 100%;
+  border-top: 1px solid #afafaf;
+  padding: 0px;
+  padding-top: 5px;
+  padding-left: 8px;
+}
+
+#login_section #log_form .foreget_password a {
+  text-decoration: none;
+  color: #4d90fe;
+}
+
+#login_section #log_form .login-submit {
+  width: 250px;
+  margin-bottom: 20px;
+  border: 0px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+  padding: 15px 0px;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+#login_section #log_form .login-submit:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
+}
+
+#login_section #log_form .login-profile-img {
+  border-radius: 50%;
+  width: 125px;
+  margin-bottom: 25px;
+}
+
+#login_section #log_form input {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#login_section #log_form label {
+  width: 300px;
+  margin-bottom: 8px;
+  color: black !important;
+}
+
+#login_section #log_form .rememberAccount {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+#login_section #log_form .rememberAccount input {
+  padding: 0px;
+  margin: 0px;
+  width: 30px;
+}
+
+#login_section #log_form .rememberAccount label {
+  padding: 0px;
+  margin: 0px;
+}
+
+#create-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e2e2e2;
+}
+
+#create-account form {
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  margin: 75px 0px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 15px #636363;
+          box-shadow: 0px 0px 15px #636363;
+}
+
+#create-account form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#create-account form .btn-create-account {
+  width: 250px;
+  margin-bottom: 20px;
+  border: 0px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+  padding: 15px 0px;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+#create-account form .btn-create-account:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
+}
+
+#create-account form input {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#create-account form label {
+  width: 300px;
+  margin-bottom: 8px;
+  color: black !important;
 }
 
 #stationPresentation .col-md-3 {
@@ -485,7 +669,7 @@ header .topBarreContainer {
 
 footer {
   color: white;
-  background-color: #afafaf;
+  background-color: #636363;
   height: 218px;
   padding: 15px 0px;
 }
