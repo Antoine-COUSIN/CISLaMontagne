@@ -382,31 +382,6 @@ header .topBarreContainer {
   background-color: #e2e2e2;
 }
 
-#create-account .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-#create-account .active, #create-account .accordion:hover {
-  background-color: #ccc;
-}
-
-#create-account .panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-}
-
 #create-account form {
   background-color: white;
   border-radius: 5px;
@@ -428,16 +403,6 @@ header .topBarreContainer {
           box-shadow: 0px 0px 15px #636363;
 }
 
-#create-account form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 #create-account form .btn-create-account {
   width: 250px;
   margin-bottom: 20px;
@@ -457,15 +422,93 @@ header .topBarreContainer {
   background-color: #357ae8;
 }
 
-#create-account form input {
+#create-account form #registrationInput300 input {
   width: 300px;
   margin-bottom: 15px;
 }
 
-#create-account form label {
+#create-account form #registrationInput300 select {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#create-account form #registrationInput300 label {
   width: 300px;
   margin-bottom: 8px;
   color: black !important;
+}
+
+#create-account form #registrationInput300 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#create-account form #checkBoxSpeciality {
+  width: 100%;
+  padding: 0px 50px;
+  margin-bottom: 15px;
+}
+
+#create-account form #checkBoxSpeciality h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+#create-account form #checkBoxSpeciality .checkbox_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#create-account form #checkBoxSpeciality .checkbox_container .speciality_checkbox {
+  width: auto;
+  margin-right: 10px;
+}
+
+#create-account form #checkBoxRoleCenter {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 50px;
+}
+
+#create-account form #checkBoxRoleCenter h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+#create-account form #checkBoxRoleCenter .roleCenter_checkbox {
+  width: 350px;
+}
+
+#create-account form #agreeTerms {
+  margin-bottom: 10px;
+}
+
+#create-account form #agreeTerms div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#create-account form #agreeTerms div input {
+  margin-right: 8px;
 }
 
 #stationPresentation .col-md-3 {

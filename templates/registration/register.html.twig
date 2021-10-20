@@ -8,15 +8,42 @@
 
         {{ form_start(registrationForm) }}
             <h2>Création d'un compte utilisateur</h2>
-            {{ form_row(registrationForm.firstName, { label: 'Prénom' }) }}
-            {{ form_row(registrationForm.lastName, { label: 'Nom' }) }}
-            {{ form_row(registrationForm.phoneNumber, { label: 'Téléphone' }) }}
-            {{ form_row(registrationForm.email, { label: 'Email' }) }}
-            {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
-            {{ form_row(registrationForm.agreeTerms, { label: 'Accepter les conditions d\'utilisation' }) }}
-            {{ form_row(registrationForm.speciality, { label: 'Spécialitées' }) }}
-            {{ form_row(registrationForm.roleCenter, { label: 'Rôles au seins du centre' }) }}
+            <div id="registrationInput300">
+                {{ form_row(registrationForm.firstName, { label: 'Prénom :' }) }}
+                {{ form_row(registrationForm.lastName, { label: 'Nom :' }) }}
+                {{ form_row(registrationForm.phoneNumber, { label: 'Téléphone :' }) }}
+                {{ form_row(registrationForm.email, { label: 'Email :' }) }}
+                {{ form_row(registrationForm.plainPassword, { label: 'Password :' }) }}
+                {{ form_row(registrationForm.rank, { label: 'Rang :' }) }}
+                {{ form_row(registrationForm.grade, { label: 'Grade :' }) }}
+                {{ form_row(registrationForm.fonction, { label: 'Fonction :' }) }}
+            </div>
+            
+            <div id="checkBoxSpeciality">
+                <h6>Spécialitées :</h6>
+                <div class="checkbox_container">
+                {% for child in registrationForm.speciality %}
+                    <div class="speciality_checkbox">
+                        {{ form_widget(child) }}
+                        {{ form_label(child) }}
+                    </div>
+                {% endfor %}
+                </div>  
+            </div>
 
+            <div id="checkBoxRoleCenter">
+                <h6>Rôle au seins du centre :</h6>
+                {% for child in registrationForm.roleCenter %}
+                    <div class="roleCenter_checkbox">
+                        {{ form_widget(child) }}
+                        {{ form_label(child) }}
+                    </div>
+                {% endfor %}
+            </div>
+                
+            <div id="agreeTerms">
+                {{ form_row(registrationForm.agreeTerms, { label: 'Accepter les conditions d\'utilisation' }) }}
+            </div>
             
 
             <button type="submit" class="btn-create-account">Créer le compte</button>

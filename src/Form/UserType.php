@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\User;
+use App\Entity\Grade;
+use App\Entity\Ranks;
+use App\Entity\Fonction;
 use App\Entity\RoleCenter;
 use App\Entity\Speciality;
-use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -33,6 +36,18 @@ class UserType extends AbstractType
                 'expanded' => true,
                 'choice_label' => 'nameRoleCenter',
             ])
+            ->add('rank', EntityType::class, [
+                'class' => Ranks::class, 
+                'choice_label' => 'nameRanks', 
+                ])
+            ->add('grade', EntityType::class, [
+                'class' => Grade::class, 
+                'choice_label' => 'nameGrade', 
+                ])
+            ->add('fonction', EntityType::class, [
+                'class' => Fonction::class, 
+                'choice_label' => 'nameFonction', 
+                ])
         ;
     }
 
