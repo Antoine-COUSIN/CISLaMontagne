@@ -16,6 +16,7 @@ class RoleCenterController extends AbstractController
     #[Route('/', name: 'role_center_index', methods: ['GET'])]
     public function index(RoleCenterRepository $roleCenterRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('role_center/index.html.twig', [
             'role_centers' => $roleCenterRepository->findAll(),
         ]);

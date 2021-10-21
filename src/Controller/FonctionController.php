@@ -16,6 +16,7 @@ class FonctionController extends AbstractController
     #[Route('/', name: 'fonction_index', methods: ['GET'])]
     public function index(FonctionRepository $fonctionRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('fonction/index.html.twig', [
             'fonctions' => $fonctionRepository->findAll(),
         ]);

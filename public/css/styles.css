@@ -435,7 +435,8 @@ header .topBarreContainer {
 #create-account form #registrationInput300 label {
   width: 300px;
   margin-bottom: 8px;
-  color: black !important;
+  color: #4b4b4b !important;
+  font-weight: bold;
 }
 
 #create-account form #registrationInput300 div {
@@ -448,6 +449,19 @@ header .topBarreContainer {
           flex-direction: column;
 }
 
+#create-account form #registrationInput300 ul {
+  padding: 0px;
+}
+
+#create-account form #registrationInput300 ul li {
+  list-style: none;
+  color: red;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: -15px;
+  margin-top: -10px;
+}
+
 #create-account form #checkBoxSpeciality {
   width: 100%;
   padding: 0px 50px;
@@ -456,8 +470,9 @@ header .topBarreContainer {
 
 #create-account form #checkBoxSpeciality h6 {
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 8px;
+  color: #4b4b4b;
 }
 
 #create-account form #checkBoxSpeciality .checkbox_container {
@@ -482,8 +497,9 @@ header .topBarreContainer {
 
 #create-account form #checkBoxRoleCenter h6 {
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 8px;
+  color: #4b4b4b;
 }
 
 #create-account form #checkBoxRoleCenter .roleCenter_checkbox {

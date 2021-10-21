@@ -16,6 +16,7 @@ class SpecialityController extends AbstractController
     #[Route('/', name: 'speciality_index', methods: ['GET'])]
     public function index(SpecialityRepository $specialityRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('speciality/index.html.twig', [
             'specialities' => $specialityRepository->findAll(),
         ]);

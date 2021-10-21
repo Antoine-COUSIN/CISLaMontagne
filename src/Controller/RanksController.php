@@ -16,6 +16,7 @@ class RanksController extends AbstractController
     #[Route('/', name: 'ranks_index', methods: ['GET'])]
     public function index(RanksRepository $ranksRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('ranks/index.html.twig', [
             'ranks' => $ranksRepository->findAll(),
         ]);

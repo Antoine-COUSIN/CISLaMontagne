@@ -16,6 +16,7 @@ class GradeController extends AbstractController
     #[Route('/', name: 'grade_index', methods: ['GET'])]
     public function index(GradeRepository $gradeRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('grade/index.html.twig', [
             'grades' => $gradeRepository->findAll(),
         ]);
