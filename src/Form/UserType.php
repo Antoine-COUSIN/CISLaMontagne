@@ -11,6 +11,7 @@ use App\Entity\Speciality;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
@@ -19,8 +20,25 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                'Administrateur' => User::ROLE_ADMIN,
+                'Adjoint chef de centre' => User::ROLE_ADJOINTCHEFDECENTRE,
+                'Formateur' => User::ROLE_FORMATEUR,
+                'Responsable pharma' => User::ROLE_RESPONSABLEPHARMA,
+                'Responsable véhicules' => User::ROLE_RESPONSABLEVEHICULE,
+                'Responsable sport' => User::ROLE_RESPONSABLESPORT,
+                'Responsable location' => User::ROLE_RESPONSABLELOCATION,
+                'Responsable commandes' => User::ROLE_RESPONSABLECOMMANDE,
+                'Responsable habillement' => User::ROLE_RESPONSABLEHABILLEMENT,
+                'Responsable amicale' => User::ROLE_RESPONSABLEAMICALE,
+                'Chef de garde' => User::ROLE_CHEFDEGARDE,
+                'Utilisateur' => User::ROLE_USER,
+                ],
+                'multiple' => true,
+                'expanded' => true,
+                'required' => true,
+                ])
             ->add('firstName')
             ->add('lastName')
             ->add('phoneNumber')

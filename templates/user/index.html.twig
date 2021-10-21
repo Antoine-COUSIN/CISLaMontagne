@@ -76,8 +76,6 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Roles</th>
-                                    <th scope="col">Password</th>
                                     <th scope="col">FirstName</th>
                                     <th scope="col">LastName</th>
                                     <th scope="col">PhoneNumber</th>
@@ -89,8 +87,6 @@
                                 {% for user in users %}
                                     <tr>
                                         <td>{{ user.email }}</td>
-                                        <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                                        <td>{{ user.password }}</td>
                                         <td>{{ user.firstName }}</td>
                                         <td>{{ user.lastName }}</td>
                                         <td>{{ user.phoneNumber }}</td>
@@ -101,7 +97,10 @@
 
                                         {% endfor %}
                                         </td>
-                                        <td><a class="aEdit" href="{{ path('user_edit', {'id': user.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('user_edit', {'id': user.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('user/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                         <p>no records found</p>

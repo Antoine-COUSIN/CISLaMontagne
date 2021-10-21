@@ -1,4 +1,54 @@
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    <div id="registrationInput300">
+        {{ form_row(form.firstName, { label: 'Prénom :' }) }}
+        {{ form_row(form.lastName, { label: 'Nom :' }) }}
+        {{ form_row(form.phoneNumber, { label: 'Téléphone :' }) }}
+        {{ form_row(form.email, { label: 'Email :' }) }}
+
+        {{ form_row(form.rank, { label: 'Rang :' }) }}
+        {{ form_row(form.grade, { label: 'Grade :' }) }}
+        {{ form_row(form.fonction, { label: 'Fonction :' }) }}
+    </div>
+
+    <div id="checkBoxSpeciality">
+        <h6>Spécialités :</h6>
+        <div class="checkbox_container">
+            {% for child in form.speciality %}
+                <div class="speciality_checkbox">
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="checkBoxRoleCenter">
+        <h6>Rôle au seins du centre :</h6>
+        {% for child in form.roleCenter %}
+            <div class="roleCenter_checkbox">
+                {{ form_widget(child) }}
+                {{ form_label(child) }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="checkBoxGestionRoleAcces">
+        <h6>Gestion des accès :</h6>
+        {% for child in form.roles %}
+            <div class="GestionRoleAcces_checkbox">
+                {{ form_widget(child) }}
+                {{ form_label(child) }}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <button class="btn-edit-account">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

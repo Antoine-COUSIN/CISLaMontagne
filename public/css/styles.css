@@ -527,6 +527,180 @@ header .topBarreContainer {
   margin-right: 8px;
 }
 
+#Edit-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e2e2e2;
+}
+
+#Edit-account .btn-back {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  margin-top: 15px;
+  margin-bottom: 75px;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #4d90fe;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#Edit-account .btn-back:hover {
+  color: white;
+  border: 1px solid #4d90fe;
+  background-color: #4d90fe;
+}
+
+#Edit-account form {
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  margin-top: 75px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 15px #636363;
+          box-shadow: 0px 0px 15px #636363;
+}
+
+#Edit-account form .btn-edit-account {
+  width: 250px;
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+  padding: 15px 0px;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+#Edit-account form .btn-edit-account:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
+}
+
+#Edit-account form #registrationInput300 input {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#Edit-account form #registrationInput300 select {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#Edit-account form #registrationInput300 label {
+  width: 300px;
+  margin-bottom: 8px;
+  color: #4b4b4b !important;
+  font-weight: bold;
+}
+
+#Edit-account form #registrationInput300 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Edit-account form #registrationInput300 ul {
+  padding: 0px;
+}
+
+#Edit-account form #registrationInput300 ul li {
+  list-style: none;
+  color: red;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: -15px;
+  margin-top: -10px;
+}
+
+#Edit-account form #checkBoxSpeciality {
+  width: 100%;
+  padding: 0px 50px;
+  margin-bottom: 15px;
+}
+
+#Edit-account form #checkBoxSpeciality h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4b4b4b;
+}
+
+#Edit-account form #checkBoxSpeciality .checkbox_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#Edit-account form #checkBoxSpeciality .checkbox_container .speciality_checkbox {
+  width: auto;
+  margin-right: 10px;
+}
+
+#Edit-account form #checkBoxRoleCenter {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 50px;
+}
+
+#Edit-account form #checkBoxRoleCenter h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4b4b4b;
+}
+
+#Edit-account form #checkBoxRoleCenter .roleCenter_checkbox {
+  width: 350px;
+}
+
+#Edit-account form #checkBoxGestionRoleAcces {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 50px;
+}
+
+#Edit-account form #checkBoxGestionRoleAcces h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4b4b4b;
+}
+
+#Edit-account form #checkBoxGestionRoleAcces .GestionRoleAcces_checkbox {
+  width: 350px;
+}
+
 #stationPresentation .col-md-3 {
   padding: 0px !important;
 }
@@ -830,28 +1004,6 @@ footer .right-footer li i {
   margin-bottom: 30px;
 }
 
-#back-office-container-laptop tbody .aEdit {
-  border: transparent;
-  border-radius: 25px;
-  padding: 5px;
-  color: green;
-  text-decoration: none;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-#back-office-container-laptop tbody .aEdit .fa-edit {
-  margin-right: 5px;
-}
-
-#back-office-container-laptop tbody .aEdit:hover {
-  color: green;
-  text-decoration: underline;
-  border: 1px solid white;
-  border-radius: 25px;
-  background-color: white;
-}
-
 #back-office-container-laptop .container-fluid {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -891,5 +1043,47 @@ footer .right-footer li i {
 
 #back-office-container-laptop .backOfficeContainer {
   padding: 50px 25px;
+}
+
+#back-office-container-laptop .backOfficeContainer .aEdit {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: transparent;
+  color: green;
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#back-office-container-laptop .backOfficeContainer .aEdit i {
+  margin-right: 5px;
+}
+
+#back-office-container-laptop .backOfficeContainer .aEdit:hover {
+  color: white;
+  border: 1px solid green;
+  background-color: green;
+}
+
+#back-office-container-laptop .backOfficeContainer .btn_delete {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: transparent;
+  color: red;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#back-office-container-laptop .backOfficeContainer .btn_delete i {
+  margin-right: 5px;
+}
+
+#back-office-container-laptop .backOfficeContainer .btn_delete:hover {
+  color: white;
+  border: 1px solid red;
+  background: red;
 }
 /*# sourceMappingURL=styles.css.map */
