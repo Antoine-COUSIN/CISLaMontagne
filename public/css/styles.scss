@@ -1096,10 +1096,15 @@ footer
     }
 }
 
+//=================================================================================================================
 
-//=================================================================================================================
+
+
+
+
 //BACK-OFFICE======================================================================================================
-//=================================================================================================================
+
+//GLOBAL INDEX=====================================================================================================
 #back-office-container-laptop
 {
     h2::after
@@ -1193,5 +1198,113 @@ footer
             border: 1px solid red;
             background: red;
         }
+    }
+}
+
+//GLOBAL NEW=======================================================================================================
+.newContainer
+{
+    padding: 50px 0px;
+    background-color: rgb(226, 226, 226);
+
+    .container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+    }
+
+    form
+    {
+        background-color: white;
+        border-radius: 5px;
+        width: 400px;
+        margin-bottom: 30px;
+        padding-top: 35px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 15px rgb(99, 99, 99);
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+
+            label
+            {
+                margin-bottom: 8px;
+                color: rgb(75, 75, 75) !important;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .btn-back
+    {
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background: transparent;
+        margin-top: 15px;
+        padding: 4px 8px;
+        text-decoration: none;
+        color: #4d90fe;
+        transition: all 1s;
+    }
+
+    .btn-back:hover
+    {
+        color: white;
+        border: 1px solid #4d90fe;
+        background-color: #4d90fe;
+    }
+
+    .btn-save
+    {
+        width: 250px;
+        margin: 20px 0px;
+        border: 0px;
+        border-radius: 3px;
+        color: #fff;
+        text-shadow: 0 1px rgba(0,0,0,0.1); 
+        background-color: #4d90fe;
+        padding: 15px 0px;
+        transition: all 0.7s;
+    }
+
+    .btn-save:hover
+    {
+        border: 0px;
+        text-shadow: 0 1px rgba(0,0,0,0.3);
+        background-color: #357ae8;
+    }
+}
+
+//GLOBAL EDIT=======================================================================================================
+#editContainer
+{
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
     }
 }

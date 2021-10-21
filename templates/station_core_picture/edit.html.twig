@@ -3,11 +3,13 @@
 {% block title %}Edit StationCorePicture{% endblock %}
 
 {% block body %}
-    <h1>Edit StationCorePicture</h1>
+    <section id="editStationCorePicture editContainer">
+        <h2>Edit StationCorePicture</h2>
 
-    {{ include('station_core_picture/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('station_core_picture/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('station_core_picture_index') }}">back to list</a>
+        <a class="btn-back" href="{{ path('station_core_picture_index') }}">Retour à la liste</a>
 
-    {{ include('station_core_picture/_delete_form.html.twig') }}
+        {{ include('station_core_picture/_delete_form.html.twig') }}
+    </section>    
 {% endblock %}
