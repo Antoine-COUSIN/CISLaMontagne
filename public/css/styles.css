@@ -1189,7 +1189,25 @@ footer .right-footer li i {
   background-color: #357ae8;
 }
 
-#editContainer h2::after {
+.editContainer {
+  padding: 50px 0px;
+  background-color: #e2e2e2;
+}
+
+.editContainer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editContainer h2::after {
   display: block;
   height: 2px;
   background-color: #f14e38;
@@ -1197,5 +1215,79 @@ footer .right-footer li i {
   content: "";
   margin: 5px auto;
   margin-bottom: 30px;
+}
+
+.editContainer form {
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  margin-bottom: 30px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 15px #636363;
+          box-shadow: 0px 0px 15px #636363;
+}
+
+.editContainer form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.editContainer form div label {
+  margin-bottom: 8px;
+  color: #4b4b4b !important;
+  font-weight: bold;
+}
+
+.editContainer .btn-back {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  margin-top: 15px;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #4d90fe;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.editContainer .btn-back:hover {
+  color: white;
+  border: 1px solid #4d90fe;
+  background-color: #4d90fe;
+}
+
+.editContainer .btn-save {
+  width: 250px;
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+  padding: 15px 0px;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.editContainer .btn-save:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
 }
 /*# sourceMappingURL=styles.css.map */

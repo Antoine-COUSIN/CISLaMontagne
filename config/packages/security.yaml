@@ -36,5 +36,24 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/home, roles: PUBLIC_ACCESS }
+        - { path: ^/page_missions, roles: PUBLIC_ACCESS }
+        - { path: ^/page_amicale_sp, roles: PUBLIC_ACCESS }
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: ^/home_back_office, roles: ROLE_ADMIN }
+        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/register, roles: ROLE_ADMIN }
+        - { path: ^/station_core_picture, roles: ROLE_ADMIN }
+        - { path: ^/tation_story, roles: ROLE_ADMIN }
+        - { path: ^/speciality, roles: ROLE_ADMIN }
+        - { path: ^/role_center, roles: ROLE_ADMIN }
+        - { path: ^/ranks, roles: ROLE_ADMIN }
+        - { path: ^/missions, roles: ROLE_ADMIN }
+        - { path: ^/grade, roles: ROLE_ADMIN }
+        - { path: ^/fonction, roles: ROLE_ADMIN }
+        - { path: ^/engins, roles: ROLE_ADMIN }
+        - { path: ^/chief_speech, roles: ROLE_ADMIN }
+        - { path: ^/amicale_news, roles: ROLE_ADMIN }
+        - { path: ^/amicale_descript, roles: ROLE_ADMIN }
+        - { path: ^/home_extranet, roles: ROLE_USER }
         # - { path: ^/profile, roles: ROLE_USER }

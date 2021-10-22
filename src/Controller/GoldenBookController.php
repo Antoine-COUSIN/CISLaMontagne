@@ -20,7 +20,7 @@ class GoldenBookController extends AbstractController
      */
     public function index(Request $request, GoldenBookRepository $goldenBookRepository): Response
     {
-
+        $this->denyAccessUnlessGranted('PUBLIC_ACCESS');
         $goldenBook = new GoldenBook();
         $form = $this->createForm(GoldenBookType::class, $goldenBook);
         $form->handleRequest($request);
@@ -45,19 +45,18 @@ class GoldenBookController extends AbstractController
      */
     public function admin(GoldenBookRepository $goldenBookRepository): Response
     {
-        
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('golden_book/admin.html.twig', [
             'golden_books' => $goldenBookRepository->findAll(),
         ]);
     }
-
-    // ICI se trouve la fonction NEW
 
     /**
      * @Route("/{id}", name="golden_book_show", methods={"GET"})
      */
     public function show(GoldenBook $goldenBook): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('golden_book/show.html.twig', [
             'golden_book' => $goldenBook,
         ]);
@@ -68,6 +67,7 @@ class GoldenBookController extends AbstractController
      */
     public function edit(Request $request, GoldenBook $goldenBook): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(GoldenBookType::class, $goldenBook);
         $form->handleRequest($request);
 
@@ -88,6 +88,7 @@ class GoldenBookController extends AbstractController
      */
     public function delete(Request $request, GoldenBook $goldenBook): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         if ($this->isCsrfTokenValid('delete'.$goldenBook->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($goldenBook);

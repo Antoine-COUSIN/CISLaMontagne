@@ -83,7 +83,10 @@
                                 {% for station_core_picture in station_core_pictures %}
                                     <tr>
                                         <td class="tBodyImg"><img src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" width="250" alt=""></td>
-                                        <td><a class="aEdit" href="{{ path('station_core_picture_edit', {'id': station_core_picture.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('station_core_picture_edit', {'id': station_core_picture.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('station_core_picture/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>
