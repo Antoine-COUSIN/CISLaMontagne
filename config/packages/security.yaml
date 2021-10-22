@@ -39,6 +39,7 @@ security:
         - { path: ^/home, roles: PUBLIC_ACCESS }
         - { path: ^/page_missions, roles: PUBLIC_ACCESS }
         - { path: ^/page_amicale_sp, roles: PUBLIC_ACCESS }
+        - { path: ^/secours_phone_number, roles: PUBLIC_ACCESS }
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/home_back_office, roles: ROLE_ADMIN }
         - { path: ^/user, roles: ROLE_ADMIN }
@@ -56,4 +57,3 @@ security:
         - { path: ^/amicale_news, roles: ROLE_ADMIN }
         - { path: ^/amicale_descript, roles: ROLE_ADMIN }
         - { path: ^/home_extranet, roles: ROLE_USER }
-        # - { path: ^/profile, roles: ROLE_USER }
