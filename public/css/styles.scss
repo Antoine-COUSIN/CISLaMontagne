@@ -974,6 +974,11 @@ header
 {
     padding: 50px 0px;
 
+    .btn-save
+    {
+        display: none;
+    }
+
     h2::after
     {
         display: block;
@@ -1152,6 +1157,11 @@ footer
     {
         padding: 50px 25px;
 
+        .textColumn
+        {
+            max-width: 1000px;
+        }
+
         .aEdit
         {
             margin-bottom: 10px;
@@ -1243,6 +1253,8 @@ footer
         {
             display: flex;
             flex-direction: column;
+            width: 320px;
+            margin-bottom: 20px;
 
             label
             {
@@ -1275,7 +1287,7 @@ footer
     .btn-save
     {
         width: 250px;
-        margin: 20px 0px;
+        margin-bottom: 20px;
         border: 0px;
         border-radius: 3px;
         color: #fff;
@@ -1299,6 +1311,11 @@ footer
 
     padding: 50px 0px;
     background-color: rgb(226, 226, 226);
+
+    .btnPosteGoldenBook
+    {
+        display: none;
+    }
 
     .container
     {
@@ -1336,6 +1353,8 @@ footer
         {
             display: flex;
             flex-direction: column;
+            width: 320px;
+            margin-bottom: 20px;
 
             label
             {
@@ -1368,7 +1387,7 @@ footer
     .btn-save
     {
         width: 250px;
-        margin: 20px 0px;
+        margin-bottom: 20px;
         border: 0px;
         border-radius: 3px;
         color: #fff;

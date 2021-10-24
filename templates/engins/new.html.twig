@@ -3,9 +3,15 @@
 {% block title %}New Engins{% endblock %}
 
 {% block body %}
-    <h1>Create new Engins</h1>
 
-    {{ include('engins/_form.html.twig') }}
+<section id="newStationCorePicture" class="newContainer">
+        <div class="container">
+            <h2>Ajouter un nouvelle engin</h2>
 
-    <a href="{{ path('engins_index') }}">back to list</a>
+            {{ include('engins/_form.html.twig') }}
+
+            <a class="btn-back" href="{{ path('engins_index') }}">Retour à la liste</a>
+        </div>
+    </section>  
+
 {% endblock %}

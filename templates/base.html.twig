@@ -100,23 +100,23 @@
                         <em class="flying_bubble_info_2">18/112</em>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="{{ asset('img/attestation-1.png') }}">
-                        </a>
-                        <em class="flying_bubble_info_3">Attestation d’intervention</em>
-                    </li>
-                    <li>
                         <a href="{{ path('contact') }}">
                             <img src="{{ asset('img/contacter-nous-1.png') }}">
                         </a>
-                        <em class="flying_bubble_info_4">Contactez-nous</em>
+                        <em class="flying_bubble_info_3">Contactez-nous</em>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <img src="{{ asset('img/attestation-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_4">Attestation d’intervention</em>
                     </li>
                     <li>
                         <a href="#">
                             <img src="{{ asset('img/attestation-1.png') }}">
                         </a>
                         <em class="flying_bubble_info_5">Demande de saisine</em>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -150,8 +150,8 @@
                     <div class="col-md-2">
                         <div class="right-footer">
                             <ul>
-                                <li><a href="{{ path('app_login') }}"><i class="fas fa-lock"></i>Extranet</a></li>
-                                <li><a class="border-right" href=""><i class="fas fa-envelope-open-text"></i>Nous contacter</a></li>
+                                <li><a href="{{ path('app_login') }}"><i class="fas fa-lock"></i>Accès réservé</a></li>
+                                <li><a class="border-right" href="{{ path('contact') }}"><i class="fas fa-envelope-open-text"></i>Contactez-nous</a></li>
                             </ul>
                         </div>
                     </div>

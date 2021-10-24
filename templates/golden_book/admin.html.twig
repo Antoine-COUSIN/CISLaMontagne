@@ -66,7 +66,7 @@
             <div class="backOfficeContainer col-md-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Gestion de la photo de groupe</h2>
+                        <h2>Gestion du livre d'or</h2>
                     </div>
                 </div>
                 
@@ -85,9 +85,12 @@
                                 {% for golden_book in golden_books %}
                                     <tr>
                                         <td>{{ golden_book.title }}</td>
-                                        <td>{{ golden_book.text|raw }}</td>
+                                        <td class="textColumn">{{ golden_book.text|raw }}</td>
                                         <td>{{ golden_book.validationStatus ? 'Yes' : 'No' }}</td>
-                                        <td><a class="aEdit" href="{{ path('golden_book_edit', {'id': golden_book.id}) }}"><i class="far fa-edit"></i>Modifier</a></a></td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('golden_book_edit', {'id': golden_book.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('golden_book/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                         <p>Il n'y a pas encore d'article dans le livre d'or</p>

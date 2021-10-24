@@ -66,7 +66,7 @@
             <div class="backOfficeContainer col-md-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Gestion de la photo de groupe</h2>
+                        <h2>Gestion de l'article "nos missions"</h2>
                     </div>
                 </div>
                 
@@ -82,8 +82,11 @@
                             <tbody>
                                 {% for mission in missions %}
                                     <tr>
-                                        <td>{{ mission.text|raw }}</td>
-                                        <td><a class="aEdit" href="{{ path('missions_edit', {'id': mission.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td class="textColumn">{{ mission.text|raw }}</td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('missions_edit', {'id': mission.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('missions/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>

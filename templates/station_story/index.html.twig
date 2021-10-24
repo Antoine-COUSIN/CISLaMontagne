@@ -85,8 +85,11 @@
                                 {% for station_story in station_stories %}
                                     <tr>
                                         <td>{{ station_story.title }}</td>
-                                        <td>{{ station_story.text|raw }}</td>
-                                        <td><a class="aEdit" href="{{ path('station_story_edit', {'id': station_story.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td class="textColumn">{{ station_story.text|raw }}</td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('station_story_edit', {'id': station_story.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('station_story/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>

@@ -3,11 +3,15 @@
 {% block title %}Edit Missions{% endblock %}
 
 {% block body %}
-    <h1>Edit Missions</h1>
 
-    {{ include('missions/_form.html.twig', {'button_label': 'Update'}) }}
+    <section id="editStationCorePicture" class="editContainer">
+        <div class="container">
+            <h2>Mettre à jour l'article "nos missions"</h2>
 
-    <a href="{{ path('missions_index') }}">back to list</a>
+            {{ include('missions/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    {{ include('missions/_delete_form.html.twig') }}
+            <a class="btn-back" href="{{ path('missions_index') }}">Retour à la liste</a>
+        </div>
+    </section>
+
 {% endblock %}

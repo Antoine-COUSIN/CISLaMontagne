@@ -1,4 +1,12 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+{{ form_start(form) }}
+    {{ form_row(form.picture, { label: 'Photo du groupe :' }) }}
+    {{ form_row(form.underTitle, { label: 'Chef de centre :' }) }}
+    {{ form_row(form.text, { label: 'Mot du chef :' }) }}
+
+    <button class="btn-save">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(form) }}

@@ -3,9 +3,13 @@
 {% block title %}New AmicaleDescript{% endblock %}
 
 {% block body %}
-    <h1>Create new AmicaleDescript</h1>
+    <section id="newStationCorePicture" class="newContainer">
+        <div class="container">
+            <h2>Créer le text de présentation de l'amicale</h2>
 
-    {{ include('amicale_descript/_form.html.twig') }}
+            {{ include('amicale_descript/_form.html.twig') }}
 
-    <a href="{{ path('amicale_descript_index') }}">back to list</a>
+            <a class="btn-back" href="{{ path('amicale_descript_index') }}">Retour à la liste</a>
+        </div>
+    </section>  
 {% endblock %}

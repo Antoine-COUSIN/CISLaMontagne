@@ -3,9 +3,13 @@
 {% block title %}New Missions{% endblock %}
 
 {% block body %}
-    <h1>Create new Missions</h1>
+    <section id="newStationCorePicture" class="newContainer">
+        <div class="container">
+            <h2>Créer l'article "Nos missions</h2>
 
-    {{ include('missions/_form.html.twig') }}
+            {{ include('missions/_form.html.twig') }}
 
-    <a href="{{ path('missions_index') }}">back to list</a>
+            <a class="btn-back" href="{{ path('missions_index') }}">Retour à la liste</a>
+        </div>
+    </section> 
 {% endblock %}

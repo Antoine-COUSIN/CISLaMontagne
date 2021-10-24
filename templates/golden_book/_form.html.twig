@@ -1,5 +1,14 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btnPosteGoldenBook float-end">{{ button_label|default('Poster') }}</button>
     <button class="btn btnValidateGoldenBook">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }} #}
+
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.text) }}
+    {{ form_row(form.validationStatus, { label: 'Validation de la publication :' }) }}
+
+    <button class="btn btnPosteGoldenBook float-end">{{ button_label|default('Poster') }}</button>
+    <button class="btn-save">{{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}

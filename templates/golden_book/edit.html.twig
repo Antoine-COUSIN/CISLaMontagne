@@ -3,11 +3,13 @@
 {% block title %}Edit GoldenBook{% endblock %}
 
 {% block body %}
-    <h1>Edit GoldenBook</h1>
+    <section id="editStationCorePicture" class="editContainer">
+        <div class="container">
+            <h2>Gérer la publication</h2>
 
-    {{ include('golden_book/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('golden_book/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('golden_book_index') }}">back to list</a>
-
-    {{ include('golden_book/_delete_form.html.twig') }}
+            <a class="btn-back" href="{{ path('golden_book_admin') }}">Retour à la liste</a>
+        </div>
+    </section> 
 {% endblock %}

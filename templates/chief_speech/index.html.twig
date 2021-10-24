@@ -66,7 +66,7 @@
             <div class="backOfficeContainer col-md-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Gestion de la photo de groupe</h2>
+                        <h2>Gestion de l'encart "mot du chef de centre"</h2>
                     </div>
                 </div>
                 
@@ -86,8 +86,11 @@
                                     <tr>
                                         <td><img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" width="100" alt=""></td>
                                         <td>{{ chief_speech.underTitle }}</td>
-                                        <td>{{ chief_speech.text }}</td>
-                                        <td><a class="aEdit" href="{{ path('chief_speech_edit', {'id': chief_speech.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td class="textColumn">{{ chief_speech.text|raw }}</td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('chief_speech_edit', {'id': chief_speech.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('chief_speech/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>

@@ -3,11 +3,14 @@
 {% block title %}Edit AmicaleNews{% endblock %}
 
 {% block body %}
-    <h1>Edit AmicaleNews</h1>
+    <section id="editStationCorePicture" class="editContainer">
+        <div class="container">
+            <h2>Mettre à jour la news : {{ amicale_news.title }}</h2>
 
-    {{ include('amicale_news/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('amicale_news/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('amicale_news_index') }}">back to list</a>
+            <a class="btn-back" href="{{ path('amicale_news_index') }}">Retour à la liste</a>
+        </div>
+    </section> 
 
-    {{ include('amicale_news/_delete_form.html.twig') }}
 {% endblock %}

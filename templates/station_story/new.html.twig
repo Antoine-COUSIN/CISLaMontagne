@@ -3,9 +3,16 @@
 {% block title %}New StationStory{% endblock %}
 
 {% block body %}
-    <h1>Create new StationStory</h1>
 
-    {{ include('station_story/_form.html.twig') }}
+    <section id="newStationCorePicture" class="newContainer">
+        <div class="container">
+            <h1>Rédiger l'article "histoire de la caserne</h1>
 
-    <a href="{{ path('station_story_index') }}">back to list</a>
+            {{ include('station_story/_form.html.twig') }}
+
+            <a class="btn-back" href="{{ path('station_story_index') }}">Retour à la liste</a>
+        </div>
+    </section>  
+
+
 {% endblock %}

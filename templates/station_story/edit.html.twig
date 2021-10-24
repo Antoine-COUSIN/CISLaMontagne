@@ -3,11 +3,14 @@
 {% block title %}Edit StationStory{% endblock %}
 
 {% block body %}
-    <h1>Edit StationStory</h1>
+    <section id="editStationCorePicture" class="editContainer">
+        <div class="container">
+            <h1>Mettre à jour l'article "histoire de la caserne</h1>
 
-    {{ include('station_story/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('station_story/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('station_story_index') }}">back to list</a>
+            <a class="btn-back" href="{{ path('station_story_index') }}">Retour à la liste</a>
+        </div>
+    </section> 
 
-    {{ include('station_story/_delete_form.html.twig') }}
 {% endblock %}

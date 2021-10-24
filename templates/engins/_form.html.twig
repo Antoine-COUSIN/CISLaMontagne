@@ -1,4 +1,9 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.title, { label: 'Appelation de l\'engin :' }) }}
+    {{ form_row(form.text, { label: 'Description de l\'engin :' }) }}
+    {{ form_row(form.enginpicture, { label: 'Photo de l\'engin :' }) }}
+    
+
+    <button class="btn-save">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(form) }}
+

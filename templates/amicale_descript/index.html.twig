@@ -66,7 +66,7 @@
             <div class="backOfficeContainer col-md-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Gestion de la photo de groupe</h2>
+                        <h2>Gestion du texte de présentation de l'amicale</h2>
                     </div>
                 </div>
                 
@@ -82,8 +82,11 @@
                             <tbody>
                                 {% for amicale_descript in amicale_descripts %}
                                     <tr>
-                                        <td>{{ amicale_descript.text }}</td>
-                                        <td><a class="aEdit" href="{{ path('amicale_descript_edit', {'id': amicale_descript.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td class="textColumn">{{ amicale_descript.text|raw }}</td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('amicale_descript_edit', {'id': amicale_descript.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('amicale_descript/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>

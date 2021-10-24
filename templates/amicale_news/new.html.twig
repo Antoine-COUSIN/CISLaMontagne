@@ -3,9 +3,13 @@
 {% block title %}New AmicaleNews{% endblock %}
 
 {% block body %}
-    <h1>Create new AmicaleNews</h1>
+    <section id="newStationCorePicture" class="newContainer">
+        <div class="container">
+            <h2>Ajouter une nouvelle news</h2>
 
-    {{ include('amicale_news/_form.html.twig') }}
+            {{ include('amicale_news/_form.html.twig') }}
 
-    <a href="{{ path('amicale_news_index') }}">back to list</a>
+            <a class="btn-back" href="{{ path('amicale_news_index') }}">Retour à la liste</a>
+        </div>
+    </section> 
 {% endblock %}

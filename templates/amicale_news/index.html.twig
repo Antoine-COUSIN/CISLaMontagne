@@ -66,7 +66,7 @@
             <div class="backOfficeContainer col-md-10">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Gestion de la photo de groupe</h2>
+                        <h2>Gestion des news de l'amicale</h2>
                     </div>
                 </div>
                 
@@ -85,9 +85,12 @@
                                 {% for amicale_news in amicale_news %}
                                     <tr>
                                         <td>{{ amicale_news.title }}</td>
-                                        <td>{{ amicale_news.text|raw }}</td>
+                                        <td class="textColumn">{{ amicale_news.text|raw }}</td>
                                         <td><img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" width="100" alt=""></td>
-                                        <td><a class="aEdit" href="{{ path('amicale_news_edit', {'id': amicale_news.id}) }}"><i class="far fa-edit"></i>Modifier</a></td>
+                                        <td>
+                                            <a class="aEdit" href="{{ path('amicale_news_edit', {'id': amicale_news.id}) }}"><i class="far fa-edit"></i>Modifier</a>
+                                            {{ include('amicale_news/_delete_form.html.twig') }}
+                                        </td>
                                     </tr>
                                 {% else %}
                                         <p>Il n'y a pas encore de news</p>
