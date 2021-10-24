@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index(StationCorePictureRepository $stationCorePictureRepository, ChiefSpeechRepository $chiefSpeechRepository, StationStoryRepository $stationStoryRepository): Response
     {

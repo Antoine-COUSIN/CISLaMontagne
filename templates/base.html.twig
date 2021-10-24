@@ -27,8 +27,8 @@
                         <Div class="col-md-12">
                             <div class="topBarre">
                                 <div>
-                                    <a href="{{ path('secours_phone_number') }}"><i class="fas fa-phone-alt"></i>18/112</a>
-                                    <a href=""><i class="far fa-envelope"></i>Contactez-nous</a>
+                                    <a href="{{ path('urgency_phone') }}"><i class="fas fa-phone-alt"></i>18/112</a>
+                                    <a href="{{ path('contact') }}"><i class="far fa-envelope"></i>Contactez-nous</a>
                                 </div>
         
                                 <div class="socialNetwork">
@@ -94,7 +94,7 @@
                         <em class="flying_bubble_info_1">Accès réservé</em>
                     </li>
                     <li>
-                        <a href="{{ path('secours_phone_number') }}">
+                        <a href="{{ path('urgency_phone') }}">
                             <img src="{{ asset('img/numero-durgence-1.png') }}">
                         </a>
                         <em class="flying_bubble_info_2">18/112</em>
@@ -106,7 +106,7 @@
                         <em class="flying_bubble_info_3">Attestation d’intervention</em>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('contact') }}">
                             <img src="{{ asset('img/contacter-nous-1.png') }}">
                         </a>
                         <em class="flying_bubble_info_4">Contactez-nous</em>
