@@ -1,0 +1,195 @@
+/*
+
+
+
+
+
+*/
+
+
+//GLOBAL=========================================================================================================
+body
+{
+    background-color: rgb(220, 220, 220);
+
+    h2
+    {
+        text-align: center;
+    }
+}
+
+
+
+//HEADER=========================================================================================================
+// header
+// {
+//     border: 1px solid black;
+// }
+//NAV============================================================================================================
+#principalNav
+{
+    
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s;
+
+    a
+    {
+        color: rgb(241, 78, 56);
+        text-transform: uppercase;
+    }
+
+    .user-dropdown
+    {
+        height: 41px;
+        margin-bottom: 8px !important;
+
+        .dropdown
+        {
+            
+            a
+            {
+                padding: 0px;
+                
+
+                .profile-img
+                {
+                    width: 50px;
+                    border-radius: 50%;
+                    // font-size: 40px;
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+//ACCUEIL EXTRANET===========================================================================
+#accueil-extranet
+{
+    h2
+    {
+        margin-top: 30px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 250px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 50px;
+    }
+
+    .principal-bloc-container
+    {     
+        margin: 0px 75px;
+
+        .dual-bloc-container
+        { 
+            .bloc-category
+            {
+                margin-bottom: 50px;
+                height: 280px;
+
+                .category-name
+                {
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .icons
+                    {
+                        width: 30px;
+
+                        i
+                        {
+                            margin-left: 5px;
+                            color: white;
+                        }
+                    }
+
+                    .title
+                    {
+                        width: 100%;
+
+                        h3
+                        {
+                            text-align: center;
+                            font-size: 18px;
+                            margin: 0px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .first-bloc
+        {
+            .bloc-category
+            {
+                border: 1px solid rgb(160, 160, 160);
+                border-radius: 3px;
+
+                .category-name
+                {
+                    background-color: rgb(160, 160, 160);
+                    border-bottom: 1px solid rgb(160, 160, 160);
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .second-bloc
+        {
+            .bloc-category
+            {
+                border: 1px solid rgb(48, 131, 149);
+                border-radius: 3px;
+
+                .category-name
+                {
+                    background-color: rgb(48, 131, 149);
+                    border-bottom: 1px solid rgb(48, 131, 149);
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .third-bloc
+        {
+            .bloc-category
+            {
+                border: 1px solid rgb(213, 51, 72);
+                border-radius: 3px;
+
+                .category-name
+                {
+                    background-color: rgb(213, 51, 72);
+                    border-bottom: 1px solid rgb(213, 51, 72);
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .fourth-bloc
+        {
+            .bloc-category
+            {
+                border: 1px solid rgb(78, 68, 118);
+                border-radius: 3px;
+
+                .category-name
+                {
+                    background-color: rgb(78, 68, 118);
+                    border-bottom: 1px solid rgb(78, 68, 118);
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+}

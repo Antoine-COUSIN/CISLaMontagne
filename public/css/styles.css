@@ -8,6 +8,12 @@
 
 
 */
+/*APPEL DES POLICE IMPORTEES
+
+    - font-family: 'Barlow Condensed', sans-serif;
+    - font-family: 'Crimson Pro', serif;
+
+*/
 h2 {
   text-align: center;
 }
@@ -25,10 +31,25 @@ h2 {
 }
 
 header {
-  background-image: url(../img/background/bg-header.jpg);
+  background-image: url(../img/background/header-bg2.png);
   background-position: center;
   background-size: cover;
-  height: 80vh;
+  height: 100vh;
+}
+
+header .home_title {
+  position: absolute;
+  max-width: 750px;
+  top: 48%;
+  left: 15%;
+}
+
+header .home_title h1 {
+  color: #f14e38;
+  font-size: 800%;
+  font-weight: 500;
+  font-family: 'Crimson Pro', serif;
+  text-shadow: 0 0 10px #333333;
 }
 
 header .topBarre {
@@ -78,7 +99,7 @@ header .topBarreContainer {
 }
 
 #principalNav {
-  background-color: rgba(230, 230, 230, 0.5);
+  background-color: rgba(230, 230, 230, 0.8);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -86,6 +107,16 @@ header .topBarreContainer {
 #principalNav a {
   color: #f14e38;
   text-transform: uppercase;
+  font-size: 19px;
+}
+
+#principalNav .navbar-brand img {
+  width: 30px;
+  margin-right: 12px;
+}
+
+#principalNav .navbar-collapse a:hover {
+  text-decoration: underline;
 }
 
 #principalNav .user-dropdown {
@@ -1011,8 +1042,12 @@ header .topBarreContainer {
 footer {
   color: white;
   background-color: #636363;
-  height: 218px;
+  height: 225px;
   padding: 15px 0px;
+}
+
+footer .logo-footer {
+  height: 200px;
 }
 
 footer .central-footer {
@@ -1027,6 +1062,16 @@ footer .central-footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+footer .central-footer .bloc-adress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .central-footer .bloc-adress .maps {
+  margin-left: 110px;
 }
 
 footer .central-footer .bloc-mentions-legales a {

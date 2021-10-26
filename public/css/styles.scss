@@ -9,6 +9,13 @@
 
 */
 
+/*APPEL DES POLICE IMPORTEES
+
+    - font-family: 'Barlow Condensed', sans-serif;
+    - font-family: 'Crimson Pro', serif;
+
+*/
+
 //GLOBAL=========================================================================================================
 
 h2
@@ -34,10 +41,27 @@ h2
 //HEADER=========================================================================================================
 header
 {
-    background-image: url(../img/background/bg-header.jpg);
+    background-image: url(../img/background/header-bg2.png);
     background-position: center;
     background-size: cover;
-    height: 80vh;
+    height: 100vh;
+
+    .home_title
+    {
+        position: absolute;
+        max-width: 750px;
+        top: 48%;
+        left: 15%;
+
+        h1
+        {
+            color: rgb(241, 78, 56);
+            font-size: 800%;
+            font-weight: 500;
+            font-family: 'Crimson Pro', serif;
+            text-shadow: 0 0 10px rgb(51, 51, 51);
+        }
+    }
 
     .topBarre
     {
@@ -91,13 +115,31 @@ header
 #principalNav
 {
     
-    background-color: rgba(230, 230, 230, 0.5);
+    background-color: rgba(230, 230, 230, 0.8);
     transition: all 0.5s;
 
     a
     {
         color: rgb(241, 78, 56);
         text-transform: uppercase;
+        font-size: 19px;
+    }
+
+    .navbar-brand
+    {
+        img
+        {
+            width: 30px;
+            margin-right: 12px;
+        }
+    }
+
+    .navbar-collapse
+    {
+        a:hover
+        {
+            text-decoration: underline;
+        }
     }
 
     .user-dropdown
@@ -1103,8 +1145,13 @@ footer
 {
     color: white;
     background-color: rgb(99, 99, 99);
-    height: 218px;
+    height: 225px;
     padding: 15px 0px;
+
+    .logo-footer
+    {
+        height: 200px;
+    }
 
     .central-footer
     {
@@ -1112,6 +1159,16 @@ footer
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .bloc-adress
+        {
+            display: flex;
+
+            .maps
+            {
+                margin-left: 110px;
+            }
+        }
 
         .bloc-mentions-legales
         {

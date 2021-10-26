@@ -1,20 +1,184 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseExtranet.html.twig' %}
 
-{% block title %}Hello HomeExtranetController!{% endblock %}
+{% block title %}Extranet{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section id="accueil-extranet">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Bienvenue sur l'extranet du C.I.S La Montagne</h2>
+            </div>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div class="principal-bloc-container">
+            <div class="row"> <!-- Déclaration de la première ligne de container -->
+                <div class="col-md-6"> <!-- Déclaration du bloc gauche -->
+                    <div class="dual-bloc-container first-bloc"><!-- Déclaration nominal du bloc gauche -->
+                        <div class="row">
+                            <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-fire-extinguisher"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Opérationnelle</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="col-md-6"><!-- Déclaration de l'item droit -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Formation</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6"><!-- Déclaration du bloc droit -->
+                    <div class="dual-bloc-container second-bloc"><!-- Déclaration nominal du bloc droit -->
+                        <div class="row">
+                            <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-basketball-ball"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Sport</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-6"><!-- Déclaration de l'item droit -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Amicale</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/CISLaMontagne/src/Controller/HomeExtranetController.php'|file_link(0) }}">src/Controller/HomeExtranetController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/CISLaMontagne/templates/home_extranet/index.html.twig'|file_link(0) }}">templates/home_extranet/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+            <div class="row"> <!-- Déclaration de la première ligne de container -->
+                <div class="col-md-6"> <!-- Déclaration du bloc gauche -->
+                    <div class="dual-bloc-container third-bloc"><!-- Déclaration nominal du bloc gauche -->
+                        <div class="row">
+                            <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-first-aid"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Pharmacie</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="col-md-6"><!-- Déclaration de l'item droit -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-ambulance"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Engins</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6"><!-- Déclaration du bloc droit -->
+                    <div class="dual-bloc-container fourth-bloc"><!-- Déclaration nominal du bloc droit -->
+                        <div class="row">
+                            <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Commandes</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-6"><!-- Déclaration de l'item droit -->
+                                <div class="bloc-category"> <!-- Déclaration de mon bloc-->
+                                    <div class="category-name">
+                                        <div class="icons">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                        <div class="title">
+                                            <h3>Habillement</h3>
+                                        </div>
+                                    </div>
+        
+                                    <div class="category-content">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
