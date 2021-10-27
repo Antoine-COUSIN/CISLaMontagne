@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\ReportVehicle;
 use App\Form\ReportVehicleType;
 use App\Repository\ReportVehicleRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/report/vehicle')]
 class ReportVehicleController extends AbstractController
@@ -22,7 +24,7 @@ class ReportVehicleController extends AbstractController
     }
 
     #[Route('/new', name: 'report_vehicle_new', methods: ['GET','POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, MailerInterface $mailer): Response
     {
         $reportVehicle = new ReportVehicle();
         $form = $this->createForm(ReportVehicleType::class, $reportVehicle);
@@ -32,6 +34,19 @@ class ReportVehicleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($reportVehicle);
             $entityManager->flush();
+
+            $email = (new TemplatedEmail())
+                ->from('reportVehicle@cisLaMontagne.fr')
+                ->to('ac.acousin@free.fr')
+                ->subject('Signalement véhicule')
+                ->htmlTemplate('email/reportVehicle.html.twig')
+                ->context([
+                    // 'signalePar' => $form->get('user')->getData(),
+                    // 'vehicle' => $form->get('vehicles')->getData(),
+                    'description' => $form->get('reportVehicle')->getData(),
+                ]);
+
+                $mailer->send($email);
 
             return $this->redirectToRoute('report_vehicle_index', [], Response::HTTP_SEE_OTHER);
         }
