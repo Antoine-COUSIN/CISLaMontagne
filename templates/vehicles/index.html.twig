@@ -1,0 +1,43 @@
+{% extends 'baseExtranet.html.twig' %}
+
+{% block title %}Vehicles index{% endblock %}
+
+{% block body %}
+    <section id="configServiceVehicle">
+        <div class="container">
+            <h2>Config. service engins</h2>
+
+            <table class="table table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th>Véhicule</th>
+                        <th>Immat.</th>
+                        <th>Date ct</th>
+                        <th>Date révision</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for vehicle in vehicles %}
+                    <tr>
+                        <td>{{ vehicle.nameVehicle }}</td>
+                        <td>{{ vehicle.vehicleMatricule }}</td>
+                        <td>{{ vehicle.dateCt|date('d/m/Y') }}</td>
+                        <td>{{ vehicle.dateEntretien|date('m/Y') }}</td>
+                        <td>
+                            <!-- <a href="{{ path('vehicles_show', {'id': vehicle.id}) }}">show</a> -->
+                            <a href="{{ path('vehicles_edit', {'id': vehicle.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Il n'y a pas encore de véhicule</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path('vehicles_new') }}">Ajouter un véhicule</a>
+        </div>
+    </section>
+{% endblock %}

@@ -141,6 +141,13 @@ body
                     border-bottom: 1px solid rgb(160, 160, 160);
                     border-radius: 3px;
                 }
+
+                .category-content
+                {
+                    background-color: rgb(251, 247, 246);
+                    height: 248px;
+                    border-bottom: 3px;
+                }
             }
         }
 
@@ -156,6 +163,13 @@ body
                     background-color: rgb(48, 131, 149);
                     border-bottom: 1px solid rgb(48, 131, 149);
                     border-radius: 3px;
+                }
+
+                .category-content
+                {
+                    background-color: rgb(235, 239, 240);
+                    height: 248px;
+                    border-bottom: 3px;
                 }
             }
         }
@@ -173,6 +187,49 @@ body
                     border-bottom: 1px solid rgb(213, 51, 72);
                     border-radius: 3px;
                 }
+
+                .category-content
+                {
+                    background-color: rgb(242, 230, 232);
+                    height: 248px;
+                    border-bottom: 3px;
+
+                    ul
+                    {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0px;
+                        padding: 0px 50px;
+                        padding-top: 20px;
+
+                        li
+                        {
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            a{
+                                background-color: rgb(216, 120, 133);
+                                border-radius: 5px;
+                                width: 60px;
+                                height: 60px;
+                                font-size: 40px;
+                                color: white;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    // a
+                    // {
+                    //     display: flex;
+                        // flex-direction: column;
+                    // }
+                }
             }
         }
 
@@ -189,7 +246,34 @@ body
                     border-bottom: 1px solid rgb(78, 68, 118);
                     border-radius: 3px;
                 }
+
+                .category-content
+                {
+                    background-color: rgb(228, 227, 235);
+                    height: 248px;
+                    border-bottom: 3px;
+                }
             }
         }
+    }
+}
+
+//PAGE CONFIG SERVCE VEHICLE===============================================================================
+#configServiceVehicle
+{
+    h2
+    {
+        margin-top: 30px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 50px;
     }
 }

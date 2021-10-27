@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ControlVehicles index{% endblock %}
+
+{% block body %}
+    <h1>ControlVehicles index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>OilLevel</th>
+                <th>RefreshFluidLevel</th>
+                <th>WashingFluidLevel</th>
+                <th>FrontWireShape</th>
+                <th>BackTireShape</th>
+                <th>BodyShape</th>
+                <th>IndoorShape</th>
+                <th>FrontWiper</th>
+                <th>BackWiper</th>
+                <th>FrontLighting</th>
+                <th>BackLighting</th>
+                <th>Annotation</th>
+                <th>DateControl</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for control_vehicle in control_vehicles %}
+            <tr>
+                <td>{{ control_vehicle.id }}</td>
+                <td>{{ control_vehicle.oilLevel }}</td>
+                <td>{{ control_vehicle.refreshFluidLevel }}</td>
+                <td>{{ control_vehicle.washingFluidLevel }}</td>
+                <td>{{ control_vehicle.frontWireShape }}</td>
+                <td>{{ control_vehicle.backTireShape }}</td>
+                <td>{{ control_vehicle.bodyShape }}</td>
+                <td>{{ control_vehicle.indoorShape }}</td>
+                <td>{{ control_vehicle.frontWiper }}</td>
+                <td>{{ control_vehicle.backWiper }}</td>
+                <td>{{ control_vehicle.frontLighting }}</td>
+                <td>{{ control_vehicle.backLighting }}</td>
+                <td>{{ control_vehicle.annotation }}</td>
+                <td>{{ control_vehicle.dateControl ? control_vehicle.dateControl|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('control_vehicles_show', {'id': control_vehicle.id}) }}">show</a>
+                    <a href="{{ path('control_vehicles_edit', {'id': control_vehicle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('control_vehicles_new') }}">Create new</a>
+{% endblock %}

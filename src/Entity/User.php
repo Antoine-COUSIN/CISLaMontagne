@@ -97,11 +97,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $speciality;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ReportVehicle::class, mappedBy="user")
+     */
+    private $reportVehicles;
+
     public function __construct()
     {               
         $this->roles = [self::ROLE_USER];
         $this->roleCenter = new ArrayCollection();
-        $this->speciality = new ArrayCollection();     
+        $this->speciality = new ArrayCollection();
+        $this->reportVehicles = new ArrayCollection();     
     }
 
     public function getId(): ?int
@@ -309,6 +315,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeSpeciality(Speciality $speciality): self
     {
         $this->speciality->removeElement($speciality);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ReportVehicle[]
+     */
+    public function getReportVehicles(): Collection
+    {
+        return $this->reportVehicles;
+    }
+
+    public function addReportVehicle(ReportVehicle $reportVehicle): self
+    {
+        if (!$this->reportVehicles->contains($reportVehicle)) {
+            $this->reportVehicles[] = $reportVehicle;
+            $reportVehicle->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReportVehicle(ReportVehicle $reportVehicle): self
+    {
+        if ($this->reportVehicles->removeElement($reportVehicle)) {
+            // set the owning side to null (unless already changed)
+            if ($reportVehicle->getUser() === $this) {
+                $reportVehicle->setUser(null);
+            }
+        }
 
         return $this;
     }

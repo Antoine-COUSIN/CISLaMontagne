@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ControlVehicles{% endblock %}
+
+{% block body %}
+    <h1>ControlVehicles</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ control_vehicle.id }}</td>
+            </tr>
+            <tr>
+                <th>OilLevel</th>
+                <td>{{ control_vehicle.oilLevel }}</td>
+            </tr>
+            <tr>
+                <th>RefreshFluidLevel</th>
+                <td>{{ control_vehicle.refreshFluidLevel }}</td>
+            </tr>
+            <tr>
+                <th>WashingFluidLevel</th>
+                <td>{{ control_vehicle.washingFluidLevel }}</td>
+            </tr>
+            <tr>
+                <th>FrontWireShape</th>
+                <td>{{ control_vehicle.frontWireShape }}</td>
+            </tr>
+            <tr>
+                <th>BackTireShape</th>
+                <td>{{ control_vehicle.backTireShape }}</td>
+            </tr>
+            <tr>
+                <th>BodyShape</th>
+                <td>{{ control_vehicle.bodyShape }}</td>
+            </tr>
+            <tr>
+                <th>IndoorShape</th>
+                <td>{{ control_vehicle.indoorShape }}</td>
+            </tr>
+            <tr>
+                <th>FrontWiper</th>
+                <td>{{ control_vehicle.frontWiper }}</td>
+            </tr>
+            <tr>
+                <th>BackWiper</th>
+                <td>{{ control_vehicle.backWiper }}</td>
+            </tr>
+            <tr>
+                <th>FrontLighting</th>
+                <td>{{ control_vehicle.frontLighting }}</td>
+            </tr>
+            <tr>
+                <th>BackLighting</th>
+                <td>{{ control_vehicle.backLighting }}</td>
+            </tr>
+            <tr>
+                <th>Annotation</th>
+                <td>{{ control_vehicle.annotation }}</td>
+            </tr>
+            <tr>
+                <th>DateControl</th>
+                <td>{{ control_vehicle.dateControl ? control_vehicle.dateControl|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('control_vehicles_index') }}">back to list</a>
+
+    <a href="{{ path('control_vehicles_edit', {'id': control_vehicle.id}) }}">edit</a>
+
+    {{ include('control_vehicles/_delete_form.html.twig') }}
+{% endblock %}

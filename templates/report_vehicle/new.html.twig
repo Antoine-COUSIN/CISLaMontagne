@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ReportVehicle{% endblock %}
+
+{% block body %}
+    <h1>Create new ReportVehicle</h1>
+
+    {{ include('report_vehicle/_form.html.twig') }}
+
+    <a href="{{ path('report_vehicle_index') }}">back to list</a>
+{% endblock %}
