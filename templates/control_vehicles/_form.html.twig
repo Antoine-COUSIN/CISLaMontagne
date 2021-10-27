@@ -1,4 +1,32 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="controlInfos">
+        {{ form_row(form.vehicles) }}
+        {{ form_row(form.dateControl) }}
+    </div>
+
+    <div class="controlContent">
+        <div class="first-line">
+            {{ form_row(form.oilLevel) }}
+            {{ form_row(form.refreshFluidLevel) }}
+            {{ form_row(form.washingFluidLevel) }}
+            {{ form_row(form.frontWireShape) }}
+            {{ form_row(form.backTireShape) }}
+            {{ form_row(form.bodyShape) }}
+        </div>
+
+        <div class="second-line">
+            {{ form_row(form.indoorShape) }}
+            {{ form_row(form.frontWiper) }}
+            {{ form_row(form.backWiper) }}
+            {{ form_row(form.frontLighting) }}
+            {{ form_row(form.backLighting) }}
+        </div>
+    </div>
+
+    <div class="controlAnnotations">
+        {{ form_row(form.annotation) }}
+    </div>
+    
+    
+    <button class="btn-primary">{{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}

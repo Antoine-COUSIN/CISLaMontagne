@@ -1,11 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseExtranet.html.twig' %}
 
 {% block title %}New ControlVehicles{% endblock %}
 
 {% block body %}
-    <h1>Create new ControlVehicles</h1>
+    <section id="newControlVehicle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Nouveau Contrôle</h2>
 
-    {{ include('control_vehicles/_form.html.twig') }}
+                    {{ include('control_vehicles/_form.html.twig') }}
 
-    <a href="{{ path('control_vehicles_index') }}">back to list</a>
+                    <a href="{{ path('control_vehicles_index') }}">Retour au menu précédent</a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

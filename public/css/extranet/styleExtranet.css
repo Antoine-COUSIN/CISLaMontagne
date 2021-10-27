@@ -13,6 +13,10 @@ body h2 {
   text-align: center;
 }
 
+body .modal {
+  color: #4b4b4b;
+}
+
 #principalNav {
   background-color: white;
   -webkit-transition: all 0.5s;
@@ -221,5 +225,124 @@ body h2 {
   content: "";
   margin: 5px auto;
   margin-bottom: 50px;
+}
+
+#newControlVehicle h2, #editControlVehicle h2 {
+  margin-top: 30px;
+}
+
+#newControlVehicle h2::after, #editControlVehicle h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 200px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 50px;
+}
+
+#newControlVehicle form, #editControlVehicle form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#newControlVehicle form .controlInfos, #editControlVehicle form .controlInfos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#newControlVehicle form .controlInfos div, #editControlVehicle form .controlInfos div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 15px;
+}
+
+#newControlVehicle form .controlInfos div div, #editControlVehicle form .controlInfos div div {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0px;
+}
+
+#newControlVehicle form .controlContent, #editControlVehicle form .controlContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#newControlVehicle form .controlContent .first-line, #editControlVehicle form .controlContent .first-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#newControlVehicle form .controlContent .first-line div, #editControlVehicle form .controlContent .first-line div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 15px;
+}
+
+#newControlVehicle form .controlContent .second-line, #editControlVehicle form .controlContent .second-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#newControlVehicle form .controlContent .second-line div, #editControlVehicle form .controlContent .second-line div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 15px;
+}
+
+#newControlVehicle form .controlAnnotations, #editControlVehicle form .controlAnnotations {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#newControlVehicle form .btn-primary, #editControlVehicle form .btn-primary {
+  width: 150px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+#newControlVehicle form .btn-danger, #editControlVehicle form .btn-danger {
+  width: 100px;
+  padding: 5px 0px;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=styleExtranet.css.map */

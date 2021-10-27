@@ -78,7 +78,7 @@ class ControlVehicles
     private $annotation;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dateControl;
 

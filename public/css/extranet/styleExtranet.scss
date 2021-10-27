@@ -16,6 +16,11 @@ body
     {
         text-align: center;
     }
+
+    .modal
+    {
+        color: rgb(75, 75, 75);
+    }
 }
 
 
@@ -275,5 +280,106 @@ body
         content: "";
         margin: 5px auto;
         margin-bottom: 50px;
+    }
+}
+
+//PAGE NEW/EDIT CONTROL VEHICLES=================================================================================
+#newControlVehicle, #editControlVehicle
+{
+    h2
+    {
+        margin-top: 30px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 200px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 50px;
+    }
+
+    form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .controlInfos
+        {
+            display: flex;
+            margin-bottom: 20px;
+            width: 100%;
+
+            div
+            {
+                display: flex;
+                flex-direction: column;
+                margin-right: 15px;
+
+                div
+                {
+                    flex-direction: row;
+                    margin: 0px;
+                }
+            }
+        }
+
+        .controlContent
+        {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            width: 100%;
+
+            .first-line
+            {
+                display: flex;
+                margin-bottom: 20px;
+
+                div
+                {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 15px;
+                }
+            }
+
+            .second-line
+            {
+                display: flex;
+
+                div
+                {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 15px;
+                }
+            }
+        }
+
+        .controlAnnotations
+        {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .btn-primary
+        {
+            width: 150px;
+            padding: 10px 0px;
+            border-radius: 5px;
+            margin-bottom: 12px;
+        }
+
+        .btn-danger
+        {
+            width: 100px;
+            padding: 5px 0px;
+            border-radius: 5px;
+        }
     }
 }

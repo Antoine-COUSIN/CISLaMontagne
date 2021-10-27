@@ -17,7 +17,7 @@ class ControlVehiclesController extends AbstractController
     public function index(ControlVehiclesRepository $controlVehiclesRepository): Response
     {
         return $this->render('control_vehicles/index.html.twig', [
-            'control_vehicles' => $controlVehiclesRepository->findAll(),
+            'control_vehicles' => $controlVehiclesRepository->findByLast(),
         ]);
     }
 

@@ -22,19 +22,16 @@ class ControlVehiclesRepository extends ServiceEntityRepository
     // /**
     //  * @return ControlVehicles[] Returns an array of ControlVehicles objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByLast()
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('c.dateControl', 'DESC')
+            ->setMaxResults(24)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?ControlVehicles
