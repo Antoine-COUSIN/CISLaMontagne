@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contactez-nous{% endblock %}
 
 {% block body %}
 
@@ -8,6 +8,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                {% for flashError in app.flashes('sendMessage') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flashError }}
+                    </div>
+                {% endfor %}
+
                 <div class="form-container">
                     <h2>Contactez-nous</h2>
 

@@ -1,12 +1,19 @@
 {% extends 'baseExtranet.html.twig' %}
 
-{% block title %}New ReportVehicle{% endblock %}
+{% block title %}Signalement véhicule{% endblock %}
 
 {% block body %}
     <section id="newReportVehicle">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+
+                    {% for flashError in app.flashes('messageReportVehicle') %}
+                        <div class="alert alert-success" role="alert">
+                            {{ flashError }}
+                        </div>
+                    {% endfor %}
+
                     <h2>Signaler un problème sur un véhicule</h2>
 
                     <a href="{{ path('report_vehicle_index') }}">Consulter les signalements</a>

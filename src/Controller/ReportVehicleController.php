@@ -30,25 +30,28 @@ class ReportVehicleController extends AbstractController
         $form = $this->createForm(ReportVehicleType::class, $reportVehicle);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($reportVehicle);
             $entityManager->flush();
 
             $email = (new TemplatedEmail())
-                ->from('reportVehicle@cisLaMontagne.fr')
+                ->from('No_Reply@servicevehicule.fr')
                 ->to('ac.acousin@free.fr')
                 ->subject('Signalement véhicule')
                 ->htmlTemplate('email/reportVehicle.html.twig')
                 ->context([
-                    // 'signalePar' => $form->get('user')->getData(),
-                    // 'vehicle' => $form->get('vehicles')->getData(),
+                    'prenom' =>$form->get('user')->getData()->getFirstName(),
+                    'nom' =>$form->get('user')->getData()->getLastName(),
+                    'vehicle' => $form->get('vehicles')->getData()->getNameVehicle(),
                     'description' => $form->get('reportVehicle')->getData(),
                 ]);
 
                 $mailer->send($email);
 
-            return $this->redirectToRoute('report_vehicle_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('messageReportVehicle', 'Le report à bien été effectué !');
+            return $this->redirectToRoute('report_vehicle_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('report_vehicle/new.html.twig', [
