@@ -41,7 +41,7 @@ h2
 //HEADER=========================================================================================================
 header
 {
-    background-image: url(../img/background/header-bg2.png);
+    background-image: url(../img/background/header-bgtest.png);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -162,6 +162,40 @@ header
                     // font-size: 40px;
                     margin: 0px;
                     padding: 0px;
+                }
+            }
+        }
+
+        .dropdown-menu
+        {
+            padding: 8px 0px;
+
+            .userProfileContainer
+            {
+                border-bottom: 1px solid rgb(210, 210, 210);
+                margin-bottom: 7px;
+                padding-bottom: 3px;
+            }
+
+            .userLogoutContainer
+            {
+                border-top: 1px solid rgb(210, 210, 210);
+                margin-top: 7px;
+                padding-top: 3px;
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+
+            li
+            {
+                padding: 0px 8px;
+
+                a
+                {
+                    text-transform: initial;
+                    text-decoration: none;
                 }
             }
         }
@@ -936,7 +970,7 @@ header
 
         img
         {
-            border-radius: 8px;
+            border-radius: 3px;
             box-shadow: 0px 0px 5px #646464;
         }
 

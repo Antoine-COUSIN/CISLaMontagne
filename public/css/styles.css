@@ -31,7 +31,7 @@ h2 {
 }
 
 header {
-  background-image: url(../img/background/header-bg2.png);
+  background-image: url(../img/background/header-bgtest.png);
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -133,6 +133,35 @@ header .topBarreContainer {
   border-radius: 50%;
   margin: 0px;
   padding: 0px;
+}
+
+#principalNav .user-dropdown .dropdown-menu {
+  padding: 8px 0px;
+}
+
+#principalNav .user-dropdown .dropdown-menu .userProfileContainer {
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 7px;
+  padding-bottom: 3px;
+}
+
+#principalNav .user-dropdown .dropdown-menu .userLogoutContainer {
+  border-top: 1px solid #d2d2d2;
+  margin-top: 7px;
+  padding-top: 3px;
+}
+
+#principalNav .user-dropdown .dropdown-menu .userLogoutContainer i {
+  margin-right: 5px;
+}
+
+#principalNav .user-dropdown .dropdown-menu li {
+  padding: 0px 8px;
+}
+
+#principalNav .user-dropdown .dropdown-menu li a {
+  text-transform: initial;
+  text-decoration: none;
 }
 
 #menu_turn_style {
@@ -852,7 +881,7 @@ header .topBarreContainer {
 }
 
 #engins .enginGlobalContainer img {
-  border-radius: 8px;
+  border-radius: 3px;
   -webkit-box-shadow: 0px 0px 5px #646464;
           box-shadow: 0px 0px 5px #646464;
 }
