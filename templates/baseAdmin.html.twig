@@ -33,8 +33,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
                             <a class="nav-link" aria-current="page" href="{{ path('home') }}">Accueil</a>
-                            <a class="nav-link" href="{{ path('nosMissions') }}">Nos missions</a>
-                            <a class="nav-link" href="{{ path('amicale_sp') }}">L'amicale des sapeurs-pompiers</a>
+                            <a class="nav-link" href="{{ path('page_missions') }}">Nos missions</a>
+                            <a class="nav-link" href="{{ path('page_amicale_sp') }}">L'amicale des sapeurs-pompiers</a>
                             <a class="nav-link" href="{{ path('golden_book_index') }}">Livre d'or</a>
                         </div>
 
@@ -48,8 +48,8 @@
                                         </a>
 
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a href="{{ path('extranet') }}">Extranet</a></li>
-                                            <li><a href="{{ path('admin') }}">Back-office</a></li>
+                                            <li><a href="{{ path('home_extranet') }}">Extranet</a></li>
+                                            <li><a href="{{ path('home_back_office') }}">Back-office</a></li>
                                             <li><a href="{{ path('app_logout') }}" style="color: red !important;"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
                                         </ul>
                                     </div>

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Missions{% endblock %}
+
+{% block body %}
+<section id="missions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Nos Missions</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos aliquid soluta vitae deserunt, iste minima, libero, non nostrum tempore enim beatae. Similique quibusdam odio, porro architecto repudiandae obcaecati unde temporibus sequi adipisci illo ex sapiente at iure incidunt laudantium, vel cum eaque. Fugiat, repellat? Fugit eligendi esse corporis rerum reprehenderit dolorem facere molestias maxime est? Labore eaque reiciendis consequatur magnam placeat nihil quasi iure corrupti exercitationem molestiae. Tenetur, neque. Et possimus placeat facere, aliquid eius temporibus quis architecto? Quos, libero, architecto quas voluptatibus dolores tempore necessitatibus iusto eaque assumenda odio mollitia asperiores ipsum reprehenderit! Placeat, dolorum delectus? Atque, fugit! Est doloremque tempora accusamus laboriosam earum sit, aliquid ipsam sed libero hic quidem possimus aspernatur culpa nobis aliquam esse rerum! Quia assumenda fugiat blanditiis, nostrum nisi aliquam nesciunt iusto nam natus officiis commodi, voluptatibus similique mollitia reiciendis accusantium porro voluptate iure omnis, repudiandae delectus? Accusamus consectetur totam eius doloribus nobis exercitationem quam odit facere odio iusto! Illo explicabo, sequi numquam reiciendis fugiat adipisci laboriosam doloremque, non rerum quaerat voluptate repellendus nisi at consequatur in tempora consequuntur aperiam maiores velit? Ipsam minus aut ratione fugit! Quidem tempora vitae error optio praesentium ipsam ipsum quasi dolorem voluptate eaque quo laboriosam quas veniam debitis assumenda asperiores aut aperiam natus officiis rerum, dignissimos impedit eos modi. Inventore beatae animi voluptate, odio quaerat deleniti, aliquid aspernatur quae vel esse iure. Ipsum quaerat totam laudantium, consequuntur, distinctio beatae quasi itaque illo debitis necessitatibus deserunt laborum pariatur ex exercitationem sit nostrum. Excepturi quidem iste sint veritatis non reiciendis, laboriosam perferendis nam, tempora, sequi a inventore porro vero? Iusto officiis magni ab laudantium illo repellendus quidem aut? Quis doloremque eius ipsum tempora ad molestias esse necessitatibus, quo, repellendus atque, eum eligendi recusandae dolor? Quia harum officia asperiores, dignissimos aut ipsum autem praesentium eligendi natus expedita dolorem maiores. Voluptatibus itaque inventore eaque aperiam qui nihil minus, suscipit, reprehenderit deserunt ipsam iure tenetur quos veniam officiis, molestias quo ea repellendus laboriosam omnis. Earum, ut id! Nostrum quaerat corporis itaque, aliquid sed magni libero quas recusandae error repellendus possimus alias praesentium rem blanditiis quo laborum inventore tenetur ipsam ea ut provident quasi enim voluptatibus repudiandae? Atque quidem expedita, sit impedit nesciunt vel optio in nihil. Facilis velit sunt repudiandae. Fuga officia, rerum aspernatur sapiente suscipit repudiandae deserunt quos veniam amet inventore praesentium qui fugit repellendus possimus harum architecto totam provident officiis quisquam aliquid natus! Officiis adipisci nemo recusandae facere voluptatem at? Reiciendis consectetur hic soluta, explicabo id, odit odio eos culpa aperiam nulla, suscipit possimus beatae inventore quidem illo quas omnis eveniet. Molestias, commodi. Optio, nobis aut suscipit maiores odit commodi reiciendis sed? Architecto fugiat consequatur ea similique omnis dolorem, dolores iusto aliquid perspiciatis nam laborum vero, debitis necessitatibus distinctio sit quam quo eveniet ut dolor modi enim aliquam neque rerum possimus! Quibusdam possimus, unde alias deserunt aut ducimus autem incidunt cum omnis ea est vero, distinctio ipsam. Odio animi eaque temporibus, consequuntur accusamus illo nihil sed, ab itaque a dignissimos nisi aspernatur, qui corporis praesentium tempore. Ipsum cupiditate laboriosam eius beatae?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="engins">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Nos engins</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="enginGlobalContainer">
+                    {% for engin in engins %}
+                        <article class="enginArticle">
+                            <div class="pictureContainer cold-md-6">
+                                <img src="{{ asset('img/upload/engins/' ~ engin.enginPicture) }}" alt="">
+                            </div>
+
+                            <div class="descriptContainer cold-md-6">
+                                <h3>{{ engin.title }}</h3>
+                                <p>{{ engin.text|raw }}</p>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <nav id="navBackOffice" class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid">
-                                <a href="{{ path('home_back_office') }}"><h3>Menu<br>Back-Office</h3></a>
+                                <a href="{{ path('admin') }}"><h3>Menu<br>Back-Office</h3></a>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
@@ -24,7 +24,6 @@
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                                 <li><a class="dropdown-item" href="{{ path('station_core_picture_index') }}">Photo groupe</a></li>
                                                 <li><a class="dropdown-item" href="{{ path('chief_speech_index') }}">Encart chef de centre</a></li>
-                                                <li><a class="dropdown-item" href="{{ path('station_story_index') }}">Histoire de la caserne</a></li>
                                             </ul>
                                         </li>
 
@@ -33,7 +32,6 @@
                                                 Nos Missions
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                <li><a class="dropdown-item" href="{{ path('missions_index') }}">Missions</a></li>
                                                 <li><a class="dropdown-item pageEnCours" href="{{ path('engins_index') }}">Engins</a></li>
                                             </ul>
                                         </li>
