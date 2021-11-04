@@ -828,6 +828,63 @@ header
     }
 }
 
+//PAGE 18/112====================================================================================================
+
+#UrgencyPhone
+{
+    h2
+    {
+        margin-top: 25px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 250px;
+        content: "";
+        margin: 5px auto;
+        // margin-bottom: 40px;
+    }
+
+    .row
+    {
+        margin-bottom: 50px;
+    }
+
+    .img_18_112
+    {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        img
+        {
+            margin-right: 50px;
+            height: 250px;
+        }
+    }
+
+    .img_cta
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img
+        {
+            border-radius: 3px;
+        }
+    }
+
+    .img_coeur
+    {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 //SECTION STATIONPRESENTATION====================================================================================
 #stationPresentation
 {
