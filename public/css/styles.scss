@@ -885,6 +885,75 @@ header
     }
 }
 
+//PAGE RECRUITEMENT==============================================================================================
+
+#recruitement
+{
+    h2
+    {
+        margin-top: 25px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 175px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 40px;
+    }
+
+    form
+    {
+        margin-bottom: 50px;
+
+        .form-contact
+        {
+            div
+            {
+                display: flex;
+                flex-direction: column;
+
+                label
+                {
+                    margin-bottom: 8px;
+                    color: rgb(75, 75, 75) !important;
+                    font-weight: bold;
+                }
+
+                input
+                {
+                    width: 300px;
+                    margin-bottom: 15px;
+                }
+
+                #cke_contact_message
+                {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .submit
+        {  
+            margin-top: 25px;
+            
+            div
+            {
+                display: flex;
+                justify-content: center;
+            }
+
+            button
+                {
+                    width: 200px;
+                }
+        }
+    }
+}
+
 //SECTION STATIONPRESENTATION====================================================================================
 #stationPresentation
 {

@@ -3,17 +3,44 @@
 {% block title %}C.I.S La MONTAGNE{% endblock %}
 
 {% block body %}
-<section id="rgpd">
+<section id="recruitement">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Rejoignez-nous</h2>
+                <img class="img-fluid" src="{{ asset('img/divers/recruitement2.jpg') }}" alt="">
+            </div>
+
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-fluid" src="{{ asset('img/divers/recruitement1.jpg') }}" alt="">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
+                <h2>Rejoignez-nous !</h2>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                {{ form_start(form) }}
+
+                    <div class="form-contact">
+                        {{ form_row(form.firstname) }}
+                        {{ form_row(form.lastname) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.message) }}
+                    </div>
+
+                    <div class="submit">
+                        {{ form_row(form.Envoyer) }}
+                    </div>
+
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

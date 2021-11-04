@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Form\RecruitementType;
 use App\Repository\EnginsRepository;
 use App\Repository\AmicaleNewsRepository;
 use App\Repository\ChiefSpeechRepository;
@@ -57,18 +58,20 @@ class HomeController extends AbstractController
     }
 
     #[Route('/rgpd', name: 'rgpd')]
-    public function rgpd(EnginsRepository $enginsRepository): Response
+    public function rgpd(): Response
     {
-        return $this->render('home/rgpd.html.twig', [
-            'engins' => $enginsRepository->findAll(),
-        ]);
+        return $this->render('home/rgpd.html.twig');
     }
 
     #[Route('/recruitement', name: 'recruitement')]
-    public function recruitement(EnginsRepository $enginsRepository): Response
+    public function recruitement(Request $request): Response
     {
+        $form = $this->createForm(RecruitementType::class);
+
+        $contact = $form->handleRequest($request);
+
         return $this->render('home/recruitement.html.twig', [
-            'engins' => $enginsRepository->findAll(),
+            'form' => $form->createView(),
         ]);
     }
 

@@ -820,6 +820,66 @@ header .topBarreContainer {
           justify-content: center;
 }
 
+#recruitement h2 {
+  margin-top: 25px;
+}
+
+#recruitement h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 175px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 40px;
+}
+
+#recruitement form {
+  margin-bottom: 50px;
+}
+
+#recruitement form .form-contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#recruitement form .form-contact div label {
+  margin-bottom: 8px;
+  color: #4b4b4b !important;
+  font-weight: bold;
+}
+
+#recruitement form .form-contact div input {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#recruitement form .form-contact div #cke_contact_message {
+  margin-bottom: 15px;
+}
+
+#recruitement form .submit {
+  margin-top: 25px;
+}
+
+#recruitement form .submit div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#recruitement form .submit button {
+  width: 200px;
+}
+
 #stationPresentation .col-md-3 {
   padding: 0px !important;
 }
