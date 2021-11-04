@@ -51,4 +51,12 @@ class HomeController extends AbstractController
             'engins' => $enginsRepository->findAll(),
         ]);
     }
+
+    #[Route('/rgpd', name: 'rgpd')]
+    public function rgpd(EnginsRepository $enginsRepository): Response
+    {
+        return $this->render('home/rgpd.html.twig', [
+            'engins' => $enginsRepository->findAll(),
+        ]);
+    }
 }
