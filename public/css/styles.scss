@@ -1175,7 +1175,7 @@ header
 }
 
 //FOOTER=========================================================================================================
-footer
+.footer-laptop
 {
     color: white;
     background-color: rgb(99, 99, 99);
@@ -1189,34 +1189,36 @@ footer
 
     .central-footer
     {
+        // border: 1px solid red;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        .bloc-adress
+        .maps
         {
             display: flex;
-
-            .maps
-            {
-                margin-left: 110px;
-            }
+            justify-content: center;
         }
 
         .bloc-mentions-legales
         {
+            // border: 1px solid green;
+            display: flex;
+            justify-content: center;
             a
             {
+                // border: 1px blueviolet solid;
                 color: white;
                 text-decoration: none;
-                padding: 0px 20px;
-                margin-right: -5px;
+                padding: 0px 15px;
+                // margin-right: -5px;
             }
 
             .border-right
             {
                 border-right: 1px solid white;
+                // border: 1px blueviolet solid;
             }
         }
     }
@@ -1239,6 +1241,11 @@ footer
             }
         }
     }
+}
+
+.footer-mobile
+{
+    display: none;
 }
 
 //RESPONSIVE===================================================================================================
@@ -1269,6 +1276,90 @@ footer
         top: 100%;
         left: -85px;
         margin-top: .125rem;
+    }
+}
+
+@media screen and (max-width: 995px)
+{
+    .footer-laptop
+    {
+        display: none;
+    }
+
+    .footer-mobile
+    {
+        display: block;
+        color: white;
+        background-color: rgb(99, 99, 99);
+        // height: 600px;
+        padding: 15px 0px;
+
+        .logo-container
+        {
+            display: flex;
+            justify-content: center;
+
+            .logo-footer
+            {
+                height: 200px;
+            }
+        }
+
+        .attachement-container
+        {
+            margin-top: 15px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .adress
+        {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .maps
+        {
+            margin-top: 15px;
+        }
+
+        li
+        {
+            list-style: none;
+
+            a
+            {
+                color: white;
+                text-decoration: none;
+            }
+
+            i
+            {
+                margin-right: 8px;
+            }
+        }
+
+        .bloc-mentions-legales
+        {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0px 15px;
+            }
+
+            .border-right
+            {
+                border-right: 1px solid white;
+            }
+        }
     }
 }
 

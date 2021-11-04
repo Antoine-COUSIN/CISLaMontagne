@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
 use App\Repository\EnginsRepository;
 use App\Repository\AmicaleNewsRepository;
 use App\Repository\ChiefSpeechRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Repository\AmicaleDescriptRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\StationCorePictureRepository;
@@ -58,5 +62,55 @@ class HomeController extends AbstractController
         return $this->render('home/rgpd.html.twig', [
             'engins' => $enginsRepository->findAll(),
         ]);
+    }
+
+    #[Route('/recruitement', name: 'recruitement')]
+    public function recruitement(EnginsRepository $enginsRepository): Response
+    {
+        return $this->render('home/recruitement.html.twig', [
+            'engins' => $enginsRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/urgency_phone', name: 'urgency_phone')]
+    public function urgency_phone(): Response
+    {
+        return $this->render('home/urgency_phone.html.twig', [
+            'controller_name' => 'UrgencyPhoneController',
+        ]);
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(Request $request, MailerInterface $mailer): Response
+    {
+        $form = $this->createForm(ContactType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('ac.acousin@free.fr')
+                ->subject('contact depuis le site caserne')
+                ->htmlTemplate('email/contact.html.twig')
+                ->context([
+                    'prenom' => $contact->get('firstname')->getData(),
+                    'nom' => $contact->get('lastname')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'sujet' => $contact->get('subject')->getData(),
+                    'message' => $contact->get('message')->getData(),
+                ]);
+
+                $mailer->send($email);
+
+            $this->addFlash('sendMessage', 'Message envoyé');
+            return $this->redirectToRoute('contact');
+        }
+
+        return $this->render('home/contact.html.twig', [
+            'form' => $form->createView(),
+        ])
+        ;
     }
 }

@@ -146,7 +146,7 @@
 
         {% block body %}{% endblock %}
 
-        <footer>
+        <footer class="footer-laptop">
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">
@@ -155,23 +155,29 @@
         
                     <div class="col-md-8">
                         <div class="central-footer">
-                            <div class="bloc-adress">
-                                <div class="adress">
-                                    <h5>Centre d'incendie et de secours de La Montagne</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Centre d'Incendie et de Secours de La Montagne</h5>
                                     <p>189 route de Bouguenais,<br>
-                                    44620 LA MONTAGNE<br>
-                                    Tél: 02.40.65.84.97</p>
+                                        44620 LA MONTAGNE<br>
+                                        Tél: 02.40.65.84.97
+                                    </p>
                                 </div>
-
-                                <div class="maps">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.7129950532326!2d-1.6881861621356569!3d47.18944132986077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805951094df9da1%3A0xeab34530803413fe!2sCaserne%20de%20la%20Montagne!5e1!3m2!1sfr!2sfr!4v1635207152872!5m2!1sfr!2sfr" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <div class="col-md-6">
+                                    <div class="maps">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.7129950532326!2d-1.6881861621356569!3d47.18944132986077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805951094df9da1%3A0xeab34530803413fe!2sCaserne%20de%20la%20Montagne!5e1!3m2!1sfr!2sfr!4v1635207152872!5m2!1sfr!2sfr" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="bloc-mentions-legales">
-                                <a class="border-right" href="">Plan du site</a>
-                                <a class="border-right" href="{{ path('rgpd') }}">Mentions légales et confidentialité</a>
-                                <a href="http://www.cosinus-sa.fr">Réalisation : COSINUS-SA webcreation</a>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bloc-mentions-legales">
+                                        <a class="border-right" href="">Plan du site</a>
+                                        <a class="border-right" href="{{ path('rgpd') }}">Mentions légales et confidentialité</a>
+                                        <a href="http://www.cosinus-sa.fr">Réalisation : COSINUS-SA</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,11 +187,63 @@
                             <ul>
                                 <li><a href="{{ path('app_login') }}"><i class="fas fa-lock"></i>Accès réservé</a></li>
                                 <li><a class="border-right" href="{{ path('contact') }}"><i class="fas fa-envelope-open-text"></i>Contactez-nous</a></li>
+                                <li><a href="{{ path('recruitement') }}"><i class="fas fa-pencil-alt"></i>Rejoignez-Nous!</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </footer>
+
+        <footer class="footer-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="logo-container">
+                            <img class="logo-footer" src="{{ asset('img/logo-cis.png') }}" alt="CIS la Montagne">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="adress">
+                            <h5>Centre d'Incendie et de Secours de La Montagne</h5>
+                            <p>189 route de Bouguenais,<br>
+                                44620 LA MONTAGNE<br>
+                                Tél: 02.40.65.84.97
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="attachement-container">
+                            <ul>
+                                <li><a href="{{ path('app_login') }}"><i class="fas fa-lock"></i>Accès réservé</a></li>
+                                <li><a class="border-right" href="{{ path('contact') }}"><i class="fas fa-envelope-open-text"></i>Contactez-nous</a></li>
+                                <li><a href="{{ path('recruitement') }}"><i class="fas fa-pencil-alt"></i>Rejoignez-Nous!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <div class="maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.7129950532326!2d-1.6881861621356569!3d47.18944132986077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805951094df9da1%3A0xeab34530803413fe!2sCaserne%20de%20la%20Montagne!5e1!3m2!1sfr!2sfr!4v1635207152872!5m2!1sfr!2sfr" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bloc-mentions-legales">
+                            <a class="border-right" href="">Plan du site</a>
+                            <a class="border-right" href="{{ path('rgpd') }}">Mentions légales et confidentialité</a>
+                            <a href="http://www.cosinus-sa.fr">Réalisation : COSINUS-SA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </footer>
 
         <script type="text/javascript" src="{{ asset('js/navbarscroll.js') }}"></script>
