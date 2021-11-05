@@ -962,6 +962,12 @@ header
         padding: 0px !important;
     }
 
+    .cis-descript
+    {
+        margin-top: 15px;
+        text-align: justify;
+    }
+
     h2::after
     {
         display: block;
@@ -1039,6 +1045,27 @@ header
     {
         max-width: 400px;
     }
+
+    .img-content
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+
+    .text-content
+    {
+        text-align: justify;
+        display: flex;
+        align-items: center;
+    }
+
+    .stair_raice
+    {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 //SECTION STATION STORY==========================================================================================
@@ -1067,6 +1094,27 @@ header
     p
     {
         text-align: justify;
+    }
+
+    .img-content
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+
+    .text-content
+    {
+        text-align: justify;
+        display: flex;
+        align-items: center;
+    }
+
+    .textimg-content
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
