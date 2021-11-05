@@ -1018,19 +1018,46 @@ header
     }
 }
 
-//SECTION STATION STORY==========================================================================================
+//SECTION STATION VALUE==========================================================================================
 
-#stationStory
+#stationValue
 {
-    padding: 50px 0px;
-
 
     h2::after
     {
         display: block;
         height: 2px;
         background-color: rgb(241, 78, 56);
-        width: 250px;
+        width: 125px;
+        content: "";
+        margin: 5px auto;
+        margin-bottom: 30px;
+        
+    }
+
+    img
+    {
+        max-width: 400px;
+    }
+}
+
+//SECTION STATION STORY==========================================================================================
+
+#stationStory
+{
+    padding: 50px 0px;
+
+    img
+    {
+        max-width: 300px;
+    }
+
+    h2::after
+    {
+        display: block;
+        height: 2px;
+        background-color: rgb(241, 78, 56);
+        width: 150px;
         content: "";
         margin: 5px auto;
         margin-bottom: 30px;

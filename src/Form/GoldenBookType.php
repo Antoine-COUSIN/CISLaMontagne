@@ -15,7 +15,7 @@ class GoldenBookType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre du commentaire'
+                'label' => 'Titre du commentaire :'
             ])
             ->add('text', CKEditorType::class, [
                 'label' => 'Votre commentaire :'
