@@ -7,24 +7,29 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
 
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
         <!-- ICONS -->
         <script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
 
         {% block stylesheets %}
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('css/extranet/styleExtranet.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
         {% endblock %}
 
         {% block javascripts %}
             
         {% endblock %}
     </head>
-
     <body>
-        <header id="extranet">
+        <header id="admin">
             <nav id="principalNav" class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="/">C.I.S LA MONTAGNE</a>
+                    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-cis.png') }}" alt="">C.I.S LA MONTAGNE</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -33,8 +38,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
                             <a class="nav-link" aria-current="page" href="{{ path('home') }}">Accueil</a>
-                            <a class="nav-link" href="{{ path('page_missions') }}">Nos missions</a>
-                            <a class="nav-link" href="{{ path('page_amicale_sp') }}">L'amicale des sapeurs-pompiers</a>
+                            <a class="nav-link" href="{{ path('nosMissions') }}">Nos missions</a>
+                            <a class="nav-link" href="{{ path('amicale_sp') }}">L'amicale des sapeurs-pompiers</a>
                             <a class="nav-link" href="{{ path('golden_book_index') }}">Livre d'or</a>
                         </div>
 
@@ -44,13 +49,26 @@
                                     <div class="dropdown">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <img class="profile-img" src="{{ asset('img/user.png') }}" />
-                                            
                                         </a>
+                                        {% set tableau = [] %}
+                                            {% for roleCenter in app.user.roleCenter %}
+                                                {% if roleCenter.nameRoleCenter not in tableau %}
+                                                    {% set tableau = tableau|merge([roleCenter.nameRoleCenter])%}
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            
+                                            
 
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a href="{{ path('home_extranet') }}">Extranet</a></li>
-                                            <li><a href="{{ path('home_back_office') }}">Back-office</a></li>
-                                            <li><a href="{{ path('app_logout') }}" style="color: red !important;"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
+                                            <li class="userProfileContainer">Bonjour,<br>{{ app.user.firstName }} {{ app.user.lastName }}<br></li>
+                                            <li><a href="{{ path('extranet') }}">Extranet</a></li>
+
+                                            {% if 'Chef de centre' in tableau or 'Adjoint moyens opérationnels' in tableau or 'Adjoint Moyens/Ressources/Infrastructures' in tableau or 'Bureau Amicale' in tableau or 'Admin' in tableau %}
+                                                <li><a href="{{ path('admin') }}">Back-office</a></li>
+                                            {% endif %}
+
+                                            <li class="userLogoutContainer"><a href="{{ path('app_logout') }}" style="color: red !important;"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
                                         </ul>
                                     </div>
                             </div>
@@ -61,9 +79,48 @@
             </nav>
         </header>
 
-        {% block body %}{% endblock %}
+        <div id="menu_turn_style" class="container-fluid">
+            <div class="menu_turn_style">
+                <input type="checkbox">
+                <a href="/">
+                    <img src="{{ asset('img/acces-rapide.png') }}">
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ path('app_login') }}">
+                            <img src="{{ asset('img/acces-reserve-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_1">Accès réservé</em>
+                    </li>
+                    <li>
+                        <a href="{{ path('urgency_phone') }}">
+                            <img src="{{ asset('img/numero-durgence-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_2">18/112</em>
+                    </li>
+                    <li>
+                        <a href="{{ path('contact') }}">
+                            <img src="{{ asset('img/contacter-nous-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_3">Contactez-nous</em>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <img src="{{ asset('img/attestation-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_4">Attestation d’intervention</em>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{{ asset('img/attestation-1.png') }}">
+                        </a>
+                        <em class="flying_bubble_info_5">Demande de saisine</em>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
 
-        <script type="text/javascript" src="{{ asset('js/navbarscroll.js') }}"></script>
+        {% block body %}{% endblock %}
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     </body>
