@@ -1133,6 +1133,33 @@ header
         margin: 5px auto;
         margin-bottom: 30px;
     }
+
+    img
+    {
+        width: 350px;
+    }
+
+    .missionsPresentation
+    {
+        margin-bottom: 40px;
+    }
+
+    .text_content
+    {
+        display: flex;
+        align-items: center;
+
+        p
+        {
+            text-align: justify;
+        }
+    }
+
+    .img_content
+    {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 //SECTION ENGINS=================================================================================================
@@ -1149,6 +1176,12 @@ header
         content: "";
         margin: 5px auto;
         margin-bottom: 30px;
+    }
+
+    .img-all-vehicles
+    {
+        width: auto;
+        margin-bottom: 50px;
     }
 
     .enginGlobalContainer
@@ -1171,6 +1204,7 @@ header
 
         img
         {
+            max-width: 400px;
             border-radius: 3px;
             box-shadow: 0px 0px 5px #646464;
         }
@@ -1178,6 +1212,9 @@ header
         .descriptContainer
         {
             padding: 0px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             
             p
             {
