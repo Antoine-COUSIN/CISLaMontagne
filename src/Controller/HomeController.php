@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Form\BugsTrackerType;
 use App\Form\RecruitementType;
 use App\Repository\EnginsRepository;
 use App\Repository\AmicaleNewsRepository;
@@ -138,10 +139,33 @@ class HomeController extends AbstractController
     }
 
     #[Route('/bugSignalement', name: 'bugSignalement')]
-    public function bugSignalement(): Response
+    public function bugSignalement(Request $request, MailerInterface $mailer): Response
     {
+        $form = $this->createForm(BugsTrackerType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $email = (new TemplatedEmail())
+                ->from('bugTracker@cislamontagne.fr')
+                ->to('ac.acousin@free.fr')
+                ->subject('Signalement d\'un bug CIS La Montagne')
+                ->htmlTemplate('email/bugTrackerMail.html.twig')
+                ->context([
+                    'bugPage' => $contact->get('bugPage')->getData(),
+                    'bugDescript' => $contact->get('bugDescript')->getData(),
+                ]);
+
+                $mailer->send($email);
+
+            $this->addFlash('sendMessage', 'Message envoyé');
+            return $this->redirectToRoute('bugSignalement');
+        }
+
         return $this->render('home/bugSignalement.html.twig', [
-            'controller_name' => 'UrgencyPhoneController',
-        ]);
+            'form' => $form->createView(),
+        ])
+        ;
     }
 }
