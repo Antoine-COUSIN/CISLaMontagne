@@ -821,6 +821,66 @@ header .topBarreContainer {
           justify-content: center;
 }
 
+#bugTracker-form h2 {
+  margin-top: 25px;
+}
+
+#bugTracker-form h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 175px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 40px;
+}
+
+#bugTracker-form form {
+  margin-bottom: 50px;
+}
+
+#bugTracker-form form .form-contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#bugTracker-form form .form-contact div label {
+  margin-bottom: 8px;
+  color: #4b4b4b !important;
+  font-weight: bold;
+}
+
+#bugTracker-form form .form-contact div input {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+#bugTracker-form form .form-contact div #cke_contact_message {
+  margin-bottom: 15px;
+}
+
+#bugTracker-form form .submit {
+  margin-top: 25px;
+}
+
+#bugTracker-form form .submit div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#bugTracker-form form .submit button {
+  width: 200px;
+}
+
 #recruitement h2 {
   margin-top: 25px;
 }
