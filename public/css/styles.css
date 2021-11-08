@@ -880,13 +880,17 @@ header .topBarreContainer {
   width: 200px;
 }
 
-#stationPresentation .col-md-3 {
+#stationPresentation .col-lg-3 {
   padding: 0px !important;
 }
 
 #stationPresentation .cis-descript {
   margin-top: 15px;
   text-align: justify;
+}
+
+#stationPresentation .cis-descript-mobile {
+  display: none;
 }
 
 #stationPresentation h2::after {
@@ -1416,6 +1420,12 @@ header .topBarreContainer {
 }
 
 @media screen and (max-width: 1399px) {
+  .stationPicture {
+    margin-top: 30px;
+  }
+  .stationPicture img {
+    margin-top: 30px;
+  }
   .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: 0px;
@@ -1431,7 +1441,25 @@ header .topBarreContainer {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  #stationPresentation {
+    margin-bottom: 50px;
+  }
+  #stationPresentation .stationPicture .cis-descript-mobile {
+    display: block;
+    text-align: justify;
+    padding: 0px 8px;
+    padding-top: 5px;
+  }
+  #stationPresentation .cis-descript {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 995px) {
+  #stationValue img {
+    max-width: 300px;
+  }
   .footer-laptop {
     display: none;
   }

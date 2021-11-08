@@ -957,7 +957,7 @@ header
 //SECTION STATIONPRESENTATION====================================================================================
 #stationPresentation
 {
-    .col-md-3
+    .col-lg-3
     {
         padding: 0px !important;
     }
@@ -966,6 +966,11 @@ header
     {
         margin-top: 15px;
         text-align: justify;
+    }
+
+    .cis-descript-mobile
+    {
+        display: none;
     }
 
     h2::after
@@ -1517,6 +1522,15 @@ header
 
 @media screen and (max-width: 1399px)
 {
+    .stationPicture
+    {
+        margin-top: 30px;
+
+        img{
+            margin-top: 30px;
+        }
+    }
+
     .dropdown-menu[data-bs-popper]
     {
         top: 100%;
@@ -1535,8 +1549,40 @@ header
     }
 }
 
+@media screen and (max-width: 1199px)
+{
+    #stationPresentation
+    {
+        margin-bottom: 50px;
+        .stationPicture
+        {
+            .cis-descript-mobile
+            {
+                display: block;
+                text-align: justify;
+                padding: 0px 8px;
+                padding-top: 5px;
+            }
+        }
+
+        .cis-descript
+        {
+            display: none;
+        }
+    }
+    
+}
+
 @media screen and (max-width: 995px)
 {
+    #stationValue
+    {
+        img
+        {
+            max-width: 300px;
+        }
+    }
+
     .footer-laptop
     {
         display: none;

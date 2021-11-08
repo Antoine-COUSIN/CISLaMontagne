@@ -5,8 +5,8 @@
 {% block body %}
 <section id="stationPresentation">
     <div class="container">
-        <div class="row">
-            <div class="col-md-9">
+        <div class="row container-station-presentation">
+            <div class="col-lg-9">
                 <div class="stationPicture">
                     <div class="row">
                         <div class="col-md-12">
@@ -21,10 +21,23 @@
                             {% endfor %}
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="cis-descript-mobile">
+                                Un centre d’Intervention et d’Incendie et de secours (C.I.S) comme celui de La Montagne est armé, 
+                                selon notre jargon, par une trentaine de Sapeur Pompiers Volontaires. Etre SPV est un engagement 
+                                citoyen reposant sur le volontariat. Par opposition aux sapeurs-pompiers professionnels, les SPV 
+                                ne sont pas rémunérés, mais seulement indemnisés. Etre pompier n’est pas leurs métiers, car elles 
+                                ou ils sont pâtissiers, commerçants mécaniciens, mais ces SPV ont tous pour passion de porter assistance 
+                                et défendre nos communes de La Montagne et de Saint Jean de Boiseau.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <div class="containerChiefSpeech">
                     {% for chief_speech in chief_speeches %}
                         <img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" width="100" alt="">
@@ -63,7 +76,7 @@
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/nos_valeurs/fiers_de_nos_valeurs.jpeg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/fiers_de_nos_valeurs.jpeg') }}" alt="">
             </div>
 
             <div class="col-md-7 text-content">
@@ -83,13 +96,13 @@
                 </p>
             </div>
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/nos_valeurs/porter_secours.jpeg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/porter_secours.jpeg') }}" alt="">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/nos_valeurs/equipe.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/equipe.jpg') }}" alt="">
             </div>
 
             <div class="col-md-7 text-content">
@@ -102,7 +115,7 @@
 
         <div class="row">
             <div class="col-md-12 stair_raice">
-                <img src="{{ asset('img/nos_valeurs/stair_raice.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/stair_raice.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -118,7 +131,7 @@
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/station_story/Anciens.jpeg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/station_story/Anciens.jpeg') }}" alt="">
             </div>
 
             <div class="col-md-7 text-content">
@@ -137,13 +150,13 @@
                 </p>
             </div>
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/station_story/Motopompe_action.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_action.jpg') }}" alt="">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img src="{{ asset('img/station_story/Motopompe_LMTGE.jpeg') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_LMTGE.jpeg') }}" alt="">
             </div>
 
             <div class="col-md-7 text-content">
@@ -153,7 +166,7 @@
                         pas aujourd’hui.
                     </p>
     
-                    <img src="{{ asset('img/station_story/Casque.jpeg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('img/station_story/Casque.jpeg') }}" alt="">
                 </div>
             </div>
         </div>
