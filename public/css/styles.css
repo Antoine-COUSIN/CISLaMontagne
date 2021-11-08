@@ -1323,6 +1323,20 @@ header .topBarreContainer {
   width: 200px;
 }
 
+#rgpd {
+  padding: 50px 0px;
+}
+
+#rgpd h2::after {
+  display: block;
+  height: 2px;
+  background-color: #f14e38;
+  width: 300px;
+  content: "";
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+
 .footer-laptop {
   color: white;
   background-color: #636363;
