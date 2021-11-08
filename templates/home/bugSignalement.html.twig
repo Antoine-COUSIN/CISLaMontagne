@@ -1,0 +1,42 @@
+{% extends 'baseExtranet.html.twig' %}
+
+{% block title %}Signaler un bug{% endblock %}
+
+{% block body %}
+
+<section id="contact-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for flashError in app.flashes('sendMessage') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flashError }}
+                    </div>
+                {% endfor %}
+
+                <div class="form-container">
+                    <h2>Signalez un bug</h2>
+
+                    {# {{ form_start(form) }}
+
+                        <div class="form-contact">
+                            {{ form_row(form.firstname) }}
+                            {{ form_row(form.lastname) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.subject) }}
+                            {{ form_row(form.message) }}
+                        </div>
+
+                        <div class="submit">
+                            {{ form_row(form.Envoyer) }}
+                        </div>
+
+                    {{ form_end(form) }} #}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

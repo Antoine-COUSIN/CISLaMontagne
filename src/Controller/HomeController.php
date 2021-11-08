@@ -136,4 +136,12 @@ class HomeController extends AbstractController
         ])
         ;
     }
+
+    #[Route('/bugSignalement', name: 'bugSignalement')]
+    public function bugSignalement(): Response
+    {
+        return $this->render('home/bugSignalement.html.twig', [
+            'controller_name' => 'UrgencyPhoneController',
+        ]);
+    }
 }

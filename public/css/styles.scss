@@ -348,6 +348,7 @@ header
         {
             top: 262.5%;
             left: 262.5%;
+            display: none;
         }
 
         input:checked ~ ul li:nth-child(5)
@@ -1551,6 +1552,17 @@ header
 
 @media screen and (max-width: 1199px)
 {
+    header
+    {
+        .navbar-nav
+        {
+            a
+            {
+                font-size: 15px !important;
+            }
+        }
+    }
+
     #stationPresentation
     {
         margin-bottom: 50px;
