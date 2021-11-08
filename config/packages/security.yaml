@@ -59,3 +59,4 @@ security:
         - { path: ^/amicale_news, roles: ROLE_ADMIN }
         - { path: ^/amicale_descript, roles: ROLE_ADMIN }
         - { path: ^/extranet, roles: ROLE_USER }
+        - { path: ^/bugSignalement, roles: ROLE_USER }
