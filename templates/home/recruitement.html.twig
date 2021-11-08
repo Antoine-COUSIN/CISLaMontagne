@@ -7,6 +7,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                {% for flashError in app.flashes('sendMessage') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flashError }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-12">
                 <img class="img-fluid" src="{{ asset('img/divers/recruitement2.jpg') }}" alt="">
             </div>
 

@@ -64,11 +64,31 @@ class HomeController extends AbstractController
     }
 
     #[Route('/recruitement', name: 'recruitement')]
-    public function recruitement(Request $request): Response
+    public function recruitement(Request $request, MailerInterface $mailer): Response
     {
         $form = $this->createForm(RecruitementType::class);
 
         $contact = $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $email = (new TemplatedEmail())
+            ->from($contact->get('email')->getData())
+            ->to('ac.acousin@free.fr')
+            ->subject('contact depuis le site caserne')
+            ->htmlTemplate('email/recruitementMail.html.twig')
+            ->context([
+                'prenom' => $contact->get('firstname')->getData(),
+                'nom' => $contact->get('lastname')->getData(),
+                'mail' => $contact->get('email')->getData(),
+                'message' => $contact->get('message')->getData(),
+            ]);
+
+            $mailer->send($email);
+
+            $this->addFlash('sendMessage', 'Message envoyé');
+            return $this->redirectToRoute('recruitement');
+        }
 
         return $this->render('home/recruitement.html.twig', [
             'form' => $form->createView(),
