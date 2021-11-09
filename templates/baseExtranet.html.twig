@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Le site web des Sapeurs-Pompiers de La Montagne vous permettra de mieux les connaîtres, de postuler mais également de les remercier">
+        <meta name="robots" content="index follow">
         <title>{% block title %}C.I.S La MONTAGNE{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
@@ -31,7 +32,7 @@
         <header id="extranet">
             <nav id="principalNav" class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-cis.avif') }}" type="image/AVIF" alt="">C.I.S LA MONTAGNE</a>
+                    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-cis.avif') }}" type="image/AVIF" alt="logo cis la montagne">C.I.S LA MONTAGNE</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -50,7 +51,7 @@
                             <div class="navbar-nav user-dropdown ms-auto">
                                     <div class="dropdown">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img class="profile-img" src="{{ asset('img/user.png') }}" />
+                                            <img class="profile-img" src="{{ asset('img/user.png') }}" alt="user" />
                                         </a>
                                         {% set tableau = [] %}
                                             {% for roleCenter in app.user.roleCenter %}
@@ -81,40 +82,41 @@
             </nav>
         </header>
 
-        <div id="menu_turn_style" class="container-fluid">
+        <div id="menu_turn_style" class="container-fluid" alt="Menu rapide icons">
             <div class="menu_turn_style">
-                <input type="checkbox">
+                <label style="display: none;" for="menu-rapide"></label>
+                <input id="menu-rapide" type="checkbox">
                 <a href="/">
-                    <img src="{{ asset('img/acces-rapide.png') }}">
+                    <img src="{{ asset('img/acces-rapide.png') }}" alt="Menu rapide icons">
                 </a>
                 <ul>
                     <li>
                         <a href="{{ path('app_login') }}">
-                            <img src="{{ asset('img/acces-reserve-1.png') }}">
+                            <img src="{{ asset('img/acces-reserve-1.png') }}" alt="Menu rapide icons">
                         </a>
                         <em class="flying_bubble_info_1">Accès réservé</em>
                     </li>
                     <li>
                         <a href="{{ path('urgency_phone') }}">
-                            <img src="{{ asset('img/numero-durgence-1.png') }}">
+                            <img src="{{ asset('img/numero-durgence-1.png') }}" alt="Menu rapide icons">
                         </a>
                         <em class="flying_bubble_info_2">18/112</em>
                     </li>
                     <li>
                         <a href="{{ path('contact') }}">
-                            <img src="{{ asset('img/contacter-nous-1.png') }}">
+                            <img src="{{ asset('img/contacter-nous-1.png') }}" alt="Menu rapide icons">
                         </a>
                         <em class="flying_bubble_info_3">Contactez-nous</em>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="{{ asset('img/attestation-1.png') }}">
+                            <img src="{{ asset('img/attestation-1.png') }}" alt="Menu rapide icons">
                         </a>
                         <em class="flying_bubble_info_4">Attestation d’intervention</em>
                     </li>
                     <li>
                         <a href="{{ path('bugSignalement') }}">
-                            <img style="border-radius: 50%;" src="{{ asset('img/bugs.png') }}">
+                            <img style="border-radius: 50%;" src="{{ asset('img/bugs.png') }}" alt="Menu rapide icons">
                         </a>
                         <em class="flying_bubble_info_5">Signaler un bug</em>
                     </li>

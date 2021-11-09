@@ -35,7 +35,7 @@
                     {% for amicale_news in amicale_news %}
                         <h3>{{ amicale_news.title }}</h3>
                         <p>{{ amicale_news.text|raw }}</p>
-                        <img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" alt="">
+                        <img src="{{ asset('img/upload/imgNews/' ~ amicale_news.img) }}" alt="amicale news">
                     {% endfor %}
                 </artcile>
             </div>
