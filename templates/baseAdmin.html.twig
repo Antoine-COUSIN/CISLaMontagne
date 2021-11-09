@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Le site web des Sapeurs-Pompiers de La Montagne vous permettra de mieux les connaîtres, de postuler mais également de les remercier">
         <title>{% block title %}C.I.S La MONTAGNE{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
@@ -10,8 +12,7 @@
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;500&display=swap" rel="stylesheet">
 
         <!-- ICONS -->
         <script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
@@ -29,7 +30,7 @@
         <header id="admin">
             <nav id="principalNav" class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-cis.png') }}" alt="">C.I.S LA MONTAGNE</a>
+                    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-cis.avif') }}" type="image/AVIF" alt="">C.I.S LA MONTAGNE</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
