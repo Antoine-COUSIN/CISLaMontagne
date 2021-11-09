@@ -30,6 +30,11 @@ h2 {
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url("../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf") format("truetype");
+}
+
 header {
   background-image: url(../img/background/header-bg.avif);
   background-position: center;
@@ -1536,6 +1541,9 @@ header .topBarreContainer {
 }
 
 @media screen and (max-width: 995px) {
+  header .home_title h1 {
+    font-size: 550%;
+  }
   #stationValue img {
     max-width: 300px;
   }
@@ -1614,6 +1622,50 @@ header .topBarreContainer {
   }
   .footer-mobile .bloc-mentions-legales .border-right {
     border-right: 1px solid white;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  header .topBarreContainer .topBarre .nav_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .topBarreContainer .topBarre .nav_content a {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  header .topBarreContainer .topBarre .socialNetwork {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header .home_title h1 {
+    font-size: 400%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  header .topBarreContainer .topBarre {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .topBarreContainer .topBarre .socialNetwork .socialNetwork-P {
+    margin-right: 4px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header .home_title h1 {
+    font-size: 250%;
   }
 }
 

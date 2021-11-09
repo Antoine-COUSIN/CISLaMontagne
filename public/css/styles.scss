@@ -38,6 +38,13 @@ h2
     font-weight: bold;
 }
 
+//FONTS==========================================================================================================
+
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+}
+
 //HEADER=========================================================================================================
 header
 {
@@ -1686,6 +1693,17 @@ header
 
 @media screen and (max-width: 995px)
 {
+    header
+    {
+        .home_title
+        {
+            h1
+            {
+                font-size: 550%;
+            }
+        }
+    }
+
     #stationValue
     {
         img
@@ -1771,6 +1789,87 @@ header
             .border-right
             {
                 border-right: 1px solid white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 770px)
+{
+    header
+    {
+        .topBarreContainer
+        {
+            .topBarre
+            {
+                .nav_content
+                {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    a
+                    {
+                        width: 100%;
+                        margin-bottom: 8px;
+                    }
+                }
+
+                .socialNetwork
+                {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    header
+    {
+        .home_title
+        {
+            h1
+            {
+                font-size: 400%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 520px)
+{
+    header
+    {
+        .topBarreContainer
+        {
+            .topBarre
+            {
+                flex-direction: column;
+
+                .socialNetwork
+                {
+                    .socialNetwork-P
+                    {
+                        margin-right: 4px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px)
+{
+    header
+    {
+        .home_title
+        {
+            h1
+            {
+                font-size: 250%;
             }
         }
     }
