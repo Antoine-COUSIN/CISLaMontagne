@@ -30,6 +30,10 @@ h2 {
   font-weight: bold;
 }
 
+body .tarteaucitronIcon {
+  display: none !important;
+}
+
 header {
   background-image: url(../img/background/header-bg.avif);
   background-position: center;

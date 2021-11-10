@@ -10,6 +10,13 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
 
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bootstrap-5/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
+        {% endblock %}
+
+        {% block javascripts %}
+
         <!-- ReCaptcha V3 -->
         <script src="https://www.google.com/recaptcha/api.js?render=6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3"></script>
         <script>
@@ -25,29 +32,42 @@
                 });
             }
         </script>
-
-        <!-- FONTS -->
-
+        
         <!-- ICONS -->
         <script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
 
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bootstrap-5/css/bootstrap.min.css')}}">
-            <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
-        {% endblock %}
+        <!-- Tarte au citron -->
+        <script type="text/javascript" src="{{asset('tarteaucitron/tarteaucitron.js')}}"></script>
+        <script>
+            tarteaucitron.init({
+                "privacyUrl": "", /* URL de la page de la politique de vie privée */
+                "hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
+                "cookieName": "tarteaucitron", /* Nom du Cookie */
+                "orientation": "middle", /* Position de la banniére (top - bottom) */
+                "showAlertSmall": false, /* Voir la bannière réduite en bas à droite */
+                "cookieslist": false, /* Voir la liste des cookies */
+                "adblocker": false, /* Voir une alerte si un bloqueur de publicités est détecté */
+                "AcceptAllCta": true, /* Voir le bouton accepter tout (quand highPrivacy est à true) */
+                "highPrivacy": true, /* Désactiver le consentement automatique */
+                "handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout interdire */
+                "removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
+                "moreInfoLink": false, /* Afficher le lien 'voir plus d'infos' */
+                "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé*/
+                "cookieDomain": '.my-multisite-domaine.fr', /* Cookie multisite */
+                "readmoreLink": '/cookiespolicy' /* Lien vers la page 'Lire plus' */
+            });
 
-        {% block javascripts %}
+            tarteaucitron.user.gtagUa = 'G-10R68LQL0G';
+            // tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+            tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+            (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+
+            tarteaucitron.user.recaptchaapi = '6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3';
+            (tarteaucitron.job = tarteaucitron.job || []).push('recaptcha');
+        </script>
             
         {% endblock %}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-10R68LQL0G"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-10R68LQL0G');
-        </script>
+        
     </head>
     <body>
         <header>

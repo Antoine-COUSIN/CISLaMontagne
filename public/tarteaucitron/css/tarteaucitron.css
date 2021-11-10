@@ -708,7 +708,7 @@ span#tarteaucitronDisclaimerAlert {
 #tarteaucitronIcon #tarteaucitronManager {
     color: transparent;
     cursor: pointer;
-    display: inline-block;
+    display: none !important;
     font-size: 11px !important;
     padding: 8px 10px 8px;
     border: none;
