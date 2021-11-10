@@ -10,6 +10,22 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
 
+        <!-- ReCaptcha V3 -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3"></script>
+        <script>
+            function onClick(e)
+            {
+                e.preventDefault();
+                grecaptcha.ready(function()
+                {
+                    grecaptcha.execute('6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3', {action: 'submit'}).then(function(token)
+                    {
+                        console.log('captacha');
+                    });
+                });
+            }
+        </script>
+        
         <!-- FONTS -->
 
         <!-- ICONS -->

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ContactType extends AbstractType
@@ -40,7 +41,10 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('message', CKEditorType::class, [
-                'label' => 'Votre message :'
+                'label' => 'Votre message :',
+                'attr' => [
+                    'class' => 'contact-form-control'
+                ]
             ])
             ->add('Envoyer', SubmitType::class, [
                 'attr' => [
