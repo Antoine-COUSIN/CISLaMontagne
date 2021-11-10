@@ -87,12 +87,35 @@ class EnginsController extends AbstractController
     /**
      * @Route("/{id}/edit", name="engins_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Engins $engin): Response
+    public function edit(Request $request, Engins $engin, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(EnginsType::class, $engin);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            /** Début du code à ajouter **/
+            $enginpicture = $form->get('enginpicture')->getData();
+            if ($enginpicture) {
+                $originalFilename = pathinfo($enginpicture->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$enginpicture->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $enginpicture->move(
+                        $this->getParameter('photos_directory').'/engins',
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant le téléchargement du fichier
+                }
+                // met à jour la propriété 'stationPicture' pour stocker le nom du fichier PDF
+                // au lieu de son contenu
+                $engin->setEnginPicture($newFilename);
+            }
+                /** Fin du code à ajouter **/
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('engins_index', [], Response::HTTP_SEE_OTHER);

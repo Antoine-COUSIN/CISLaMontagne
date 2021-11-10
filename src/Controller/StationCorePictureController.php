@@ -87,12 +87,35 @@ class StationCorePictureController extends AbstractController
     /**
      * @Route("/{id}/edit", name="station_core_picture_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, StationCorePicture $stationCorePicture): Response
+    public function edit(Request $request, StationCorePicture $stationCorePicture, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(StationCorePictureType::class, $stationCorePicture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            /** Début du code à ajouter **/
+            $stationPicture = $form->get('picture')->getData();
+            if ($stationPicture) {
+                $originalFilename = pathinfo($stationPicture->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$stationPicture->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $stationPicture->move(
+                        $this->getParameter('photos_directory').'/stationPicture',
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant le téléchargement du fichier
+                }
+                // met à jour la propriété 'stationPicture' pour stocker le nom du fichier PDF
+                // au lieu de son contenu
+                $stationCorePicture->setPicture($newFilename);
+            }
+                /** Fin du code à ajouter **/
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('station_core_picture_index', [], Response::HTTP_SEE_OTHER);
