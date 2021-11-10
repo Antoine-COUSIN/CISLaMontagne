@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             {% for station_core_picture in station_core_pictures %}
-                                <img class="img-fluid" src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" type="image/AVIF"  alt="Photo effectif C.I.S La Montagne">    
+                                <img class="img-fluid" src="{{ asset('img/upload/stationPicture/' ~ station_core_picture.picture) }}" type="image/AVIF" loading="lazy"  alt="Photo effectif C.I.S La Montagne">    
                             {% endfor %}
                         </div>
                     </div>
@@ -40,7 +40,7 @@
             <div class="col-lg-3">
                 <div class="containerChiefSpeech">
                     {% for chief_speech in chief_speeches %}
-                        <img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" type="image/AVIF" width="100" alt="Chef de C.I.S La Montagne">
+                        <img src="{{ asset('img/upload/chiefPicture/' ~ chief_speech.picture) }}" type="image/AVIF" loading="lazy" width="100" alt="Chef de C.I.S La Montagne">
                         <figcaption>{{ chief_speech.underTitle }}</figcaption>
                     {% endfor %}
                         <h3>Le mot du<br>chef de centre</h3>
@@ -76,7 +76,7 @@
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/nos_valeurs/fiers_de_nos_valeurs.avif') }}" type="image/AVIF" alt="Fiers de nos valeurs">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/fiers_de_nos_valeurs.avif') }}" type="image/AVIF" loading="lazy" alt="Fiers de nos valeurs">
             </div>
 
             <div class="col-md-7 text-content">
@@ -96,13 +96,13 @@
                 </p>
             </div>
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/nos_valeurs/porter_secours.avif') }}" type="image/AVIF" alt="porter_secours">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/porter_secours.avif') }}" type="image/AVIF" loading="lazy" alt="porter_secours">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/nos_valeurs/equipe.avif') }}" type="image/AVIF" alt="Equipe">
+                <img class="img-fluid" src="{{ asset('img/nos_valeurs/equipe.avif') }}" type="image/AVIF" loading="lazy" alt="Equipe">
             </div>
 
             <div class="col-md-7 text-content">
@@ -112,12 +112,6 @@
                 </p>
             </div>
         </div>
-
-        <!-- <div class="row">
-            <div class="col-md-12 stair_raice">
-                <img class="img-fluid" src="{{ asset('img/nos_valeurs/stair_raice.avif') }}" type="image/AVIF" alt="">
-            </div>
-        </div> -->
     </div>
 </section>
 
@@ -131,7 +125,7 @@
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/station_story/Anciens.avif') }}" type="image/AVIF" alt="AnciensPompiers">
+                <img class="img-fluid" src="{{ asset('img/station_story/Anciens.avif') }}" type="image/AVIF" loading="lazy" alt="AnciensPompiers">
             </div>
 
             <div class="col-md-7 text-content">
@@ -150,13 +144,13 @@
                 </p>
             </div>
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_action.avif') }}" type="image/AVIF" alt="Motopompe en action">
+                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_action.avif') }}" type="image/AVIF" loading="lazy" alt="Motopompe en action">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-5 img-content">
-                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_LMTGE.avif') }}" type="image/AVIF" alt="Motopompe La Montagne">
+                <img class="img-fluid" src="{{ asset('img/station_story/Motopompe_LMTGE.avif') }}" type="image/AVIF" loading="lazy" alt="Motopompe La Montagne">
             </div>
 
             <div class="col-md-7 text-content">
@@ -166,7 +160,7 @@
                         pas aujourd’hui.
                     </p>
     
-                    <img class="img-fluid" src="{{ asset('img/station_story/Casque.avif') }}" type="image/AVIF" alt="Casque pompier anciens">
+                    <img class="img-fluid" src="{{ asset('img/station_story/Casque.avif') }}" type="image/AVIF" loading="lazy" alt="Casque pompier anciens">
                 </div>
             </div>
         </div>

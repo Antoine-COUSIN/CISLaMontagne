@@ -40,10 +40,10 @@ h2
 
 //FONTS==========================================================================================================
 
-@font-face {
-    font-family: 'Crimson Pro';
-    src: url('../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
-}
+// @font-face {
+//     font-family: 'Crimson Pro';
+//     src: url('../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+// }
 
 //HEADER=========================================================================================================
 header
@@ -65,7 +65,7 @@ header
             color: rgb(241, 78, 56);
             font-size: 800%;
             font-weight: 500;
-            font-family: 'Crimson Pro', serif;
+            font-family: Georgia, serif;
             text-shadow: 0 0 10px rgb(51, 51, 51);
         }
     }

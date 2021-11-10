@@ -30,11 +30,6 @@ h2 {
   font-weight: bold;
 }
 
-@font-face {
-  font-family: 'Crimson Pro';
-  src: url("../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf") format("truetype");
-}
-
 header {
   background-image: url(../img/background/header-bg.avif);
   background-position: center;
@@ -53,7 +48,7 @@ header .home_title h1 {
   color: #f14e38;
   font-size: 800%;
   font-weight: 500;
-  font-family: 'Crimson Pro', serif;
+  font-family: Georgia, serif;
   text-shadow: 0 0 10px #333333;
 }
 
