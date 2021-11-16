@@ -19,7 +19,7 @@
                 <td>{{ pharma_stock.productsName }}</td>
                 <td>{{ pharma_stock.productsQuantity }}</td>
                 <td>
-                    <a href="{{ path('pharma_stock_edit', {'id': pharma_stock.id}) }}">edit</a>
+                    <a href="{{ path('pharma_stock_editReplenishment', {'id': pharma_stock.id}) }}">Modifier le stock</a>
                 </td>
             </tr>
         {% else %}

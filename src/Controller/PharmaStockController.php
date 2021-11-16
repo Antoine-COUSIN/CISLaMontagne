@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use App\Entity\PharmaStock;
 use App\Form\PharmaStockType;
+use App\Form\PharmaReplenishmentType;
 use App\Repository\PharmaStockRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/pharma_stock')]
 class PharmaStockController extends AbstractController
@@ -44,12 +45,14 @@ class PharmaStockController extends AbstractController
         $form = $this->createForm(PharmaStockType::class, $pharmaStock);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            // $pharmaStock->setProductsQuantity(0);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($pharmaStock);
             $entityManager->flush();
 
-            return $this->redirectToRoute('pharma_stock_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('pharma_stock_configService', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('pharma_stock/new.html.twig', [
@@ -87,10 +90,13 @@ class PharmaStockController extends AbstractController
     #[Route('/{id}/editReplenishment', name: 'pharma_stock_editReplenishment', methods: ['GET','POST'])]
     public function editReplenishment(Request $request, PharmaStock $pharmaStock): Response
     {
-        $form = $this->createForm(PharmaStockType::class, $pharmaStock);
+        $form = $this->createForm(PharmaReplenishmentType::class, $pharmaStock);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            var_dump($form);
+            die;
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('pharma_stock_index', [], Response::HTTP_SEE_OTHER);
