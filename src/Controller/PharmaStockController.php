@@ -10,18 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/pharma/stock')]
+#[Route('/pharma_stock')]
 class PharmaStockController extends AbstractController
 {
-    #[Route('/', name: 'pharma_stock_index', methods: ['GET'])]
-    public function index(PharmaStockRepository $pharmaStockRepository): Response
-    {
-        return $this->render('pharma_stock/index.html.twig', [
-            'pharma_stocks' => $pharmaStockRepository->findAll(),
-        ]);
-    }
-
-    #[Route('/', name: 'pharma_stock_configService', methods: ['GET'])]
+    #[Route('/configService', name: 'pharma_stock_configService', methods: ['GET'])] //Page accueil référencement des produits
     public function configService(PharmaStockRepository $pharmaStockRepository): Response
     {
         return $this->render('pharma_stock/configService.html.twig', [
@@ -29,7 +21,7 @@ class PharmaStockController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'pharma_stock_replenishment', methods: ['GET'])]
+    #[Route('/replenishment', name: 'pharma_stock_replenishment', methods: ['GET'])] //Page accueil gestion des stocks produit cotés service
     public function replenishment(PharmaStockRepository $pharmaStockRepository): Response
     {
         return $this->render('pharma_stock/replenishment.html.twig', [
@@ -37,10 +29,15 @@ class PharmaStockController extends AbstractController
         ]);
     }
 
+    #[Route('/', name: 'pharma_stock_index', methods: ['GET'])] //Page d'aceuil réarmement VSAV
+    public function index(PharmaStockRepository $pharmaStockRepository): Response
+    {
+        return $this->render('pharma_stock/index.html.twig', [
+            'pharma_stocks' => $pharmaStockRepository->findAll(),
+        ]);
+    }
 
-
-
-    #[Route('/new', name: 'pharma_stock_new', methods: ['GET','POST'])]
+    #[Route('/new', name: 'pharma_new_product', methods: ['GET','POST'])] //Page
     public function new(Request $request): Response
     {
         $pharmaStock = new PharmaStock();
@@ -61,16 +58,13 @@ class PharmaStockController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'pharma_stock_show', methods: ['GET'])]
-    public function show(PharmaStock $pharmaStock): Response
-    {
-        return $this->render('pharma_stock/show.html.twig', [
-            'pharma_stock' => $pharmaStock,
-        ]);
-    }
-
-
-
+    // #[Route('/{id}', name: 'pharma_stock_show', methods: ['GET'])]
+    // public function show(PharmaStock $pharmaStock): Response
+    // {
+    //     return $this->render('pharma_stock/show.html.twig', [
+    //         'pharma_stock' => $pharmaStock,
+    //     ]);
+    // }
 
     #[Route('/{id}/edit', name: 'pharma_stock_edit', methods: ['GET','POST'])]
     public function edit(Request $request, PharmaStock $pharmaStock): Response
@@ -90,7 +84,7 @@ class PharmaStockController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'pharma_stock_editReplenishment', methods: ['GET','POST'])]
+    #[Route('/{id}/editReplenishment', name: 'pharma_stock_editReplenishment', methods: ['GET','POST'])]
     public function editReplenishment(Request $request, PharmaStock $pharmaStock): Response
     {
         $form = $this->createForm(PharmaStockType::class, $pharmaStock);
@@ -107,9 +101,6 @@ class PharmaStockController extends AbstractController
             'form' => $form,
         ]);
     }
-
-
-
 
     #[Route('/{id}', name: 'pharma_stock_delete', methods: ['POST'])]
     public function delete(Request $request, PharmaStock $pharmaStock): Response

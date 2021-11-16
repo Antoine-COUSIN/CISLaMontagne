@@ -1,37 +1,32 @@
 {% extends 'baseExtranet.html.twig' %}
 
-{% block title %}PharmaStock index{% endblock %}
+{% block title %}Config. Service{% endblock %}
 
 {% block body %}
-    <h1>PharmaStock index</h1>
+    <h1>Ajout de nouveau produit</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>ProductsName</th>
-                <th>ProductsQuantity</th>
-                <th>actions</th>
+                <th>Produits</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for pharma_stock in pharma_stocks %}
             <tr>
-                <td>{{ pharma_stock.id }}</td>
                 <td>{{ pharma_stock.productsName }}</td>
-                <td>{{ pharma_stock.productsQuantity }}</td>
                 <td>
-                    <a href="{{ path('pharma_stock_show', {'id': pharma_stock.id}) }}">show</a>
-                    <a href="{{ path('pharma_stock_edit', {'id': pharma_stock.id}) }}">edit</a>
+                    <a href="{{ path('pharma_stock_edit', {'id': pharma_stock.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="2">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('pharma_stock_new') }}">Create new</a>
+    <a href="{{ path('pharma_new_product') }}">Ajouter un produit</a>
 {% endblock %}
