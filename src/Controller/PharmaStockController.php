@@ -73,9 +73,20 @@ class PharmaStockController extends AbstractController
     public function edit(Request $request, PharmaStock $pharmaStock): Response
     {
         $form = $this->createForm(PharmaStockType::class, $pharmaStock);
+        $stock = $pharmaStock->getProductsQuantity();
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            if ($pharmaStock->getProductsQuantity() >= 0)
+            {
+                $pharmaStock->setProductsQuantity($stock - $pharmaStock->getProductsQuantity());
+            } 
+            elseif ($pharmaStock->getProductsQuantity() < 0) 
+            {
+                $pharmaStock->setProductsQuantity($stock + $pharmaStock->getProductsQuantity());
+            }
+            
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('pharma_stock_index', [], Response::HTTP_SEE_OTHER);
@@ -91,15 +102,16 @@ class PharmaStockController extends AbstractController
     public function editReplenishment(Request $request, PharmaStock $pharmaStock): Response
     {
         $form = $this->createForm(PharmaReplenishmentType::class, $pharmaStock);
+        $stock = $pharmaStock->getProductsQuantity();
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            var_dump($form);
-            die;
+            $pharmaStock->setProductsQuantity($stock + $pharmaStock->getProductsQuantity());
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('pharma_stock_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('pharma_stock_replenishment', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('pharma_stock/editReplenishment.html.twig', [
