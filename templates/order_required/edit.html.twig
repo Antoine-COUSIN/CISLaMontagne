@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit OrderRequired{% endblock %}
+
+{% block body %}
+    <h1>Edit OrderRequired</h1>
+
+    {{ include('order_required/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('order_required_index') }}">back to list</a>
+
+    {{ include('order_required/_delete_form.html.twig') }}
+{% endblock %}

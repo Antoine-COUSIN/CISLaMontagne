@@ -61,14 +61,6 @@ class PharmaStockController extends AbstractController
         ]);
     }
 
-    // #[Route('/{id}', name: 'pharma_stock_show', methods: ['GET'])]
-    // public function show(PharmaStock $pharmaStock): Response
-    // {
-    //     return $this->render('pharma_stock/show.html.twig', [
-    //         'pharma_stock' => $pharmaStock,
-    //     ]);
-    // }
-
     #[Route('/{id}/edit', name: 'pharma_stock_edit', methods: ['GET','POST'])]
     public function edit(Request $request, PharmaStock $pharmaStock): Response
     {

@@ -102,12 +102,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $reportVehicles;
 
+    /**
+     * @ORM\OneToMany(targetEntity=OrderRequired::class, mappedBy="user")
+     */
+    private $orderRequireds;
+
     public function __construct()
     {               
         $this->roles = [self::ROLE_USER];
         $this->roleCenter = new ArrayCollection();
         $this->speciality = new ArrayCollection();
-        $this->reportVehicles = new ArrayCollection();     
+        $this->reportVehicles = new ArrayCollection();
+        $this->orderRequireds = new ArrayCollection();     
     }
 
     public function getId(): ?int
@@ -343,6 +349,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($reportVehicle->getUser() === $this) {
                 $reportVehicle->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OrderRequired[]
+     */
+    public function getOrderRequireds(): Collection
+    {
+        return $this->orderRequireds;
+    }
+
+    public function addOrderRequired(OrderRequired $orderRequired): self
+    {
+        if (!$this->orderRequireds->contains($orderRequired)) {
+            $this->orderRequireds[] = $orderRequired;
+            $orderRequired->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderRequired(OrderRequired $orderRequired): self
+    {
+        if ($this->orderRequireds->removeElement($orderRequired)) {
+            // set the owning side to null (unless already changed)
+            if ($orderRequired->getUser() === $this) {
+                $orderRequired->setUser(null);
             }
         }
 

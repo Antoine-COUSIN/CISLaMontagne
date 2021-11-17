@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OrderRequired index{% endblock %}
+
+{% block body %}
+    <h1>OrderRequired index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>OrderDescript</th>
+                <th>OrderDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_required in order_requireds %}
+            <tr>
+                <td>{{ order_required.id }}</td>
+                <td>{{ order_required.orderDescript }}</td>
+                <td>{{ order_required.orderDate ? order_required.orderDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('order_required_show', {'id': order_required.id}) }}">show</a>
+                    <a href="{{ path('order_required_edit', {'id': order_required.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('order_required_new') }}">Create new</a>
+{% endblock %}
