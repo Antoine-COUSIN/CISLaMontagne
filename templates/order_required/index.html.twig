@@ -8,30 +8,31 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>OrderDescript</th>
-                <th>OrderDate</th>
+                <th>Demandeur</th>
+                <th>Demande</th>
+                <th>Date de la demande</th>
+                <th>Status de la demande</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for order_required in order_requireds %}
             <tr>
-                <td>{{ order_required.id }}</td>
-                <td>{{ order_required.orderDescript }}</td>
-                <td>{{ order_required.orderDate ? order_required.orderDate|date('Y-m-d') : '' }}</td>
+                <td>{{ order_required.user.firstName }} {{ order_required.user.lastName }}</td>
+                <td>{{ order_required.orderDescript|raw }}</td>
+                <td>{{ order_required.orderDate ? order_required.orderDate|date('d/m/Y') : '' }}</td>
+                <td>{{ order_required.orderStatus.statusName }}</td>
                 <td>
-                    <a href="{{ path('order_required_show', {'id': order_required.id}) }}">show</a>
-                    <a href="{{ path('order_required_edit', {'id': order_required.id}) }}">edit</a>
+                    <a href="{{ path('order_required_edit', {'id': order_required.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('order_required_new') }}">Create new</a>
+    <a href="{{ path('order_required_new') }}">Effectuer une demande</a>
 {% endblock %}

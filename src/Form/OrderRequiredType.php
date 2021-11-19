@@ -13,16 +13,33 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OrderRequiredType extends AbstractType
 {
-
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
 
         $builder
-            // ->add('user')
+        ->add('userIdentity', TextType::class, [
+            'label' => 'Demandeur :',
+            'attr' => [
+                'readonly' => true,
+            ],
+            'data' => $options ['user_readonly_value'],
+            'mapped' => false
+        ])
+
+        // ->add('user', EntityType::class, [
+        //     'label' => 'S-P réalisant le signalement :',
+        //     'class' => User::class,
+        //     'choice_label' => function (User $user){
+        //         return $user->getfirstName() . ' ' . $user->getlastName();
+        //     },
+        //     // 'disabled' => true,
+        // ])
             ->add('orderDescript', CKEditorType::class, [
                 'label' => 'Description de la commande :'
             ])
@@ -44,6 +61,7 @@ class OrderRequiredType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => OrderRequired::class,
+            'user_readonly_value' => '',
         ]);
     }
 }

@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 #[Route('/order_required')]
 class OrderRequiredController extends AbstractController
@@ -22,13 +23,24 @@ class OrderRequiredController extends AbstractController
     }
 
     #[Route('/new', name: 'order_required_new', methods: ['GET','POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, Security $security): Response
     {
+        /** @var User $user */
+        $user = $this->getUser(); // Pour set la jointure
+
         $orderRequired = new OrderRequired();
-        $form = $this->createForm(OrderRequiredType::class, $orderRequired);
+        $form = $this->createForm(OrderRequiredType::class, $orderRequired, [
+                'user_readonly_value' => $user->getUserIdentity() // On imagine que cela provient de $user->getUserIdentity()
+            ]
+        ); 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $orderRequired = $form->getData(); // Récupération des valeurs mappées
+
+            $orderRequired->setUser($user); // Set de la jointure 
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($orderRequired);
             $entityManager->flush();
