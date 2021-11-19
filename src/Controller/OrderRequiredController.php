@@ -4,26 +4,36 @@ namespace App\Controller;
 
 use App\Entity\OrderRequired;
 use App\Form\OrderRequiredType;
+use App\Form\ReplaceOrderStatusType;
 use App\Repository\OrderRequiredRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/order_required')]
 class OrderRequiredController extends AbstractController
 {
     #[Route('/', name: 'order_required_index', methods: ['GET'])]
-    public function index(OrderRequiredRepository $orderRequiredRepository): Response
+    public function index(OrderRequiredRepository $orderRequiredRepository, Request $request): Response
     {
+        $replaceOrderStatus = new ReplaceOrderStatusType();
+        $form = $this->createForm( ReplaceOrderStatusType::class, $replaceOrderStatus);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            dd($form->getData());
+        }
+
         return $this->render('order_required/index.html.twig', [
             'order_requireds' => $orderRequiredRepository->findAll(),
         ]);
     }
 
     #[Route('/new', name: 'order_required_new', methods: ['GET','POST'])]
-    public function new(Request $request, Security $security): Response
+    public function new(Request $request): Response
     {
         /** @var User $user */
         $user = $this->getUser(); // Pour set la jointure

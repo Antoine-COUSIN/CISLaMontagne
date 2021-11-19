@@ -12,10 +12,11 @@ class ReplaceOrderStatusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('orderDescript')
-            ->add('orderDate')
-            ->add('user')
-            ->add('orderStatus')
+        ->add('orderStatus', EntityType::class, [
+            'label' => 'Status de la commande :',
+            'class' => OrderStatus::class,
+            'choice_label' => 'statusName',
+        ])
         ;
     }
 

@@ -1,4 +1,4 @@
-document.getElementById("formFruit").addEventListener("input", function(e) {
+document.getElementById("").addEventListener("input", function(e) {
     e.preventDefault();
 
     var data = new FormData(this);

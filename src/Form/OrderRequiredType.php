@@ -23,23 +23,14 @@ class OrderRequiredType extends AbstractType
     {
 
         $builder
-        ->add('userIdentity', TextType::class, [
-            'label' => 'Demandeur :',
-            'attr' => [
-                'readonly' => true,
-            ],
-            'data' => $options ['user_readonly_value'],
-            'mapped' => false
-        ])
-
-        // ->add('user', EntityType::class, [
-        //     'label' => 'S-P réalisant le signalement :',
-        //     'class' => User::class,
-        //     'choice_label' => function (User $user){
-        //         return $user->getfirstName() . ' ' . $user->getlastName();
-        //     },
-        //     // 'disabled' => true,
-        // ])
+            ->add('userIdentity', TextType::class, [
+                'label' => 'Demandeur :',
+                'attr' => [
+                    'readonly' => true,
+                ],
+                'data' => $options ['user_readonly_value'],
+                'mapped' => false
+            ])
             ->add('orderDescript', CKEditorType::class, [
                 'label' => 'Description de la commande :'
             ])
@@ -48,7 +39,6 @@ class OrderRequiredType extends AbstractType
                 'format' => 'dd MMMM yyyy',
                 'data' => new \DateTime("now")
             ])
-            
             ->add('orderStatus', EntityType::class, [
                 'label' => 'Status de la commande :',
                 'class' => OrderStatus::class,
