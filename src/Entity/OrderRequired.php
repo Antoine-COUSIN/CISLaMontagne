@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OrderRequiredRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRequiredRepository::class)
@@ -89,4 +90,9 @@ class OrderRequired
 
         return $this;
     }
+
+    // public function statusReplace()
+    // {
+
+    // }
 }

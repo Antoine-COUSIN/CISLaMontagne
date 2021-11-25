@@ -1,39 +1,39 @@
-, [
-            'user' => $user->getFirstName(), // On passe le user au formulaire
-        ] dans le Controller
+// #[Route('/{id}/status_change', name: 'status_change')]
+    // public function satusChange(OrderRequiredRepository $orderRequiredRepository, OrderStatusRepository $orderStatusRepository, Request $request, OrderRequired $orderRequired): Response
+    // {
+    //     if ($request->isXmlHttpRequest()) {
+    //         dd($request);
+    //       }
 
+    //     $form = $this->createForm(StatusChangeType::class, $orderRequired);
 
+    //     // if ($request->isXmlHttpRequest()) {
+    //     //     dd($request);
+    //     //   }
 
+    //     $form->handleRequest($request);
 
-        // private $security;
+    //     // if ($request->isXmlHttpRequest()) {
+    //     //     dd($request);
+    //     //   }
 
-// public function __construct(Security $security)
-// {
-//     $this->security = $security;
-// }
+    //     return $this->render('order_required/index.html.twig', [
+    //         'order_requireds' => $orderRequiredRepository->findAll(),
+    //         'order_statuses' => $orderStatusRepository->findAll(),
+    //     ]);
 
-public function buildForm(FormBuilderInterface $builder, array $options): void
-{
-    // $user = $this->security->getToken()->getUser();
-    // $user = $options['user'];
-
-    $builder
-        // ->add('user', EntityType::class, [
-        //     'label' => 'Initiatiateur de la commande :',
-        //     'class' => User::class,
-        //     'disabled' => true,
-        //     // 'query_builder' => function (EntityRepository $er) use ($user) {
-        //     //     return $er->createQueryBuilder('er')
-        //     //         ->where('er.user = :user')
-        //     //         ->setParameter('user', $user->getFirstName());
-        //     // },
-            
-        //     // 'query_builder' => function (EntityRepository $er) use ($user) {
-        //     //     return $er->createQueryBuilder('u')
-        //     //         ->where('u.user = :user')
-        //     //         ->setParameter('user', $user->firstName)
-        //     //     ;
-        //     // },
-        // ])
-        dans le type
         
+
+    //     // if ($form->isSubmitted() && $form->isValid()) {die;
+    //     //     $this->getDoctrine()->getManager()->flush();
+
+    //     //     return $this->redirectToRoute('order_required_index', [], Response::HTTP_SEE_OTHER);
+    //     // }
+
+    //     // return $this->renderForm('order_required/index.html.twig', [
+    //     //     'order_required' => $orderRequired,
+    //     //     'form' => $form,
+    //     // ]);
+    // }
+
+    

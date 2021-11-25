@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseExtranet.html.twig' %}
 
 {% block title %}OrderRequired index{% endblock %}
 
@@ -10,8 +10,8 @@
             <tr>
                 <th>Demandeur</th>
                 <th>Demande</th>
-                <th>Date de la demande</th>
-                <th>Status de la demande</th>
+                <th>Date demande</th>
+                <th>Status demande</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,9 +21,39 @@
                 <td>{{ order_required.user.firstName }} {{ order_required.user.lastName }}</td>
                 <td>{{ order_required.orderDescript|raw }}</td>
                 <td>{{ order_required.orderDate ? order_required.orderDate|date('d/m/Y') : '' }}</td>
-                <td>{{ order_required.orderStatus.statusName }}</td>
+
+                {% set userTable = [] %}
+                    {% for roleCenter in app.user.roleCenter %}
+                        {% if roleCenter.nameRoleCenter not in userTable %}
+                            {% set userTable = userTable|merge([roleCenter.nameRoleCenter])%}
+                        {% endif %}
+                    {% endfor %}
+                
+                {% if 'Chef de centre' in userTable or 'Adjoint moyens opérationnels' in userTable or 'Adjoint Moyens/Ressources/Infrastructures' in userTable or 'Admin' in userTable %}
+                    <!-- <td>Status accès formulaire</td> -->
+
+                    <td>
+                        <form class="statusChange">
+                            <select name="order_required_order_status" id="order_required[{{ order_required.orderStatus.statusName }}]">
+                                <option value="{{ order_required.orderStatus.id }}" selected="selected">{{ order_required.orderStatus.id }}. {{ order_required.orderStatus.statusName }}</option>
+                                {% for order_status in order_statuses %}
+                                    {% if order_status.id != order_required.orderStatus.id %}
+                                        <option value="{{ order_status.id }}">{{ order_status.id }}. {{ order_status.statusName }}</option>
+                                    {% endif %}
+                                    
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="id-target" value="{{ order_required.id }}">
+                        </form>
+                    </td>
+
+                {% else %}
+                    <td>{{ order_required.orderStatus.statusName }}</td>
+                {% endif %}
+                
                 <td>
-                    <a href="{{ path('order_required_edit', {'id': order_required.id}) }}">Modifier</a>
+                    <!-- <a href="{{ path('order_required_edit', {'id': order_required.id}) }}">Modifier</a> -->
+                    {{ include('order_required/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -35,4 +65,10 @@
     </table>
 
     <a href="{{ path('order_required_new') }}">Effectuer une demande</a>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/ajax/ajaxTraitementForOrderStatus.js') }}" defer></script>
+    
 {% endblock %}

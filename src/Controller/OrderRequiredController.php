@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\OrderStatus;
 use App\Entity\OrderRequired;
+use App\Form\StatusChangeType;
 use App\Form\OrderRequiredType;
-use App\Form\ReplaceOrderStatusType;
+use App\Repository\OrderStatusRepository;
 use App\Repository\OrderRequiredRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,20 +16,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/order_required')]
 class OrderRequiredController extends AbstractController
 {
-    #[Route('/', name: 'order_required_index', methods: ['GET'])]
-    public function index(OrderRequiredRepository $orderRequiredRepository, Request $request): Response
+    #[Route('/', name: 'order_required_index')]
+    public function index(OrderRequiredRepository $orderRequiredRepository, OrderStatusRepository $orderStatusRepository, Request $request): Response
     {
-        $replaceOrderStatus = new ReplaceOrderStatusType();
-        $form = $this->createForm( ReplaceOrderStatusType::class, $replaceOrderStatus);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) 
+        if ($request->request->count() > 0)
         {
-            dd($form->getData());
-        }
+            dump($request->request);
+            $data = $request->request->get('order_required_order_status');
+            $idTarget = $request->request->get('id-target');
+            dump($data);
+            dd($idTarget);
+
+            return $this->json(['code' => 200, 'Message' => 'Ca fonctionne bien'], 200 );
+        } 
+
+        // if ($request->isXmlHttpRequest()) {
+        //     dd($request->request);
+        //   }
+
 
         return $this->render('order_required/index.html.twig', [
             'order_requireds' => $orderRequiredRepository->findAll(),
+            'order_statuses' => $orderStatusRepository->findAll(),
         ]);
     }
 
@@ -64,17 +73,16 @@ class OrderRequiredController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'order_required_show', methods: ['GET'])]
-    public function show(OrderRequired $orderRequired): Response
-    {
-        return $this->render('order_required/show.html.twig', [
-            'order_required' => $orderRequired,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'order_required_edit', methods: ['GET','POST'])]
     public function edit(Request $request, OrderRequired $orderRequired): Response
     {
+        // if ($request->request->count() > 0)
+        // {
+        //     dd($request);
+        // }
+
+        dd($request);
+
         $form = $this->createForm(OrderRequiredType::class, $orderRequired);
         $form->handleRequest($request);
 
