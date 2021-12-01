@@ -159,9 +159,20 @@
                                             <h3>Commandes</h3>
                                         </div>
                                     </div>
+
+                                    {% set userTable = [] %}
+                                        {% for roleCenter in app.user.roleCenter %}
+                                            {% if roleCenter.nameRoleCenter not in userTable %}
+                                                {% set userTable = userTable|merge([roleCenter.nameRoleCenter])%}
+                                            {% endif %}
+                                        {% endfor %}
         
                                     <div class="category-content">
-                                        <p>Service indisponible sur la version bêta test</p>
+                                        {% if 'Chef de centre' in userTable or 'Adjoint moyens opérationnels' in userTable or 'Adjoint Moyens/Ressources/Infrastructures' in userTable or 'Admin' in userTable %}
+                                            <li><a href="{{ path('order_required_index') }}"><i class="fas fa-clipboard-list"></i></a><span>Gérer les commandes</span></li>
+                                        {% else %}
+                                            <li><a href="{{ path('order_required_index') }}"><i class="fas fa-shopping-bag"></i></a><span>Demander une commande</span></li>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

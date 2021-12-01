@@ -21,19 +21,17 @@ class OrderRequiredController extends AbstractController
     {
         if ($request->request->count() > 0)
         {
-            dump($request->request);
-            $data = $request->request->get('order_required_order_status');
+            $data = $request->request->get('order_required_order_status'); // Première intention avant de tenter de le mettre direct dans le setOrderStatus
             $idTarget = $request->request->get('id-target');
-            dump($data);
-            dd($idTarget);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $product = $entityManager->getRepository(OrderRequired::class)->find($idTarget);
+            $newStatus = $entityManager->getRepository(OrderStatus::class)->find($data);
+            $product->setOrderStatus($newStatus);
+            $entityManager->flush();
 
             return $this->json(['code' => 200, 'Message' => 'Ca fonctionne bien'], 200 );
         } 
-
-        // if ($request->isXmlHttpRequest()) {
-        //     dd($request->request);
-        //   }
-
 
         return $this->render('order_required/index.html.twig', [
             'order_requireds' => $orderRequiredRepository->findAll(),
@@ -76,13 +74,6 @@ class OrderRequiredController extends AbstractController
     #[Route('/{id}/edit', name: 'order_required_edit', methods: ['GET','POST'])]
     public function edit(Request $request, OrderRequired $orderRequired): Response
     {
-        // if ($request->request->count() > 0)
-        // {
-        //     dd($request);
-        // }
-
-        dd($request);
-
         $form = $this->createForm(OrderRequiredType::class, $orderRequired);
         $form->handleRequest($request);
 

@@ -3,7 +3,7 @@
 {% block title %}OrderRequired index{% endblock %}
 
 {% block body %}
-    <h1>OrderRequired index</h1>
+    <h1>Tableau de gestion des commandes</h1>
 
     <table class="table">
         <thead>
@@ -30,17 +30,17 @@
                     {% endfor %}
                 
                 {% if 'Chef de centre' in userTable or 'Adjoint moyens opérationnels' in userTable or 'Adjoint Moyens/Ressources/Infrastructures' in userTable or 'Admin' in userTable %}
-                    <!-- <td>Status accès formulaire</td> -->
 
                     <td>
                         <form class="statusChange">
                             <select name="order_required_order_status" id="order_required[{{ order_required.orderStatus.statusName }}]">
-                                <option value="{{ order_required.orderStatus.id }}" selected="selected">{{ order_required.orderStatus.id }}. {{ order_required.orderStatus.statusName }}</option>
-                                {% for order_status in order_statuses %}
+                                <option value="{{ order_required.orderStatus.id }}" selected="selected">{{ order_required.orderStatus.statusName }}</option>
+                                {% for order_status in order_statuses %}                                
                                     {% if order_status.id != order_required.orderStatus.id %}
-                                        <option value="{{ order_status.id }}">{{ order_status.id }}. {{ order_status.statusName }}</option>
-                                    {% endif %}
+
+                                        <option value="{{ order_status.id }}">{{ order_status.statusName }}</option>
                                     
+                                    {% endif %}                                    
                                 {% endfor %}
                             </select>
                             <input type="hidden" name="id-target" value="{{ order_required.id }}">
