@@ -1,7 +1,7 @@
 const nav = document.getElementById('principalNav');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY  > 10)
+    if (window.scrollY  > 1)
     {
         nav.classList.add('fixed-top');
         nav.classList.add('bg-light');

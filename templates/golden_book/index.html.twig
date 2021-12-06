@@ -21,7 +21,7 @@
                         </arcticle>
                     {% endif %}
                 {% else %}
-                    <p>Il n'y à pas encore de commentaire dans le livre d'or.</p>
+                    <p>Il n'y à pas encore de commentaires dans le livre d'or.</p>
                 {% endfor %}
             </div>
         </div>
@@ -38,14 +38,18 @@
 
         <div class="row">
             <div class="col-md-12">
-                <p>Les Sapeurs-Pompiers de la montagne sont intervenus pour vous et vous souhaitez les remercier? Profitez de cet espace dédié!</p>
+                <p>Les Sapeurs-Pompiers de la montagne sont intervenus pour vous et vous souhaitez les remercier ? Profitez de cet espace dédié.</p>
                     {{ include('golden_book/_form.html.twig') }}
-                <p>*Les remerciements doivent être anonymes et sans indication de lieux.
-                <br>**Les commentaires sont soumis à la modération avant d'être publiés.</p>
+                <p>*Les remerciements doivent être anonymes et sans indication de lieu.
+                <br>**Les commentaires sont soumis à modération avant d'être publiés.</p>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+            window.scrollTo(0, 150);
+</script>
 
 <script type="text/javascript" src="{{ asset('js/validationStatusGoldenBook.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/formGoldenBookPublic.js') }}"></script>

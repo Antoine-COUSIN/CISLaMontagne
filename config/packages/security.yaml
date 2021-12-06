@@ -60,3 +60,5 @@ security:
         - { path: ^/amicale_descript, roles: ROLE_ADMIN }
         - { path: ^/extranet, roles: ROLE_USER }
         - { path: ^/bugSignalement, roles: ROLE_USER }
+        - { path: ^/order_required, roles: ROLE_ADMIN }
+        - { path: ^/order_status, roles: ROLE_ADMIN }

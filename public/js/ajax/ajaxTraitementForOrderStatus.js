@@ -2,15 +2,10 @@ let forms = document.querySelectorAll('.statusChange'); // Selection des formula
 
 forms.forEach((form) => {
 
-    console.log(form);
-
     form.addEventListener('input', function(e) { // J'indique ce qui doit se passer a l'évènement "submit"
         e.preventDefault(); // Je stop le déroulement standard du formulaire
         
         let data = new FormData(this); //Récupèration des données du formulaire dans le nouvel objet data
-
-        console.log(data);
-
     
         let xhr = new XMLHttpRequest; // J'apelle un nouvel object xhr
     

@@ -18,8 +18,8 @@
 
         {% block javascripts %}
         <!-- ReCaptcha V3 -->
-        <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3"></script> -->
-        <!-- <script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LenHCYdAAAAAFOCG3THd9FcS7Bz6yA6mjej2Bw3"></script>
+        <script>
             function onClick(e)
             {
                 e.preventDefault();
@@ -31,7 +31,7 @@
                     });
                 });
             }
-        </script> -->
+        </script>
         
         <!-- ICONS -->
         <script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
@@ -93,48 +93,6 @@
                 </div>
             </nav>
         </header>
-
-        <!-- <div id="menu_turn_style" class="container-fluid" alt="Menu rapide icons">
-            <div class="menu_turn_style">
-                <label style="display: none;" for="menu-rapide"></label>
-                <input id="menu-rapide" type="checkbox">
-                <a href="/">
-                    <img src="{{ asset('img/acces-rapide.png') }}" alt="Menu rapide icons">
-                </a>
-                <ul>
-                    <li>
-                        <a href="{{ path('app_login') }}">
-                            <img src="{{ asset('img/acces-reserve-1.png') }}" alt="Menu rapide icons">
-                        </a>
-                        <em class="flying_bubble_info_1">Accès réservé</em>
-                    </li>
-                    <li>
-                        <a href="{{ path('urgency_phone') }}">
-                            <img src="{{ asset('img/numero-durgence-1.png') }}" alt="Menu rapide icons">
-                        </a>
-                        <em class="flying_bubble_info_2">18/112</em>
-                    </li>
-                    <li>
-                        <a href="{{ path('contact') }}">
-                            <img src="{{ asset('img/contacter-nous-1.png') }}" alt="Menu rapide icons">
-                        </a>
-                        <em class="flying_bubble_info_3">Contactez-nous</em>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{{ asset('img/attestation-1.png') }}" alt="Menu rapide icons">
-                        </a>
-                        <em class="flying_bubble_info_4">Attestation d’intervention</em>
-                    </li>
-                    <li>
-                        <a href="{{ path('bugSignalement') }}">
-                            <img style="border-radius: 50%;" src="{{ asset('img/bugs.png') }}" alt="Menu rapide icons">
-                        </a>
-                        <em class="flying_bubble_info_5">Signaler un bug</em>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
 
         {% block body %}{% endblock %}
 

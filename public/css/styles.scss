@@ -1693,7 +1693,11 @@ header
             display: none;
         }
     }
-    
+
+    .footer-laptop
+    {
+        height: 250px;
+    }    
 }
 
 @media screen and (max-width: 995px)
@@ -1743,11 +1747,28 @@ header
 
         .attachement-container
         {
-            margin-top: 15px;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            ul
+            {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-evenly;
+
+                li
+                {
+                    list-style: none;
+
+                    a
+                    {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                    i
+                    {
+                        margin-right: 8px;
+                    }
+                }
+            }
         }
 
         .adress
@@ -1758,30 +1779,11 @@ header
             justify-content: center;
         }
 
-        .maps
-        {
-            margin-top: 15px;
-        }
-
-        li
-        {
-            list-style: none;
-
-            a
-            {
-                color: white;
-                text-decoration: none;
-            }
-
-            i
-            {
-                margin-right: 8px;
-            }
-        }
+        
 
         .bloc-mentions-legales
         {
-            margin-top: 15px;
+            width: 100%;
             display: flex;
             justify-content: center;
             a
@@ -1807,10 +1809,13 @@ header
         {
             .topBarre
             {
+                display: flex;
+                justify-content: space-evenly;
                 .nav_content
                 {
                     display: flex;
                     flex-direction: column;
+                    justify-content: center;
                     
                     a
                     {
@@ -1821,7 +1826,14 @@ header
 
                 .socialNetwork
                 {
-                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .network_links
+                    {
+                        display: flex;
+                        flex-direction: column;
+                    }
                 }
 
             }
