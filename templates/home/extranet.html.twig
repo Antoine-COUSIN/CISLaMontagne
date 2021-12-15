@@ -12,8 +12,8 @@
         </div>
 
         <div class="principal-bloc-container">
-            <div class="row"> <!-- Déclaration de la première ligne de container -->
-                <div class="col-md-6"> <!-- Déclaration du bloc gauche -->
+            <div class="row row_1"> <!-- Déclaration de la première ligne de container -->
+                <div class="col-md-6 dual-bloc"> <!-- Déclaration du bloc gauche -->
                     <div class="dual-bloc-container first-bloc"><!-- Déclaration nominal du bloc gauche -->
                         <div class="row">
                             <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
@@ -54,7 +54,7 @@
                     </div>
                 </div>
     
-                <div class="col-md-6"><!-- Déclaration du bloc droit -->
+                <div class="col-md-6 dual-bloc"><!-- Déclaration du bloc droit -->
                     <div class="dual-bloc-container second-bloc"><!-- Déclaration nominal du bloc droit -->
                         <div class="row">
                             <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
@@ -96,8 +96,8 @@
             </div>
 
 
-            <div class="row"> <!-- Déclaration de la première ligne de container -->
-                <div class="col-md-6"> <!-- Déclaration du bloc gauche -->
+            <div class="row row_2"> <!-- Déclaration de la première ligne de container -->
+                <div class="col-md-6 dual-bloc"> <!-- Déclaration du bloc gauche -->
                     <div class="dual-bloc-container third-bloc"><!-- Déclaration nominal du bloc gauche -->
                         <div class="row">
                             <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
@@ -115,7 +115,7 @@
                                         <ul>
                                             <li><a href="{{ path('pharma_stock_configService') }}"><i class="fas fa-cog"></i></a><span>Config.<br>service</span></li>
                                             <li><a href="{{ path('pharma_stock_replenishment') }}"><i class="fas fa-notes-medical"></i></a><span>Gestion<br>du stock</span></li>
-                                            <li><a href="{{ path('pharma_stock_index') }}"><i class="fas fa-ambulance"></i></a><span>Reconditionnement<br>VASV</span></li>
+                                            <li><a href="{{ path('pharma_stock_index') }}"><i class="fas fa-ambulance"></i></a><span style="text-align: center;">Réarmement<br>VASV</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                     </div>
                 </div>
     
-                <div class="col-md-6"><!-- Déclaration du bloc droit -->
+                <div class="col-md-6 dual-bloc"><!-- Déclaration du bloc droit -->
                     <div class="dual-bloc-container fourth-bloc"><!-- Déclaration nominal du bloc droit -->
                         <div class="row">
                             <div class="col-md-6"> <!-- Déclaration de l'item gauche -->
@@ -169,9 +169,13 @@
         
                                     <div class="category-content">
                                         {% if 'Chef de centre' in userTable or 'Adjoint moyens opérationnels' in userTable or 'Adjoint Moyens/Ressources/Infrastructures' in userTable or 'Admin' in userTable %}
-                                            <li><a href="{{ path('order_required_index') }}"><i class="fas fa-clipboard-list"></i></a><span>Gérer les commandes</span></li>
+                                            <ul>
+                                                <li><a href="{{ path('order_required_index') }}"><i class="fas fa-clipboard-list"></i></a><span>Gérer les commandes</span></li>
+                                            </ul>
                                         {% else %}
-                                            <li><a href="{{ path('order_required_index') }}"><i class="fas fa-shopping-bag"></i></a><span>Demander une commande</span></li>
+                                            <ul>
+                                                <li><a href="{{ path('order_required_index') }}"><i class="fas fa-shopping-bag"></i></a><span>Demander une commande</span></li>
+                                            </ul>
                                         {% endif %}
                                     </div>
                                 </div>

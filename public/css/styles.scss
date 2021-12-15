@@ -143,6 +143,7 @@ header
     
     background-color: rgba(230, 230, 230, 0.8);
     transition: all 0.5s;
+    // z-index: 5000;
 
     a
     {
@@ -158,6 +159,11 @@ header
             width: 30px;
             margin-right: 12px;
         }
+    }
+
+    .show
+    {
+        z-index: 5000 !important;
     }
 
     .navbar-collapse
@@ -1801,6 +1807,33 @@ header
     }
 }
 
+@media screen and (max-width: 991px)
+{
+    #principalNav
+    {
+        z-index: 5000;
+    }
+
+    #menu_turn_style
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    #contact-form
+    {
+        .form-container
+        {
+            form
+            {
+                width: 620px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 770px)
 {
     header
@@ -1853,6 +1886,17 @@ header
             }
         }
     }
+
+    #contact-form
+    {
+        .form-container
+        {
+            form
+            {
+                width: 420px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 520px)
@@ -1890,22 +1934,47 @@ header
             }
         }
     }
+
+    #contact-form
+    {
+        .form-container
+        {
+            form
+            {
+                width: 300px;
+
+                .form-contact
+                {
+                    div
+                    {
+                        input
+                        {
+                            width: 200px;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 //BACK-OFFICE======================================================================================================
 
 //BASE ADMIN.HTML.TWIG=============================================================================================
 
-#admin
+#admin-header
 {
     background: none;
-    height: 7vh;
+    height: auto;
 }
+
+
 
 //GLOBAL INDEX=====================================================================================================
 #back-office-container-laptop
 {
-    height: 93vh;
+    height: 100vh;
     h2::after
     {
         display: block;
@@ -1945,7 +2014,7 @@ header
         background-color: rgb(225, 225, 225);
         border: 1px solid rgb(225, 225, 225);
         box-shadow: 2px 0px 5px -2px rgba(0, 0, 0, 0.78);
-        height: 93vh;
+        height: 100vh;
     }
 
     .backOfficeContainer
