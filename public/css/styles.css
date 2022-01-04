@@ -1631,6 +1631,20 @@ header .topBarreContainer {
   #menu_turn_style {
     display: none;
   }
+  #engins .enginGlobalContainer .enginArticle {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  #engins .enginGlobalContainer .enginArticle .pictureContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media screen and (max-width: 900px) {

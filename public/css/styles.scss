@@ -1818,6 +1818,23 @@ header
     {
         display: none;
     }
+
+    #engins
+    {
+        .enginGlobalContainer
+        {
+            .enginArticle
+            {
+                flex-direction: column !important;
+
+                .pictureContainer
+                {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 900px)
